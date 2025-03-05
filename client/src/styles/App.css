@@ -1,0 +1,154 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.desktop-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.desktop-menu li {
+  margin-left: 2rem;
+}
+
+.desktop-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.bar.active:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar.active:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.active:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.hamburger-menu ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.hamburger-menu li {
+  margin: 1rem 0;
+}
+
+.hamburger-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* Main Content Styles */
+.main-content {
+  min-height: calc(100vh - 120px);
+  padding: 2rem;
+}
+
+/* Home Page Styles */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f0f5ff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.product-info {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feature {
+  width: 30%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .feature {
+    width: 100%;
+  }
+}
