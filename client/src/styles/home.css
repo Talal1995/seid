@@ -1,0 +1,106 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to right, #2c3e50, #4c9db8);
+  color: #ecf0f1;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #4c9db8;
+}
+
+.cta-button {
+  background: #4c9db8;
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #2c3e50;
+  transform: scale(1.05);
+}
+
+/* Co-founders Section */
+.cofounders {
+  max-width: 900px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.cofounders-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cofounder-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.cofounder-card:hover {
+  transform: translateY(-5px);
+}
+
+.cofounder-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.cofounder-desc {
+  font-size: 1.1rem;
+  color: #34495e;
+  line-height: 1.6;
+}
