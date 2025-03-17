@@ -4,81 +4,393 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #4c9db8);
-  font-family: "Poppins", sans-serif;
-  padding: 20px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--bg-light) 0%,
+    var(--bg-mid) 50%,
+    var(--bg-deep) 100%
+  ); /* Matches home.css */
+  font-family: "Avenir", "Helvetica Neue", Arial, sans-serif; /* Matches home.css font */
+  padding: clamp(1rem, 3vw, 2rem);
   margin: 0;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Use same variables as home.css */
+:root {
+  --bg-deep: #1a1b2e;
+  --bg-mid: #2e3a59;
+  --bg-light: #5a6b9e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #d1dbe8;
+  --accent: #7dd3fc;
+  --accent-dark: #38bdf8;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --highlight: rgba(125, 211, 252, 0.2);
+}
+
+/* Background Effects */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(125, 211, 252, 0.1),
+    transparent 50%,
+    rgba(56, 189, 248, 0.1)
+  );
+  opacity: 0.7;
+  z-index: -1;
+  animation: flowGradient 15s ease-in-out infinite;
+}
+
+/* RTL Adjustment for Background Gradient */
+.page[dir="rtl"]::before {
+  background: linear-gradient(
+    -45deg,
+    /* Flip gradient direction for RTL */ rgba(125, 211, 252, 0.1),
+    transparent 50%,
+    rgba(56, 189, 248, 0.1)
+  );
 }
 
 /* Page Container Styles */
 .page-container {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.95
-  ); /* Light, semi-transparent background */
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  width: 100%;
-  text-align: left;
+  background: rgba(255, 255, 255, 0.06); /* Matches hero glassmorphism */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2.5rem var(--shadow);
+  max-width: 56rem; /* Slightly wider than home.css */
+  width: 90%;
+  text-align: left; /* Default for LTR */
+  margin: clamp(1rem, 2vw, 1.5rem);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* RTL Adjustment for Page Container */
+.page-container[dir="rtl"] {
+  text-align: right; /* Align text right for RTL */
+}
+
+/* Hover Effects */
+.page-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 1.25rem 3rem var(--shadow);
+}
+
+/* Accent Line for Consistency */
+.page-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 6rem;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  opacity: 0.9;
+  transition: width 0.4s ease;
+}
+
+/* RTL Adjustment for Accent Line */
+.page-container[dir="rtl"]::after {
+  left: unset;
+  right: 50%;
+  transform: translateX(50%); /* Flip transform for RTL */
+}
+
+/* Hover Effect for Accent Line */
+.page-container:hover::after {
+  width: 8rem;
 }
 
 /* Heading Styles */
 .page h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 2px;
-  color: #2c3e50;
-  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-align: center; /* Center by default */
+  line-height: 1.3;
+  position: relative;
+  animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+/* RTL doesn’t need adjustment for h2 since it’s centered */
+
+.page h2::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
+}
+
+/* RTL Adjustment for h2 Underline */
+.page-container[dir="rtl"] h2::before {
+  left: unset;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.page-container:hover h2::before {
+  width: 30%;
 }
 
 /* Section Titles */
 .page h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 600;
-  color: #34495e;
-  margin-bottom: 10px;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.2s;
+  opacity: 0;
+}
+
+/* RTL Adjustment for h3 */
+.page[dir="rtl"] h3 {
+  text-align: right;
 }
 
 /* Paragraph Styles */
 .page p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
   font-weight: 400;
-  color: #2c3e50;
-  margin-bottom: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: justify; /* Default for LTR */
+  animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s;
+  opacity: 0;
+}
+
+/* RTL Adjustment for Paragraphs */
+.page[dir="rtl"] p {
+  text-align: justify; /* Keep justify for readability in RTL */
+  direction: rtl; /* Ensure text flows right-to-left */
 }
 
 /* Emphasized Text */
 .page span {
   display: block;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 1.75vw, 1.2rem);
   font-weight: 600;
-  color: #2980b9;
-  margin-top: 10px;
+  color: var(--accent);
+  margin-top: 0.75rem;
+  animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s;
+  opacity: 0;
+}
+
+/* RTL Adjustment for Span */
+.page[dir="rtl"] span {
+  text-align: right;
+}
+
+/* Section Spacing */
+.page section {
+  margin-bottom: 2rem;
+}
+
+/* List Styles (Added for your <ul> elements) */
+.page ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Default for LTR */
+  margin-bottom: 1.5rem;
+}
+
+/* RTL Adjustment for Lists */
+.page[dir="rtl"] ul {
+  padding-left: 0;
+  padding-right: 1.5rem; /* Move padding to right for RTL */
+  list-style-position: outside;
+  direction: rtl; /* Ensure list items flow RTL */
+}
+
+/* Button Styles */
+.cta-button {
+  background: var(--accent);
+  color: var(--text-primary);
+  padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
+  font-weight: 500;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 0.5rem 1.5rem var(--highlight);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: pulseEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s;
+  opacity: 0;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+/* RTL Adjustment for Button Gradient */
+.cta-button[dir="rtl"]::before {
+  background: linear-gradient(
+    -90deg,
+    /* Flip gradient for RTL */ transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+.cta-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-0.125rem) scale(1.05);
+  box-shadow: 0 0.75rem 2rem var(--highlight);
+}
+
+.cta-button:hover::before {
+  transform: translateX(100%);
+}
+
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--accent-dark);
+}
+
+/* Animations */
+@keyframes flowGradient {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(2rem, -2rem) rotate(45deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseEntry {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 64rem) {
+  /* 1024px */
   .page-container {
-    padding: 30px;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
     max-width: 90%;
   }
 
   .page h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   }
 
   .page h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.125rem, 2vw, 1.6rem);
   }
 
   .page p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.25vw, 1.05rem);
+  }
+
+  .cta-button {
+    padding: clamp(0.625rem, 1vw, 0.75rem) clamp(1.25rem, 1.5vw, 2rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .page-container {
+    padding: clamp(1rem, 2vw, 2rem);
+  }
+
+  .page h2 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+  }
+
+  .page h3 {
+    font-size: clamp(1rem, 1.75vw, 1.5rem);
+  }
+
+  .page p {
+    font-size: clamp(0.875rem, 1vw, 1rem);
+  }
+
+  .cta-button {
+    padding: clamp(0.5rem, 0.75vw, 0.625rem) clamp(1rem, 1.25vw, 1.5rem);
+  }
+}
+
+@media (max-width: 30rem) {
+  /* 480px */
+  .page-container {
+    padding: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+
+  .page h2 {
+    font-size: clamp(1.125rem, 2.5vw, 1.6rem);
+  }
+
+  .page h3 {
+    font-size: clamp(0.875rem, 1.5vw, 1.4rem);
+  }
+
+  .page p {
+    font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  }
+
+  .cta-button {
+    padding: clamp(0.5rem, 0.75vw, 0.625rem) clamp(0.75rem, 1vw, 1.25rem);
   }
 }

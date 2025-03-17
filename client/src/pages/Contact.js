@@ -1,14 +1,18 @@
+// Contact.js
+
 import React from "react";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 import "../styles/pages.css"; // Import the new styles
 
 const Contact = () => {
+  const { t } = useTranslation(); // Use the translation hook to get translated content
+
   return (
     <div className="page">
       <div className="page-container">
-        <h2>Contact Us</h2>
+        <h2>{t("contact Us")}</h2> {/* Translatable text */}
         <p>
-          Have questions? Feel free to reach out to us at{" "}
-          <strong>contact@ourwebsite.com</strong>. We’d love to hear from you!
+          {t("contact Message")} <strong>contact@ourwebsite.com</strong>
         </p>
       </div>
     </div>
