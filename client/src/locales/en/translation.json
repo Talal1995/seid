@@ -1,0 +1,66 @@
+{
+  "home": {
+    "title": "Syrian expertise is a key driver for Syria’s future.",
+    "description": "Syrian expertise is a key driver for Syria’s future. Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
+    "callToAction": "Join us in shaping Syria’s future, where knowledge leads to action."
+  },
+  "about": {
+    "whoWeAre": {
+      "title": "Who We Are?",
+      "namesOfVariables": "Vision and Mission ",
+      "visionTitle": "Vision: ",
+      "missionTitle": "Mission:",
+      "vision": "A future where Syrian expertise drives innovation, development, and the sustainable reconstruction of Syria.",
+      "mission": "We mobilize, connect, and activate Syrian expertise worldwide to contribute to Syria’s reconstruction and development. Through knowledge-sharing, collaboration, and strategic initiatives, we ensure that expertise is transformed into real impact."
+    },
+    "ourStory": {
+      "title": "Our Story: ",
+      "part1": "For decades, Syrians have been forced to leave their homeland in waves. The first in the 1980s and the second in 2011. Scattered across the world, they built lives, gained knowledge, and mastered new skills. The Syrian diaspora grew into a powerhouse of expertise, yet many longed to contribute where their knowledge mattered most, back home in Syria.",
+      "part2": "Despite the distance, Syrians stayed connected, forming strong communities wherever they went. Then, on December 8, 2024, history shifted. The old regime fell, and for the first time in decades, Syrians reclaimed their homeland. Across the diaspora, a single question united Syrians.",
+      "unifyingQuestion": "How can we help rebuild our country?",
+      "part3": "From Sweden, a small group of young professionals took action. Within weeks, over 4,000 experts from across the globe came together, united by a shared vision to transform knowledge into impact and drive Syria’s reconstruction.",
+      "howWeStarted": "This is how The Syrian Initiative for Expertise and Development was born. A movement. A platform. A commitment. Built by Syrians, for Syria."
+    },
+    "ourTeam": {
+      "description": "Co-Founders, Board members, Team Leads."
+    }
+  },
+  "whatWeDo": {
+    "innovationAndInitiatives": {
+      "title": "Innovation & Initiatives",
+      "description": "No idea succeeds in isolation. Many of us have concepts that could contribute to rebuilding Syria, but are they realistic? Have they been tested, refined, and shaped by those with the expertise to take them further? Every strong idea needs a foundation, a reality check, and the right people to help it grow.",
+      "role": "This is where we come in. We provide a space for professionals to connect, challenge, and develop ideas together. This is not a passive platform where ideas wait for approval. It is an active community where your ability to engage, collaborate, and build relationships determines how far your idea can go.",
+      "howToGetInvolved": {
+        "step1": "Join discussions and present your idea to others in the network.",
+        "step2": "Connect with experts who can help evaluate and refine your concept.",
+        "step3": "Work on a structured proposal with feedback from professionals.",
+        "step4": "Build a small team and prepare your idea for the next stage."
+      },
+      "engagementMessage": "Our role is to facilitate connections and provide access to expertise, but the progress of your idea depends on your engagement. If you are ready to take the next step, start here."
+    },
+    "syrianExpertiseHub": {
+      "title": "Syrian Expertise Hub",
+      "description": "Over 4,000 professionals have joined our network, and hundreds have already shared details about their expertise. This allows us to map skills, connect people efficiently, and ensure that expertise is accessible where it is needed most.",
+      "platformGoal": "We are building the largest Syrian expertise platform, powered by smart technology and AI-driven matching. The goal is simple: to ensure that knowledge does not remain scattered but is connected, structured, and ready to contribute to Syria’s reconstruction.",
+      "howToGetInvolved": {
+        "step1": "Register and create your expertise profile.",
+        "step2": "Specify your field, experience, and how you want to contribute.",
+        "step3": "Get matched with individuals and projects that need your expertise.",
+        "step4": "Leverage the platform to build connections, share expertise, and collaborate effectively."
+      },
+      "expertiseMessage": "If you are looking for expertise, you can easily find and connect with the right people. If you have expertise, this is where you make it visible and accessible."
+    },
+    "expertInsights": {
+      "title": "Expert Insights",
+      "description": "Knowledge is only powerful when it is shared. If you have insights, experiences, or ideas that others should hear, this is the place to share them.",
+      "callToAction": "Perhaps you have a concept but need to articulate it clearly before taking it further. Maybe you want to share an article, a video, or an analysis that contributes to the wider conversation. By publishing your insights, you make your expertise visible, connect with those who share your vision, and open the door to new opportunities.",
+      "howToGetInvolved": {
+        "step1": "Write an article, record a video, or prepare a visual presentation.",
+        "step2": "Submit your content to our team for review.",
+        "step3": "Once approved, your insights will be published and shared with the network.",
+        "step4": "Engage with others who respond to your ideas and expand your reach."
+      },
+      "impactMessage": "Your expertise has the power to inspire change. Share your insights and make an impact."
+    }
+  }
+}

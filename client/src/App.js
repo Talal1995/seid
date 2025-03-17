@@ -5,11 +5,13 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import WhatWeDo from "./pages/WhatWeDo";
 import Navbar from "./components/Navbar";
-// import "./config/languageConfig";
+import Footer from "./pages/Footer"; // Import Footer here
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className="app-container">
+      {" "}
+      {/* Add a wrapper for layout control */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,8 +19,9 @@ function App() {
         <Route path="/what-we-do" element={<WhatWeDo />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer /> {/* Place Footer here */}
     </div>
   );
-}
+};
 
 export default App;

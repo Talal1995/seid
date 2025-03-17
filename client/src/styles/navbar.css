@@ -4,28 +4,75 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(
-    to right,
-    #2c3e50,
-    #4c9db8
-  ); /* Navy Blue to Teal */
-  padding: 15px 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  font-family: "Poppins", sans-serif;
-  position: relative; /* Optional: position for sticky navbar */
+    145deg,
+    var(--bg-deep),
+    var(--bg-mid)
+  ); /* Matches home.css gradient */
+  padding: 1rem clamp(1.5rem, 3vw, 3rem); /* Responsive padding */
+  box-shadow: 0 0.5rem 1.5rem var(--shadow);
+  font-family: "Avenir", "Helvetica Neue", Arial, sans-serif; /* Matches home.css font */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Use same variables as home.css */
+:root {
+  --bg-deep: #1a1b2e;
+  --bg-mid: #2e3a59;
+  --bg-light: #5a6b9e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #d1dbe8;
+  --accent: #7dd3fc;
+  --accent-dark: #38bdf8;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --highlight: rgba(125, 211, 252, 0.2);
+}
+
+/* Subtle Background Effect */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--highlight), transparent 50%);
+  opacity: 0.3;
+  z-index: -1;
+  animation: slideGlow 10s ease-in-out infinite;
 }
 
 /* Brand Styles */
-.navbar .brand {
-  font-size: 1.8rem;
+.navbar .brand h1 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   font-weight: 700;
-  color: #ecf0f1; /* Light Gray */
+  color: var(--text-primary);
   text-transform: uppercase;
+  letter-spacing: 0.075em;
+  margin: 0;
+  position: relative;
+  animation: fadeInSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.navbar .brand h1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.navbar .brand:hover h1::after {
+  width: 50%;
 }
 
 /* Navigation Links Styles */
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: clamp(1rem, 2vw, 1.5rem);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,32 +84,130 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #ecf0f1; /* Light Gray for better contrast */
-  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
-/* Hover Effect */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent) 50%,
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
 .nav-links a:hover {
-  background-color: rgba(236, 240, 241, 0.3); /* Soft hover effect */
-  transform: scale(1.05);
+  color: var(--text-primary);
+  background: rgba(125, 211, 252, 0.1);
+  transform: translateY(-0.125rem);
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
+.nav-links a:hover::before {
+  transform: translateX(100%);
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.language-switcher button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.language-switcher button:hover {
+  color: var(--text-primary);
+  transform: translateY(-0.125rem);
+}
+
+.language-switcher button:hover::before {
+  opacity: 0.2;
+}
+
+/* Animations */
+@keyframes slideGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) {
   .navbar {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1rem clamp(1rem, 2vw, 1.5rem);
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .navbar .brand {
+    margin-bottom: 1.25rem;
+  }
+
+  .language-switcher {
+    margin-top: 1rem;
+  }
+
+  .nav-links a,
+  .language-switcher button {
+    padding: 0.5rem 0.75rem;
   }
 }
