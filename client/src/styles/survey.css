@@ -53,3 +53,40 @@ button {
 button:hover {
   background: #003580;
 }
+
+/* Styling for the checkbox container */
+.contribution-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Individual checkbox wrapper */
+.contribution-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Styling for the checkbox itself */
+.contribution-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; /* Adjust color to fit your theme */
+  cursor: pointer;
+}
+
+/* Label styling */
+.contribution-option label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Small note styling */
+small {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
