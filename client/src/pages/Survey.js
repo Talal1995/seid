@@ -605,6 +605,11 @@ const SurveyPage = () => {
     }
   };
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -697,6 +702,15 @@ const SurveyPage = () => {
           ? "فشل إرسال البيانات، الرجاء المحاولة لاحقًا."
           : "Failed to submit data, please try again later."
       );
+    }
+
+    if (!validateEmail(formData.email)) {
+      alert(
+        isRTL
+          ? "يرجى إدخال بريد إلكتروني صالح."
+          : "Please enter a valid email address."
+      );
+      return;
     }
   };
 
