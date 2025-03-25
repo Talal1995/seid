@@ -1,5 +1,5 @@
 {
-  "name": "product-website",
+  "name": "seid",
   "version": "1.0.0",
   "description": "A product website with React frontend and Node.js backend",
   "main": "server/server.js",
@@ -17,19 +17,29 @@
     "dotenv": "^16.4.7",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "i18next": "^24.2.2",
-    "i18next-browser-languagedetector": "6.0.4",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-i18next": "11.0.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "mongoose": "^7.5.3",
     "passport": "^0.6.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-scripts": "5.0.1",
+    "webpack": "4.29.6"
   },
   "devDependencies": {
+    "babel-jest": "27.5.1",
+    "babel-loader": "8.0.5",
     "concurrently": "^8.2.1",
+    "eslint": "7.32.0",
+    "jest": "27.5.1",
     "nodemon": "^3.0.1"
+  },
+  "resolutions": {
+    "webpack": "4.29.6",
+    "babel-jest": "27.5.1",
+    "babel-loader": "8.0.5",
+    "eslint": "7.32.0",
+    "jest": "27.5.1"
   }
 }
