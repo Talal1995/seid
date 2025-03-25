@@ -1,67 +1,73 @@
 import React from "react";
-import { useTranslation } from "react-i18next"; // Import translation hook
-import "../styles/pages.css"; // Ensure your styles are properly defined
+import { useTranslation } from "react-i18next";
+import "../styles/whatWeDo.css"; // Using the same CSS
+// Add any images if required, or just leave it as a text-based layout
+import aboutLogo from "../assets/Logo5.jpeg"; // Import the image
 
 const About = () => {
   const { t, i18n } = useTranslation(); // Get i18n object to access current language
 
   // Determine the text direction based on language
-  const isRTL = i18n.language === "ar"; // "ar" for Arabic, adjust based on your language code
+  const isRTL = i18n.language === "ar"; // "ar" for Arabic
   const direction = isRTL ? "rtl" : "ltr";
 
   return (
-    <div className="page flex items-center justify-center min-h-screen p-6">
-      <div
-        className="page-container max-w-4xl bg-white bg-opacity-90 shadow-lg rounded-2xl p-8 text-gray-800"
-        dir={direction} // Set direction dynamically
-      >
-        <h2 className="text-3xl font-bold text-center mb-6 text-blue-600 uppercase tracking-wide">
-          {t("about.whoWeAre.title")}
-        </h2>
+    <div className="what-we-do-page" dir={direction}>
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="main-title">{t("about.pageTitle")}</h1>
+        <div className="program-section">
+          <div className="program-content">
+            <div className="program-image">
+              <img src={aboutLogo} alt="Expert Insights" loading="lazy" />
+            </div>
+            <div className="program-details">
+              <h2 className="program-title">
+                {t("about.whoWeAre.namesOfVariables")}
+              </h2>
+              <h3 className="program-title">
+                {t("about.whoWeAre.visionTitle")}
+              </h3>
+              <p className="program-description">
+                {t("about.whoWeAre.vision")}
+              </p>
+              <h3 className="program-title">
+                {t("about.whoWeAre.missionTitle")}
+              </h3>
+              <p className="program-description">
+                {t("about.whoWeAre.mission")}
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <div className="space-y-6 text-left">
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-700">
-              {t("about.whoWeAre.namesOfVariables")}
-            </h3>
-            <h4 className="text-2xl font-semibold text-gray-700">
-              {t("about.whoWeAre.visionTitle")}
-            </h4>
-            <p className="text-lg text-gray-700">
-              {t("about.whoWeAre.vision")}
-            </p>
-            <h4 className="text-2xl font-semibold text-gray-700">
-              {t("about.whoWeAre.missionTitle")}
-            </h4>
-            <p className="text-lg text-gray-700">
-              {t("about.whoWeAre.mission")}
-            </p>
-          </section>
+        <div className="program-section">
+          <div className="program-content">
+            <div className="program-image">
+              <img src={aboutLogo} alt="Expert Insights" loading="lazy" />
+            </div>{" "}
+            <div className="program-details">
+              <h2 className="program-title">{t("about.ourStory.title")}</h2>
+              <p className="program-description">{t("about.ourStory.part1")}</p>
+              <p className="program-description">{t("about.ourStory.part2")}</p>
+              <h3 className="program-title">
+                {t("about.ourStory.unifyingQuestion")}
+              </h3>
+              <p className="program-description">{t("about.ourStory.part3")}</p>
+              <p className="program-description">
+                {t("about.ourStory.howWeStarted")}
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <section>
-            <h3 className="text-3xl font-bold text-center mb-6 text-blue-600 uppercase tracking-wide">
-              {t("about.ourStory.title")}
-            </h3>
-            <p className="text-lg text-gray-700">{t("about.ourStory.part1")}</p>
-            <p className="mt-2 text-lg text-gray-700">
-              {t("about.ourStory.part2")}
-            </p>
-            <h3 className="text-2xl font-semibold text-gray-700 mt-4">
-              {t("about.ourStory.unifyingQuestion")}
-            </h3>
-            <p className="mt-2 text-lg text-gray-700">
-              {t("about.ourStory.part3")}
-            </p>
-            <p className="mt-2 text-lg text-gray-700">
-              {t("about.ourStory.howWeStarted")}
-            </p>
-          </section>
-
-          <section>
-            <p className="text-3xl font-bold text-center mb-6 text-blue-600 uppercase tracking-wide">
-              {t("about.ourTeam.description")}
-            </p>
-          </section>
+        <div className="program-section">
+          <div className="program-content">
+            <div className="program-details">
+              <h2 className="program-title">
+                {t("about.ourTeam.description")}
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>
