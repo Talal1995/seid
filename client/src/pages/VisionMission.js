@@ -18,12 +18,18 @@ const VisionMission = () => {
             <img src={vissionMission} alt="Expert Insights" loading="lazy" />
           </div>
           <div className="program-details">
-            <h3 className="program-title">{t("about.whoWeAre.visionTitle")}</h3>
-            <p className="program-description">{t("about.whoWeAre.vision")}</p>
             <h3 className="program-title">
-              {t("about.whoWeAre.missionTitle")}
+              {t("whoWeAre.visionAndMission.visionTitle")}
             </h3>
-            <p className="program-description">{t("about.whoWeAre.mission")}</p>
+            <p className="program-description">
+              {t("whoWeAre.visionAndMission.vision")}
+            </p>
+            <h3 className="program-title">
+              {t("whoWeAre.visionAndMission.missionTitle")}
+            </h3>
+            <p className="program-description">
+              {t("whoWeAre.visionAndMission.mission")}
+            </p>
           </div>
         </div>
       </div>

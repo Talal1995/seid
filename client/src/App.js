@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer";
 import OurStory from "./pages/OurStory";
 import VisionMission from "./pages/VisionMission";
+import OurTeam from "./pages/OurTeam";
 import "./styles/responsive.css"; // Import the new responsive styles
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/our-team" element={<OurTeam />} />
         <Route path="/vision-mission" element={<VisionMission />} />{" "}
         <Route path="/survey" element={<SurveyPage />} /> {/* Corrected */}
         <Route path="/our-story" element={<OurStory />} /> {/* Corrected */}

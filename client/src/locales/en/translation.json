@@ -5,17 +5,17 @@
     "description": "Syrian expertise is a key driver for Syria’s future. Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
     "callToAction": "Join us in shaping Syria’s future, where knowledge leads to action."
   },
-  "about": {
+  "whoWeAre": {
     "pageTitle": "Who We Are",
-    "whoWeAre": {
-      "namesOfVariables": "Vision and Mission ",
+    "visionAndMission": {
+      "pageTitle": "Vision and Mission ",
       "visionTitle": "Vision: ",
       "missionTitle": "Mission:",
       "vision": "A future where Syrian expertise drives innovation, development, and the sustainable reconstruction of Syria.",
       "mission": "We mobilize, connect, and activate Syrian expertise worldwide to contribute to Syria’s reconstruction and development. Through knowledge-sharing, collaboration, and strategic initiatives, we ensure that expertise is transformed into real impact."
     },
     "ourStory": {
-      "title": "Our Story",
+      "pageTitle": "Our Story",
       "part1": "For decades, Syrians have been forced to leave their homeland in waves. The first in the 1980s and the second in 2011. Scattered across the world, they built lives, gained knowledge, and mastered new skills. The Syrian diaspora grew into a powerhouse of expertise, yet many longed to contribute where their knowledge mattered most, back home in Syria.",
       "part2": "Despite the distance, Syrians stayed connected, forming strong communities wherever they went. Then, on December 8, 2024, history shifted. The old regime fell, and for the first time in decades, Syrians reclaimed their homeland. Across the diaspora, a single question united Syrians.",
       "unifyingQuestion": "How can we help rebuild our country?",
@@ -23,6 +23,7 @@
       "howWeStarted": "This is how The Syrian Initiative for Expertise and Development was born. A movement. A platform. A commitment. Built by Syrians, for Syria."
     },
     "ourTeam": {
+      "pageTitle": "Our Team",
       "description": "Co-Founders, Board members, Team Leads."
     }
   },

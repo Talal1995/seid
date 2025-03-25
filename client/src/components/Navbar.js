@@ -103,17 +103,20 @@ const Navbar = () => {
             onClick={() => window.innerWidth <= 768 && toggleDropdown()}
           >
             <Link className={isActive("/who-we-are")}>
-              {t("about.pageTitle")}
+              {t("whoWeAre.pageTitle")}
             </Link>
             <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
               <Link
                 to="/vision-mission"
                 className={isActive("/vision-mission")}
               >
-                Vision and Mission
+                {t("whoWeAre.pageTitle")}
               </Link>
               <Link to="/our-story" className={isActive("/our-story")}>
-                Our Story
+                {t("whoWeAre.ourStory.pageTitle")}
+              </Link>
+              <Link to="/our-team" className={isActive("/our-team")}>
+                {t("whoWeAre.ourTeam.pageTitle")}
               </Link>
             </div>
           </li>

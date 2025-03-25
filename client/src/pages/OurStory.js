@@ -18,15 +18,23 @@ const OurStory = () => {
             <img src={aboutLogo} alt="Expert Insights" loading="lazy" />
           </div>{" "}
           <div className="program-details">
-            <h2 className="program-title">{t("about.ourStory.title")}</h2>
-            <p className="program-description">{t("about.ourStory.part1")}</p>
-            <p className="program-description">{t("about.ourStory.part2")}</p>
-            <h3 className="program-title">
-              {t("about.ourStory.unifyingQuestion")}
-            </h3>
-            <p className="program-description">{t("about.ourStory.part3")}</p>
+            <h2 className="program-title">
+              {t("whoWeAre.ourStory.pageTitle")}
+            </h2>
             <p className="program-description">
-              {t("about.ourStory.howWeStarted")}
+              {t("whoWeAre.ourStory.part1")}
+            </p>
+            <p className="program-description">
+              {t("whoWeAre.ourStory.part2")}
+            </p>
+            <h3 className="program-title">
+              {t("whoWeAre.ourStory.unifyingQuestion")}
+            </h3>
+            <p className="program-description">
+              {t("whoWeAre.ourStory.part3")}
+            </p>
+            <p className="program-description">
+              {t("whoWeAre.ourStory.howWeStarted")}
             </p>
           </div>
         </div>
