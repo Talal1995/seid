@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/ourTeam.css";
 import teamMembers from "../data/teamMembers";
-import aboutLogo from "../assets/Logo5.jpeg"; // Import the image
 
 const OurTeam = () => {
   const { t, i18n } = useTranslation(); // Get i18n object to access current language

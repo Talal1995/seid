@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import "../styles/home.css";
 import backgroundLogo from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -33,12 +34,12 @@ const Home = () => {
           <h1 className="hero-title">{t("home.title")}</h1>
           <p className="hero-text">{t("home.description")}</p>
           <div className="buttons-container">
-            <a href="#join-us" className="cta-button">
+            <Link to="/survey" className="cta-button">
               {t("joinUsButton")}
-            </a>
-            <a href="#learn-more" className="cta-button secondary">
+            </Link>
+            <Link to="/what-we-do" className="cta-button secondary">
               {t("learn More")}
-            </a>
+            </Link>
           </div>
         </div>
       </section>
