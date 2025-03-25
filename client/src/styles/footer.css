@@ -90,7 +90,6 @@
   padding-left: 15px;
 }
 
-.links-section a::before,
 .programs-section a::before {
   content: "→";
   position: absolute;

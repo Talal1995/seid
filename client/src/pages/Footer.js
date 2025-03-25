@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section about-section">
-          <h3>SEID</h3>
+          <h3>Syrian Experts</h3>
           <p>
             The Syrian Initiative for Expertise and Development connects Syrian
             professionals worldwide to contribute to Syria's future.

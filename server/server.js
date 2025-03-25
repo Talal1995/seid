@@ -11,10 +11,18 @@ const PORT = process.env.PORT || 5001;
 
 // Comprehensive CORS Configuration
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://seid-uk15.onrender.com"
-      : "http://localhost:3000",
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "https://seid-uk15.onrender.com",
+      "http://localhost:3000",
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.error(`Blocked CORS request from: ${origin}`); // Debugging
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: [
@@ -38,10 +46,10 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+      secure: process.env.NODE_ENV === "production", // Secure cookies in production
       httpOnly: true, // Prevent client-side JS from accessing the cookie
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Cross-origin fix
     },
   })
 );
@@ -52,13 +60,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect to MongoDB
+console.log(
+  "Connecting to MongoDB with URI:",
+  process.env.MONGO_URI ? "Loaded" : "Not found"
+);
+
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.error("MongoDB Connection Error:", err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
@@ -70,8 +83,7 @@ if (process.env.NODE_ENV === "production") {
   // Serve static files from the React app
   app.use(express.static(path.join(__dirname, "../client/build")));
 
-  // The "catchall" handler: for any request that doesn't
-  // match one above, send back React's index.html file.
+  // The "catchall" handler: for any request that doesn't match one above
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
@@ -79,7 +91,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error("❌ Error:", err.stack);
   res.status(500).send({
     message: "Something went wrong!",
     error: process.env.NODE_ENV === "development" ? err.stack : {},
@@ -88,6 +100,6 @@ app.use((err, req, res, next) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || "development"}`);
 });

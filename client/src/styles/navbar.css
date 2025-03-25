@@ -51,11 +51,12 @@
 .navbar-logo {
   height: 60px; /* Adjusted to match navbar height better */
   width: auto; /* Maintain aspect ratio */
-  max-width: 150px; /* Prevents excessive growth */
+  max-width: 138px; /* Prevents excessive growth */
   object-fit: contain; /* Ensures full visibility of the logo */
   display: block; /* Ensure it's a block element */
-  filter: contrast(1.5) brightness(1.2); /* Enhanced contrast and brightness */
+  filter: none; /* Remove any filters affecting the colors */
   opacity: 1 !important; /* Force full opacity */
+  background-color: transparent; /* Ensure no background color interferes */
 }
 
 /* Navigation Content Container */
