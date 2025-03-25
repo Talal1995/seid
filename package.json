@@ -8,7 +8,8 @@
     "server": "nodemon server/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "client-install": "npm install --prefix client"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
@@ -19,9 +20,9 @@
     "express-session": "^1.17.3",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "6.0.4",
-    "react": "18.0.0",  
-    "react-dom": "18.0.0",  
-    "react-i18next": "11.0.0", 
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-i18next": "11.0.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "mongoose": "^7.5.3",

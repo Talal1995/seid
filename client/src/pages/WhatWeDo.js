@@ -1,83 +1,183 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/pages.css"; // Ensure your styles are properly defined
+import "../styles/whatWeDo.css"; // Using our premium CSS
+import InnovationAndInitiativesLogo from "../assets/whatWeDoPart1.jpeg";
+import syrianHub from "../assets/Logo5.jpeg";
+import expertInsights from "../assets/expertInsight.jpeg";
 
 const WhatWeDo = () => {
-  const { t, i18n } = useTranslation(); // Get i18n object to access current language
-
-  // Determine the text direction based on language
-  const isRTL = i18n.language === "ar"; // "ar" for Arabic, adjust based on your language code
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
   const direction = isRTL ? "rtl" : "ltr";
 
+  // Ref for intersection observer
+  const sectionRefs = useRef([]);
+
+  // Setup intersection observer for scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all section refs
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  // Add ref to array
+  const addToRefs = (el) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
+
   return (
-    <div className="page flex items-center justify-center min-h-screen p-6">
-      <div
-        className="page-container max-w-4xl bg-white bg-opacity-90 shadow-lg rounded-2xl p-8 text-gray-800"
-        dir={direction} // Set direction dynamically
-      >
-        <h2 className="text-3xl font-bold text-center mb-6 text-blue-600 uppercase tracking-wide">
-          {t("whatWeDo.innovationAndInitiatives.title")}
-        </h2>
+    <div className="what-we-do-page" dir={direction}>
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="main-title">{t("whatWeDo.pageTitle")}</h1>
 
-        <div className="space-y-6 text-left">
-          <section>
-            <p className="text-2xl font-semibold text-gray-700">
-              {t("whatWeDo.innovationAndInitiatives.description")}
-            </p>
-            <h4 className="mt-4 font-semibold text-gray-800">
-              {t("whatWeDo.innovationAndInitiatives.howToGetInvolved.title")}
-            </h4>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>
-                {t("whatWeDo.innovationAndInitiatives.howToGetInvolved.step1")}
-              </li>
-              <li>
-                {t("whatWeDo.innovationAndInitiatives.howToGetInvolved.step2")}
-              </li>
-              <li>
-                {t("whatWeDo.innovationAndInitiatives.howToGetInvolved.step3")}
-              </li>
-              <li>
-                {t("whatWeDo.innovationAndInitiatives.howToGetInvolved.step4")}
-              </li>
-            </ul>
-          </section>
+        <div className="program-section" ref={addToRefs}>
+          <div className="program-content">
+            <div className="program-image">
+              <img
+                src={InnovationAndInitiativesLogo}
+                alt={
+                  t("whatWeDo.innovationAndInitiatives.imageAlt") ||
+                  "Innovation & Initiatives"
+                }
+                loading="lazy"
+              />
+            </div>
+            <div className="program-details">
+              <h2 className="program-title">
+                {t("whatWeDo.innovationAndInitiatives.title")}
+              </h2>
+              <p className="program-description">
+                {t("whatWeDo.innovationAndInitiatives.description")}
+              </p>
 
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-700">
-              {t("whatWeDo.syrianExpertiseHub.title")}
-            </h3>
-            <p className="mt-2 text-lg text-gray-700">
-              {t("whatWeDo.syrianExpertiseHub.description")}
-            </p>
-            <h4 className="mt-4 font-semibold text-gray-800">
-              {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.title")}
-            </h4>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>{t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step1")}</li>
-              <li>{t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step2")}</li>
-              <li>{t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step3")}</li>
-              <li>{t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step4")}</li>
-            </ul>
-          </section>
+              <div className="how-to-get-involved">
+                <h3>
+                  {t(
+                    "whatWeDo.innovationAndInitiatives.howToGetInvolved.title"
+                  )}
+                </h3>
+                <ul className="involvement-steps">
+                  <li>
+                    {t(
+                      "whatWeDo.innovationAndInitiatives.howToGetInvolved.step1"
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "whatWeDo.innovationAndInitiatives.howToGetInvolved.step2"
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "whatWeDo.innovationAndInitiatives.howToGetInvolved.step3"
+                    )}
+                  </li>
+                  <li>
+                    {t(
+                      "whatWeDo.innovationAndInitiatives.howToGetInvolved.step4"
+                    )}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-700">
-              {t("whatWeDo.expertInsights.title")}
-            </h3>
-            <p className="mt-2 text-lg text-gray-700">
-              {t("whatWeDo.expertInsights.description")}
-            </p>
-            <ul className="list-disc list-inside text-gray-700">
-              <h4 className="mt-4 font-semibold text-gray-800">
-                {t("whatWeDo.expertInsights.howToGetInvolved.title")}
-              </h4>
-              <li>{t("whatWeDo.expertInsights.howToGetInvolved.step1")}</li>
-              <li>{t("whatWeDo.expertInsights.howToGetInvolved.step2")}</li>
-              <li>{t("whatWeDo.expertInsights.howToGetInvolved.step3")}</li>
-              <li>{t("whatWeDo.expertInsights.howToGetInvolved.step4")}</li>
-            </ul>
-          </section>
+        <div className="program-section" ref={addToRefs}>
+          <div className="program-content">
+            <div className="program-image">
+              <img
+                src={syrianHub}
+                alt={
+                  t("whatWeDo.syrianExpertiseHub.imageAlt") ||
+                  "Syrian Expertise Hub"
+                }
+                loading="lazy"
+              />
+            </div>
+            <div className="program-details">
+              <h2 className="program-title">
+                {t("whatWeDo.syrianExpertiseHub.title")}
+              </h2>
+              <p className="program-description">
+                {t("whatWeDo.syrianExpertiseHub.description")}
+              </p>
+
+              <div className="how-to-get-involved">
+                <h3>
+                  {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.title")}
+                </h3>
+                <ul className="involvement-steps">
+                  <li>
+                    {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step1")}
+                  </li>
+                  <li>
+                    {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step2")}
+                  </li>
+                  <li>
+                    {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step3")}
+                  </li>
+                  <li>
+                    {t("whatWeDo.syrianExpertiseHub.howToGetInvolved.step4")}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="program-section" ref={addToRefs}>
+          <div className="program-content">
+            <div className="program-image">
+              <img
+                src={expertInsights}
+                alt={t("whatWeDo.expertInsights.imageAlt") || "Expert Insights"}
+                loading="lazy"
+              />
+            </div>
+            <div className="program-details">
+              <h2 className="program-title">
+                {t("whatWeDo.expertInsights.title")}
+              </h2>
+              <p className="program-description">
+                {t("whatWeDo.expertInsights.description")}
+              </p>
+
+              <div className="how-to-get-involved">
+                <h3>{t("whatWeDo.expertInsights.howToGetInvolved.title")}</h3>
+                <ul className="involvement-steps">
+                  <li>{t("whatWeDo.expertInsights.howToGetInvolved.step1")}</li>
+                  <li>{t("whatWeDo.expertInsights.howToGetInvolved.step2")}</li>
+                  <li>{t("whatWeDo.expertInsights.howToGetInvolved.step3")}</li>
+                  <li>{t("whatWeDo.expertInsights.howToGetInvolved.step4")}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -43,6 +43,7 @@ mongoose
 // Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api", require("./routes/api"));
+app.use("/api/survey", require("./routes/survey"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

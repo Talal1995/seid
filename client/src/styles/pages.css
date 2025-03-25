@@ -4,13 +4,11 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: radial-gradient(
-    circle at 50% 50%,
-    var(--bg-light) 0%,
-    var(--bg-mid) 50%,
-    var(--bg-deep) 100%
-  ); /* Matches home.css */
-  font-family: "Avenir", "Helvetica Neue", Arial, sans-serif; /* Matches home.css font */
+  background: linear-gradient(rgba(46, 59, 86, 0.7), rgba(26, 29, 47, 0.8)),
+    url("../assets/Logo5.jpeg") no-repeat center center; /* Added logo background with gradient overlay */
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; /* Matching home.css font */
   padding: clamp(1rem, 3vw, 2rem);
   margin: 0;
   color: var(--text-primary);
@@ -19,17 +17,38 @@
   isolation: isolate;
 }
 
+.logo-container {
+  width: 120px;
+  height: 120px;
+  background: url("../assets/Logo3.jpeg") no-repeat center center;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--glow);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  position: absolute; /* Changed to absolute for better positioning */
+  top: -40px; /* Push up more to overlap with container top edge */
+  left: 30px; /* Position to left side */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2; /* Ensure logo appears above other elements */
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--accent);
+}
+
 /* Use same variables as home.css */
 :root {
-  --bg-deep: #1a1b2e;
-  --bg-mid: #2e3a59;
-  --bg-light: #5a6b9e;
-  --text-primary: #f1f5f9;
-  --text-secondary: #d1dbe8;
-  --accent: #7dd3fc;
-  --accent-dark: #38bdf8;
-  --shadow: rgba(0, 0, 0, 0.45);
-  --highlight: rgba(125, 211, 252, 0.2);
+  --bg-deep: #1a1d2f;
+  --bg-mid: #2e3b56;
+  --bg-light: #3e4b7f;
+  --text-primary: #f5f7fa;
+  --text-secondary: #c9d5e8;
+  --accent: #4fa8ff; /* Changed to match home.css blue accent */
+  --accent-dark: #3b86cc; /* Darker shade for accent */
+  --shadow: rgba(0, 0, 0, 0.4);
+  --highlight: rgba(79, 168, 255, 0.3); /* Matching home.css */
+  --glow: rgba(79, 168, 255, 0.45); /* Matching home.css */
 }
 
 /* Background Effects */
@@ -39,9 +58,9 @@
   inset: 0;
   background: linear-gradient(
     45deg,
-    rgba(125, 211, 252, 0.1),
+    rgba(79, 168, 255, 0.1),
     transparent 50%,
-    rgba(56, 189, 248, 0.1)
+    rgba(59, 134, 204, 0.1)
   );
   opacity: 0.7;
   z-index: -1;
@@ -52,22 +71,23 @@
 .page[dir="rtl"]::before {
   background: linear-gradient(
     -45deg,
-    /* Flip gradient direction for RTL */ rgba(125, 211, 252, 0.1),
+    /* Flip gradient direction for RTL */ rgba(79, 168, 255, 0.1),
     transparent 50%,
-    rgba(56, 189, 248, 0.1)
+    rgba(59, 134, 204, 0.1)
   );
 }
 
 /* Page Container Styles */
 .page-container {
-  background: rgba(255, 255, 255, 0.06); /* Matches hero glassmorphism */
+  background: rgba(30, 40, 70, 0.75); /* Matching home.css hero background */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: clamp(2rem, 4vw, 3rem);
   border-radius: 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 1rem 2.5rem var(--shadow);
-  max-width: 56rem; /* Slightly wider than home.css */
+  box-shadow: 0 1rem 2.5rem var(--shadow),
+    inset 0 0 1rem rgba(79, 168, 255, 0.1); /* Matching home.css */
+  max-width: 56rem;
   width: 90%;
   text-align: left; /* Default for LTR */
   margin: clamp(1rem, 2vw, 1.5rem);
@@ -84,7 +104,8 @@
 /* Hover Effects */
 .page-container:hover {
   transform: scale(1.01);
-  box-shadow: 0 1.25rem 3rem var(--shadow);
+  box-shadow: 0 1.25rem 3rem var(--shadow),
+    inset 0 0 1.5rem rgba(79, 168, 255, 0.15); /* Enhanced glow effect */
 }
 
 /* Accent Line for Consistency */
@@ -113,6 +134,23 @@
   width: 8rem;
 }
 
+/* Optional: Add a subtle logo watermark to the container */
+.page-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  background: url("../assets/Logo5.jpeg") no-repeat center center;
+  background-size: contain;
+  opacity: 0.05; /* Very subtle watermark */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  filter: grayscale(1) contrast(1.2);
+}
+
 /* Heading Styles */
 .page h2 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -126,9 +164,10 @@
   position: relative;
   animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
+  text-shadow: 0 0 12px var(--highlight); /* Matching home.css title effect */
 }
 
-/* RTL doesn’t need adjustment for h2 since it’s centered */
+/* RTL doesn't need adjustment for h2 since it's centered */
 
 .page h2::before {
   content: "";
@@ -157,7 +196,7 @@
 .page h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--accent); /* Changed to accent color to match home.css styling */
   margin-bottom: 1rem;
   line-height: 1.5;
   animation: fadeInSlide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.2s;
@@ -208,7 +247,7 @@
   margin-bottom: 2rem;
 }
 
-/* List Styles (Added for your <ul> elements) */
+/* List Styles */
 .page ul {
   list-style-type: disc;
   padding-left: 1.5rem; /* Default for LTR */
@@ -223,19 +262,19 @@
   direction: rtl; /* Ensure list items flow RTL */
 }
 
-/* Button Styles */
+/* Button Styles - Match home.css CTA button */
 .cta-button {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: var(--text-primary);
   padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1.5rem, 2vw, 2.5rem);
   font-size: clamp(0.875rem, 1.25vw, 1.125rem);
-  font-weight: 500;
+  font-weight: 600;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 2rem; /* Matching home.css */
   cursor: pointer;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: 0 0.5rem 1.5rem var(--highlight);
+  box-shadow: 0 1rem 3rem var(--highlight), inset 0 0 0.5rem var(--glow); /* Matching home.css */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -243,43 +282,55 @@
   opacity: 0;
 }
 
-.cta-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-}
-
-/* RTL Adjustment for Button Gradient */
-.cta-button[dir="rtl"]::before {
-  background: linear-gradient(
-    -90deg,
-    /* Flip gradient for RTL */ transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-}
-
 .cta-button:hover {
-  background: var(--accent-dark);
-  transform: translateY(-0.125rem) scale(1.05);
-  box-shadow: 0 0.75rem 2rem var(--highlight);
-}
-
-.cta-button:hover::before {
-  transform: translateX(100%);
+  transform: translateY(-0.2rem) scale(1.05); /* Matching home.css */
+  box-shadow: 0 1.5rem 4rem var(--highlight), inset 0 0 1rem var(--glow); /* Matching home.css */
 }
 
 .cta-button:focus {
   outline: none;
   box-shadow: 0 0 0 0.2rem var(--accent-dark);
+}
+
+/* Add orbital animations to match home.css */
+.orbit-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(79, 168, 255, 0.4); /* Matching home.css */
+  animation: orbitSpin 20s linear infinite;
+}
+
+.orbit:nth-child(1) {
+  width: 20rem;
+  height: 20rem;
+  top: 5%;
+  left: 10%;
+  animation-duration: 26s;
+}
+
+.orbit:nth-child(2) {
+  width: 18rem;
+  height: 18rem;
+  bottom: 5%;
+  right: 10%;
+  animation-duration: 22s;
+}
+
+.orbit:nth-child(3) {
+  width: 16rem;
+  height: 16rem;
+  top: 50%;
+  left: 70%;
+  animation-duration: 24s;
 }
 
 /* Animations */
@@ -321,6 +372,16 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Add orbit spin animation from home.css */
+@keyframes orbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -392,5 +453,152 @@
 
   .cta-button {
     padding: clamp(0.5rem, 0.75vw, 0.625rem) clamp(0.75rem, 1vw, 1.25rem);
+  }
+}
+
+/* What We Do Page Styles - New styles for the Syrian Forum USA look */
+.what-we-do-page {
+  background-color: #fff;
+  color: #333;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Main Title Styling */
+.main-title {
+  color: #0056b3;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-top: 2rem;
+}
+
+/* Subtitle Styling */
+.subtitle {
+  color: #00b8d4;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Program Section Styling */
+.program-section {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 3rem;
+}
+
+.program-section:last-child {
+  border-bottom: none;
+}
+
+.program-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .program-content {
+    flex-direction: column;
+  }
+}
+
+/* Program Logo Styling */
+.program-logo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.rounded-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Program Details Styling */
+.program-details {
+  flex-grow: 1;
+}
+
+/* Program Title Styling */
+.program-title {
+  color: #0056b3;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Program Description Styling */
+.program-description {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* How to Get Involved Section */
+.how-to-get-involved h3 {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Involvement Steps List */
+.involvement-steps {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.involvement-steps li {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* RTL Support for What We Do page */
+[dir="rtl"] .program-content {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .involvement-steps {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+/* Responsive Adjustments for What We Do page */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .program-title {
+    font-size: 1.5rem;
+  }
+
+  .program-description {
+    font-size: 1rem;
+  }
+
+  .how-to-get-involved h3 {
+    font-size: 1.1rem;
+  }
+
+  .involvement-steps li {
+    font-size: 0.9rem;
   }
 }

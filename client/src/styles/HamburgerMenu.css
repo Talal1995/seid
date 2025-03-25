@@ -1,0 +1,124 @@
+/* HamburgerMenu.css */
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1rem; /* Default for LTR */
+  z-index: 1000;
+}
+
+/* RTL Adjustment */
+html[dir="rtl"] .hamburger-menu {
+  right: unset;
+  left: 1rem; /* Flip to left for RTL */
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 0.25rem;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Open State Animation */
+.hamburger-icon.open span:nth-child(1) {
+  transform: translateY(0.75rem) rotate(45deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  transform: translateY(-0.75rem) rotate(-45deg);
+}
+
+/* Menu Content */
+.menu-content {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden off-screen by default (LTR) */
+  width: 75%;
+  max-width: 20rem;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -0.5rem 0 2rem var(--shadow);
+  transition: right 0.3s ease;
+  padding: 4rem 1rem 2rem;
+  z-index: 999;
+}
+
+/* RTL Adjustment for Menu Content */
+html[dir="rtl"] .menu-content {
+  right: unset;
+  left: -100%; /* Hidden off-screen for RTL */
+  border-left: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0.5rem 0 2rem var(--shadow);
+}
+
+/* Open State */
+.menu-content.open {
+  right: 0; /* Slide in for LTR */
+}
+
+html[dir="rtl"] .menu-content.open {
+  right: unset;
+  left: 0; /* Slide in for RTL */
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Default for LTR */
+}
+
+html[dir="rtl"] .menu-list {
+  text-align: right; /* Flip for RTL */
+}
+
+.menu-list li {
+  margin: 1.5rem 0;
+}
+
+.menu-list a {
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.menu-list a:hover,
+.menu-list a.active {
+  color: var(--accent);
+}
+
+/* Responsive Design */
+@media (min-width: 48rem) {
+  .hamburger-menu {
+    display: none; /* Hide on larger screens where navbar is visible */
+  }
+}

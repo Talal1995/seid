@@ -1,0 +1,507 @@
+/* ====================================
+   PREMIUM WHAT WE DO - MODERN PROFESSIONAL DESIGN
+   ==================================== */
+
+/* Base Variables */
+:root {
+  /* Core Color Palette */
+  --primary: #1e50a0;
+  --primary-dark: #0a3273;
+  --primary-light: #4175c7;
+  --primary-gradient: linear-gradient(135deg, var(--primary) 0%, #3a7bd5 100%);
+  --accent: #00bcd4;
+  --accent-light: #00bcd4;
+
+  /* UI Colors */
+  --surface-white: #ffffff;
+  --surface-light: #f8fafd;
+  --surface-blue: #eef5ff;
+  --text-dark: #1a2a47;
+  --text-medium: #526580;
+  --text-light: #7a8ca8;
+  --border-light: rgba(30, 80, 160, 0.1);
+
+  /* Spacing System */
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Typography */
+  --font-primary: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-secondary: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --line-height: 1.7;
+
+  /* Effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 20px rgba(30, 80, 160, 0.1);
+  --shadow-lg: 0 12px 30px rgba(30, 80, 160, 0.15);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+}
+
+/* Core Page Styles */
+.what-we-do-page {
+  font-family: var(--font-secondary);
+  color: var(--text-dark);
+  line-height: var(--line-height);
+  background-color: var(--surface-white);
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+/* Title Section Animation */
+.main-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  letter-spacing: -0.03em;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.main-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+  margin: var(--space-sm) auto 0;
+  opacity: 0;
+  animation: scaleIn 1s ease-out 0.3s forwards;
+}
+
+/* Program Section Enhancements */
+.program-section {
+  position: relative;
+  margin-bottom: var(--space-xl);
+  background-color: var(--surface-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.2s);
+}
+
+.program-section:nth-child(1) {
+  --index: 1;
+}
+.program-section:nth-child(2) {
+  --index: 2;
+}
+.program-section:nth-child(3) {
+  --index: 3;
+}
+
+.program-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--primary-gradient);
+  z-index: 1;
+}
+
+.program-section:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-content {
+  display: flex;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  align-items: center;
+  position: relative;
+}
+
+/* Premium Image Styling */
+.program-image {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  border: 8px solid var(--surface-white);
+  transition: var(--transition-normal);
+  z-index: 2;
+}
+
+.program-image::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-light);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.program-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  opacity: 0.05;
+  transition: var(--transition-normal);
+}
+
+.program-image:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-section:hover .program-image::after {
+  opacity: 0.15;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+  transform: scale(1.05);
+}
+
+.program-section:hover .program-image img {
+  transform: scale(1.1);
+}
+
+/* Content Styling */
+.program-details {
+  flex: 1;
+  max-width: 700px;
+}
+
+.program-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.program-title::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: var(--space-xs);
+  border-radius: 2px;
+  background: #00bcd4 !important; /* Force cyan with !important */
+  transition: var(--transition-normal);
+}
+
+/* This ensures the after element (bottom line) is cyan */
+.program-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: var(--space-xs);
+  background: #00bcd4 !important; /* Force cyan with !important */
+  border-radius: 2px;
+  transition: var(--transition-normal);
+}
+
+.program-section:hover .program-title::after,
+.program-section:hover .program-title::before {
+  background: #00bcd4 !important; /* Force cyan on hover with !important */
+  /* Keep the width change if desired */
+  width: 60px;
+}
+
+.program-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-medium);
+  margin-bottom: var(--space-md);
+}
+
+/* Get Involved Section Enhancements */
+.how-to-get-involved {
+  background-color: var(--surface-blue);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  position: relative;
+  border: 1px solid var(--border-light);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.how-to-get-involved::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 40px 0;
+  border-color: transparent var(--primary-light) transparent transparent;
+  z-index: 1;
+}
+
+.program-section:hover .how-to-get-involved {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-5px);
+}
+
+.how-to-get-involved h3 {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.how-to-get-involved h3::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+}
+
+/* Steps Enhancement */
+.involvement-steps {
+  list-style-type: none;
+  padding: 0;
+  counter-reset: step-counter;
+}
+
+.involvement-steps li {
+  position: relative;
+  padding: var(--space-sm) 0 var(--space-sm) 35px;
+  margin-bottom: var(--space-xs);
+  color: var(--text-medium);
+  font-size: 1.05rem;
+  transition: var(--transition-normal);
+}
+
+.involvement-steps li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary-light);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: var(--transition-normal);
+}
+
+.involvement-steps li:hover {
+  color: var(--primary-dark);
+  transform: translateX(5px);
+}
+
+.involvement-steps li:hover::before {
+  background-color: var(--primary);
+  transform: translateY(-50%) rotate(360deg);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 992px) {
+  .program-section {
+    margin-bottom: var(--space-lg);
+  }
+
+  .program-content {
+    gap: var(--space-lg);
+    padding: var(--space-md);
+  }
+
+  .program-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-content {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .program-image {
+    margin-bottom: var(--space-md);
+  }
+
+  .program-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .program-section::before {
+    width: 100%;
+    height: 6px;
+    top: 0;
+    left: 0;
+  }
+
+  .how-to-get-involved {
+    text-align: left;
+    padding: var(--space-md);
+  }
+
+  .how-to-get-involved h3 {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .program-section {
+    border-radius: var(--border-radius-md);
+  }
+
+  .program-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .program-title {
+    font-size: 1.4rem;
+  }
+
+  .program-description {
+    font-size: 1rem;
+  }
+
+  .involvement-steps li {
+    font-size: 0.95rem;
+  }
+}
+
+/* RTL Support Refinement */
+[dir="rtl"] .program-section::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .program-title::after {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .involvement-steps li {
+  padding: var(--space-sm) 35px var(--space-sm) 0;
+}
+
+[dir="rtl"] .involvement-steps li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .involvement-steps li:hover {
+  transform: translateX(-5px);
+}
+
+[dir="rtl"] .how-to-get-involved h3::before {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+[dir="rtl"] .how-to-get-involved::before {
+  right: auto;
+  left: 0;
+  border-width: 40px 0 0 40px;
+  border-color: transparent transparent transparent var(--primary-light);
+}
+
+/* Print Media Optimizations */
+@media print {
+  .program-section {
+    break-inside: avoid;
+    box-shadow: none;
+    margin-bottom: 1cm;
+    border: 1px solid #ccc;
+  }
+
+  .program-image {
+    border: 4px solid #eee;
+    box-shadow: none;
+  }
+
+  .how-to-get-involved {
+    background-color: #f5f5f5;
+    box-shadow: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

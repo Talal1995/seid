@@ -1,12 +1,13 @@
 {
   "home": {
+    "pageTitle": "Home",
     "title": "Syrian expertise is a key driver for Syria’s future.",
     "description": "Syrian expertise is a key driver for Syria’s future. Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
     "callToAction": "Join us in shaping Syria’s future, where knowledge leads to action."
   },
   "about": {
+    "pageTitle": "Who We Are",
     "whoWeAre": {
-      "title": "Who We Are?",
       "namesOfVariables": "Vision and Mission ",
       "visionTitle": "Vision: ",
       "missionTitle": "Mission:",
@@ -14,7 +15,7 @@
       "mission": "We mobilize, connect, and activate Syrian expertise worldwide to contribute to Syria’s reconstruction and development. Through knowledge-sharing, collaboration, and strategic initiatives, we ensure that expertise is transformed into real impact."
     },
     "ourStory": {
-      "title": "Our Story: ",
+      "title": "Our Story",
       "part1": "For decades, Syrians have been forced to leave their homeland in waves. The first in the 1980s and the second in 2011. Scattered across the world, they built lives, gained knowledge, and mastered new skills. The Syrian diaspora grew into a powerhouse of expertise, yet many longed to contribute where their knowledge mattered most, back home in Syria.",
       "part2": "Despite the distance, Syrians stayed connected, forming strong communities wherever they went. Then, on December 8, 2024, history shifted. The old regime fell, and for the first time in decades, Syrians reclaimed their homeland. Across the diaspora, a single question united Syrians.",
       "unifyingQuestion": "How can we help rebuild our country?",
@@ -26,11 +27,13 @@
     }
   },
   "whatWeDo": {
+    "pageTitle": "What We Do",
     "innovationAndInitiatives": {
       "title": "Innovation & Initiatives",
       "description": "No idea succeeds in isolation. Many of us have concepts that could contribute to rebuilding Syria, but are they realistic? Have they been tested, refined, and shaped by those with the expertise to take them further? Every strong idea needs a foundation, a reality check, and the right people to help it grow.",
       "role": "This is where we come in. We provide a space for professionals to connect, challenge, and develop ideas together. This is not a passive platform where ideas wait for approval. It is an active community where your ability to engage, collaborate, and build relationships determines how far your idea can go.",
       "howToGetInvolved": {
+        "title": "How to Get Involved?",
         "step1": "Join discussions and present your idea to others in the network.",
         "step2": "Connect with experts who can help evaluate and refine your concept.",
         "step3": "Work on a structured proposal with feedback from professionals.",
@@ -43,6 +46,7 @@
       "description": "Over 4,000 professionals have joined our network, and hundreds have already shared details about their expertise. This allows us to map skills, connect people efficiently, and ensure that expertise is accessible where it is needed most.",
       "platformGoal": "We are building the largest Syrian expertise platform, powered by smart technology and AI-driven matching. The goal is simple: to ensure that knowledge does not remain scattered but is connected, structured, and ready to contribute to Syria’s reconstruction.",
       "howToGetInvolved": {
+        "title": "How to Get Involved?",
         "step1": "Register and create your expertise profile.",
         "step2": "Specify your field, experience, and how you want to contribute.",
         "step3": "Get matched with individuals and projects that need your expertise.",
@@ -55,6 +59,7 @@
       "description": "Knowledge is only powerful when it is shared. If you have insights, experiences, or ideas that others should hear, this is the place to share them.",
       "callToAction": "Perhaps you have a concept but need to articulate it clearly before taking it further. Maybe you want to share an article, a video, or an analysis that contributes to the wider conversation. By publishing your insights, you make your expertise visible, connect with those who share your vision, and open the door to new opportunities.",
       "howToGetInvolved": {
+        "title": "How to Get Involved?",
         "step1": "Write an article, record a video, or prepare a visual presentation.",
         "step2": "Submit your content to our team for review.",
         "step3": "Once approved, your insights will be published and shared with the network.",
@@ -62,5 +67,33 @@
       },
       "impactMessage": "Your expertise has the power to inspire change. Share your insights and make an impact."
     }
+  },
+  "contact": {
+    "pageTitle": "Contact Us"
+  },
+  "donate": {
+    "pageTitle": "Donate"
+  },
+  "joinUsButton": "Join Us",
+  "survey": {
+    "pageTitle": "Survey",
+    "surname": "Surname",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "sex": "Sex",
+    "AgeGroup": "Age Group",
+    "educationalLevel": "Educational Level",
+    "profession": "Profession",
+    "syrianCity": "City in Syria",
+    "currentCountryOfResidence": "Current Country of Residence",
+    "durationOfStayInExile": "Duration of Stay in Exile",
+    "highestDegree": "Highest Degree",
+    "fieldOfStudy": "Field of Study",
+    "yearsOfExperience": "Years of Experience",
+    "desireToContribute": "Do you have a desire to contribute to the reconstruction of Syria?",
+    "yourCurrentRole": "What is your current role?",
+    "moreDetails": "More Details",
+    "submit": "Submit"
   }
 }
