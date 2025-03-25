@@ -16,6 +16,7 @@ const SurveyPage = () => {
     province: "",
     email: "",
     phone: "",
+    countryCode: "", // New field for country code
     abroadDuration: "",
     educationLevel: "",
     specialization: "",
@@ -25,7 +26,6 @@ const SurveyPage = () => {
     contributionFields: [],
     contributionMethod: "",
     additionalComments: "",
-    // New fields based on the survey
     engineeringSpecialty: "",
     medicalSpecialty: "",
     socialScienceSpecialty: "",
@@ -204,6 +204,80 @@ const SurveyPage = () => {
     },
   ];
 
+  // Add this array of countries at the top of your component
+  const countries = [
+    { value: "", label: isRTL ? "اختر" : "Select" },
+    { value: "afghanistan", label: isRTL ? "أفغانستان" : "Afghanistan" },
+    { value: "albania", label: isRTL ? "ألبانيا" : "Albania" },
+    { value: "algeria", label: isRTL ? "الجزائر" : "Algeria" },
+    { value: "andorra", label: isRTL ? "أندورا" : "Andorra" },
+    { value: "angola", label: isRTL ? "أنغولا" : "Angola" },
+    { value: "argentina", label: isRTL ? "الأرجنتين" : "Argentina" },
+    { value: "armenia", label: isRTL ? "أرمينيا" : "Armenia" },
+    { value: "australia", label: isRTL ? "أستراليا" : "Australia" },
+    { value: "austria", label: isRTL ? "النمسا" : "Austria" },
+    { value: "azerbaijan", label: isRTL ? "أذربيجان" : "Azerbaijan" },
+    { value: "bahrain", label: isRTL ? "البحرين" : "Bahrain" },
+    { value: "bangladesh", label: isRTL ? "بنغلاديش" : "Bangladesh" },
+    { value: "belarus", label: isRTL ? "بيلاروسيا" : "Belarus" },
+    { value: "belgium", label: isRTL ? "بلجيكا" : "Belgium" },
+    { value: "bolivia", label: isRTL ? "بوليفيا" : "Bolivia" },
+    { value: "brazil", label: isRTL ? "البرازيل" : "Brazil" },
+    { value: "bulgaria", label: isRTL ? "بلغاريا" : "Bulgaria" },
+    { value: "canada", label: isRTL ? "كندا" : "Canada" },
+    { value: "chile", label: isRTL ? "تشيلي" : "Chile" },
+    { value: "china", label: isRTL ? "الصين" : "China" },
+    { value: "colombia", label: isRTL ? "كولومبيا" : "Colombia" },
+    { value: "croatia", label: isRTL ? "كرواتيا" : "Croatia" },
+    { value: "cuba", label: isRTL ? "كوبا" : "Cuba" },
+    { value: "cyprus", label: isRTL ? "قبرص" : "Cyprus" },
+    { value: "czech", label: isRTL ? "التشيك" : "Czech Republic" },
+    { value: "denmark", label: isRTL ? "الدنمارك" : "Denmark" },
+    { value: "egypt", label: isRTL ? "مصر" : "Egypt" },
+    { value: "finland", label: isRTL ? "فنلندا" : "Finland" },
+    { value: "france", label: isRTL ? "فرنسا" : "France" },
+    { value: "germany", label: isRTL ? "ألمانيا" : "Germany" },
+    { value: "greece", label: isRTL ? "اليونان" : "Greece" },
+    { value: "india", label: isRTL ? "الهند" : "India" },
+    { value: "indonesia", label: isRTL ? "إندونيسيا" : "Indonesia" },
+    { value: "iraq", label: isRTL ? "العراق" : "Iraq" },
+    { value: "italy", label: isRTL ? "إيطاليا" : "Italy" },
+    { value: "japan", label: isRTL ? "اليابان" : "Japan" },
+    { value: "jordan", label: isRTL ? "الأردن" : "Jordan" },
+    { value: "kenya", label: isRTL ? "كينيا" : "Kenya" },
+    { value: "kuwait", label: isRTL ? "الكويت" : "Kuwait" },
+    { value: "lebanon", label: isRTL ? "لبنان" : "Lebanon" },
+    { value: "libya", label: isRTL ? "ليبيا" : "Libya" },
+    { value: "malaysia", label: isRTL ? "ماليزيا" : "Malaysia" },
+    { value: "mexico", label: isRTL ? "المكسيك" : "Mexico" },
+    { value: "morocco", label: isRTL ? "المغرب" : "Morocco" },
+    { value: "netherlands", label: isRTL ? "هولندا" : "Netherlands" },
+    { value: "newzealand", label: isRTL ? "نيوزيلندا" : "New Zealand" },
+    { value: "nigeria", label: isRTL ? "نيجيريا" : "Nigeria" },
+    { value: "norway", label: isRTL ? "النرويج" : "Norway" },
+    { value: "oman", label: isRTL ? "عمان" : "Oman" },
+    { value: "pakistan", label: isRTL ? "باكستان" : "Pakistan" },
+    { value: "palestine", label: isRTL ? "فلسطين" : "Palestine" },
+    { value: "philippines", label: isRTL ? "الفلبين" : "Philippines" },
+    { value: "poland", label: isRTL ? "بولندا" : "Poland" },
+    { value: "portugal", label: isRTL ? "البرتغال" : "Portugal" },
+    { value: "qatar", label: isRTL ? "قطر" : "Qatar" },
+    { value: "russia", label: isRTL ? "روسيا" : "Russia" },
+    { value: "saudiarabia", label: isRTL ? "السعودية" : "Saudi Arabia" },
+    { value: "southafrica", label: isRTL ? "جنوب أفريقيا" : "South Africa" },
+    { value: "spain", label: isRTL ? "إسبانيا" : "Spain" },
+    { value: "sudan", label: isRTL ? "السودان" : "Sudan" },
+    { value: "sweden", label: isRTL ? "السويد" : "Sweden" },
+    { value: "switzerland", label: isRTL ? "سويسرا" : "Switzerland" },
+    { value: "syria", label: isRTL ? "سوريا" : "Syria" },
+    { value: "tunisia", label: isRTL ? "تونس" : "Tunisia" },
+    { value: "turkey", label: isRTL ? "تركيا" : "Turkey" },
+    { value: "uae", label: isRTL ? "الإمارات" : "United Arab Emirates" },
+    { value: "uk", label: isRTL ? "المملكة المتحدة" : "United Kingdom" },
+    { value: "usa", label: isRTL ? "الولايات المتحدة" : "United States" },
+    { value: "yemen", label: isRTL ? "اليمن" : "Yemen" },
+  ];
+
   // Economics specialties
   const economicsSpecialties = [
     { value: "", label: isRTL ? "اختر" : "Select" },
@@ -257,6 +331,71 @@ const SurveyPage = () => {
       label: isRTL ? "القانون البيئي" : "Environmental Law",
     },
     { value: "judiciary", label: isRTL ? "القضاء والمحاماة" : "Judiciary" },
+  ];
+
+  const countryCodes = [
+    { value: "", label: isRTL ? "اختر" : "Select" },
+    {
+      value: "+1",
+      label: isRTL ? "الولايات المتحدة (+1)" : "United States (+1)",
+    },
+    {
+      value: "+44",
+      label: isRTL ? "المملكة المتحدة (+44)" : "United Kingdom (+44)",
+    },
+    { value: "+971", label: isRTL ? "الإمارات (+971)" : "UAE (+971)" },
+    { value: "+91", label: isRTL ? "الهند (+91)" : "India (+91)" },
+    { value: "+20", label: isRTL ? "مصر (+20)" : "Egypt (+20)" },
+    { value: "+963", label: isRTL ? "سوريا (+963)" : "Syria (+963)" },
+    { value: "+90", label: isRTL ? "تركيا (+90)" : "Turkey (+90)" },
+    { value: "+33", label: isRTL ? "فرنسا (+33)" : "France (+33)" },
+    { value: "+49", label: isRTL ? "ألمانيا (+49)" : "Germany (+49)" },
+    { value: "+61", label: isRTL ? "أستراليا (+61)" : "Australia (+61)" },
+    { value: "+7", label: isRTL ? "روسيا (+7)" : "Russia (+7)" },
+    { value: "+81", label: isRTL ? "اليابان (+81)" : "Japan (+81)" },
+    { value: "+86", label: isRTL ? "الصين (+86)" : "China (+86)" },
+    {
+      value: "+82",
+      label: isRTL ? "كوريا الجنوبية (+82)" : "South Korea (+82)",
+    },
+    { value: "+34", label: isRTL ? "إسبانيا (+34)" : "Spain (+34)" },
+    { value: "+39", label: isRTL ? "إيطاليا (+39)" : "Italy (+39)" },
+    { value: "+55", label: isRTL ? "البرازيل (+55)" : "Brazil (+55)" },
+    {
+      value: "+27",
+      label: isRTL ? "جنوب أفريقيا (+27)" : "South Africa (+27)",
+    },
+    { value: "+62", label: isRTL ? "إندونيسيا (+62)" : "Indonesia (+62)" },
+    { value: "+52", label: isRTL ? "المكسيك (+52)" : "Mexico (+52)" },
+    { value: "+47", label: isRTL ? "النرويج (+47)" : "Norway (+47)" },
+    { value: "+46", label: isRTL ? "السويد (+46)" : "Sweden (+46)" },
+    { value: "+41", label: isRTL ? "سويسرا (+41)" : "Switzerland (+41)" },
+    { value: "+65", label: isRTL ? "سنغافورة (+65)" : "Singapore (+65)" },
+    { value: "+31", label: isRTL ? "هولندا (+31)" : "Netherlands (+31)" },
+    { value: "+32", label: isRTL ? "بلجيكا (+32)" : "Belgium (+32)" },
+    { value: "+48", label: isRTL ? "بولندا (+48)" : "Poland (+48)" },
+    { value: "+45", label: isRTL ? "الدنمارك (+45)" : "Denmark (+45)" },
+    { value: "+66", label: isRTL ? "تايلاند (+66)" : "Thailand (+66)" },
+    { value: "+98", label: isRTL ? "إيران (+98)" : "Iran (+98)" },
+    { value: "+92", label: isRTL ? "باكستان (+92)" : "Pakistan (+92)" },
+    { value: "+380", label: isRTL ? "أوكرانيا (+380)" : "Ukraine (+380)" },
+    { value: "+972", label: isRTL ? "إسرائيل (+972)" : "Israel (+972)" },
+    { value: "+351", label: isRTL ? "البرتغال (+351)" : "Portugal (+351)" },
+    { value: "+30", label: isRTL ? "اليونان (+30)" : "Greece (+30)" },
+    { value: "+36", label: isRTL ? "المجر (+36)" : "Hungary (+36)" },
+    { value: "+43", label: isRTL ? "النمسا (+43)" : "Austria (+43)" },
+    { value: "+60", label: isRTL ? "ماليزيا (+60)" : "Malaysia (+60)" },
+    { value: "+64", label: isRTL ? "نيوزيلندا (+64)" : "New Zealand (+64)" },
+    { value: "+56", label: isRTL ? "تشيلي (+56)" : "Chile (+56)" },
+    { value: "+57", label: isRTL ? "كولومبيا (+57)" : "Colombia (+57)" },
+    { value: "+91", label: isRTL ? "الهند (+91)" : "India (+91)" },
+    { value: "+967", label: isRTL ? "اليمن (+967)" : "Yemen (+967)" },
+    { value: "+964", label: isRTL ? "العراق (+964)" : "Iraq (+964)" },
+    { value: "+218", label: isRTL ? "ليبيا (+218)" : "Libya (+218)" },
+    { value: "+258", label: isRTL ? "موزمبيق (+258)" : "Mozambique (+258)" },
+    { value: "+253", label: isRTL ? "جيبوتي (+253)" : "Djibouti (+253)" },
+    { value: "+256", label: isRTL ? "أوغندا (+256)" : "Uganda (+256)" },
+    { value: "+998", label: isRTL ? "أوزبكستان (+998)" : "Uzbekistan (+998)" },
   ];
 
   // Media specialties
@@ -468,6 +607,37 @@ const SurveyPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validation logic
+    const requiredFields = [
+      "firstName",
+      "lastName",
+      "gender",
+      "ageGroup",
+      "country",
+      "province",
+      "email",
+      "abroadDuration",
+      "educationLevel",
+      "specialization",
+      "currentJob",
+      "workExperience",
+      "willingToContribute",
+    ];
+
+    // Check if all required fields are filled
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        alert(
+          isRTL
+            ? "يرجى ملء جميع الحقول المطلوبة."
+            : "Please fill in all required fields."
+        );
+        return;
+      }
+    }
+
+    // Proceed with form submission
     try {
       const response = await fetch("http://localhost:5001/api/survey", {
         method: "POST",
@@ -491,6 +661,7 @@ const SurveyPage = () => {
           province: "",
           email: "",
           phone: "",
+          countryCode: "",
           abroadDuration: "",
           educationLevel: "",
           specialization: "",
@@ -750,7 +921,6 @@ const SurveyPage = () => {
 
       <form onSubmit={handleSubmit}>
         <h2>{isRTL ? "المعلومات الشخصية" : "Personal Information"}</h2>
-
         <label>
           {t("survey.name")}:
           <input
@@ -760,8 +930,12 @@ const SurveyPage = () => {
             onChange={handleChange}
             required
           />
+          <small>
+            {isRTL
+              ? "يرجى كتابة اسمك بالأحرف اللاتينية"
+              : "Please write your name in Latin letters"}
+          </small>
         </label>
-
         <label>
           {t("survey.surname")}:
           <input
@@ -771,8 +945,12 @@ const SurveyPage = () => {
             onChange={handleChange}
             required
           />
+          <small>
+            {isRTL
+              ? "يرجى كتابة اسمك بالأحرف اللاتينية"
+              : "Please write your name in Latin letters"}
+          </small>
         </label>
-
         <label>
           {t("survey.sex")}:
           <select
@@ -786,7 +964,6 @@ const SurveyPage = () => {
             <option value="female">{isRTL ? "أنثى" : "Female"}</option>
           </select>
         </label>
-
         <label>
           {t("survey.AgeGroup")}:
           <select
@@ -816,18 +993,21 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         <label>
           {t("survey.currentCountryOfResidence")}:
-          <input
-            type="text"
+          <select
             name="country"
             value={formData.country}
             onChange={handleChange}
             required
-          />
+          >
+            {countries.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         </label>
-
         <label>
           {isRTL ? "المحافظة في سوريا:" : "Syrian Province:"}
           <select
@@ -843,7 +1023,6 @@ const SurveyPage = () => {
             ))}
           </select>
         </label>
-
         <label>
           {t("survey.email")}:
           <input
@@ -859,24 +1038,38 @@ const SurveyPage = () => {
               : "(Your email will be used to send important updates and information related to your contribution to the initiative)"}
           </small>
         </label>
-
         <label>
           {t("survey.phone")} ({isRTL ? "اختياري" : "optional"}):
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-          />
+          <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+            <select
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={handleChange}
+              style={{ width: "30%" }}
+              required
+            >
+              {countryCodes.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder={isRTL ? "رقم الهاتف" : "Phone number"}
+              style={{ width: "70%" }}
+            />
+          </div>
           <small>
             {isRTL
               ? "(قد نستخدم رقم هاتفك للاتصال بك بخصوص مواضيع تتناسب مع خبراتك ومجالك ذات صلة بمساهمتك في المبادرة)"
               : "(We may use your phone number to contact you regarding topics related to your expertise and your contribution to the initiative)"}
           </small>
         </label>
-
         <h2>{isRTL ? "الحالة في المهجر" : "Exile Status"}</h2>
-
         <label>
           {t("survey.durationOfStayInExile")}:
           <select
@@ -900,9 +1093,7 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         <h2>{isRTL ? "المستوى التعليمي" : "Educational Level"}</h2>
-
         <label>
           {t("survey.highestDegree")}:
           <select
@@ -935,7 +1126,6 @@ const SurveyPage = () => {
             <option value="phd">{isRTL ? "دكتوراه" : "PhD"}</option>
           </select>
         </label>
-
         <label>
           {t("survey.fieldOfStudy")}:
           <select
@@ -986,11 +1176,8 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         {renderSpecialtyFields()}
-
         <h2>{isRTL ? "الخبرة العملية" : "Work Experience"}</h2>
-
         <label>
           {t("survey.yourCurrentRole")}:
           <select
@@ -1035,7 +1222,6 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         <label>
           {t("survey.yearsOfExperience")}:
           <select
@@ -1052,14 +1238,15 @@ const SurveyPage = () => {
             <option value="8-15">
               {isRTL ? "8 - 15 سنة" : "8 - 15 years"}
             </option>
-            <option value="more-15">
-              {isRTL ? "أكثر من 15 سنة" : "More than 15 years"}
+            <option value="16-25">
+              {isRTL ? "16 - 25 سنة" : "16 - 25 years"}
+            </option>
+            <option value="more-25">
+              {isRTL ? "أكثر من 25 سنة" : "More than 25 years"}
             </option>
           </select>
         </label>
-
         <h2>{isRTL ? "المساهمة في سوريا" : "Contribution to Syria"}</h2>
-
         <label>
           {t("survey.desireToContribute")}
           <select
@@ -1076,105 +1263,82 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         {formData.willingToContribute === "yes" && (
           <>
             <label>
               {isRTL
                 ? "ما هي المجالات التي ترغب في المساهمة فيها؟"
                 : "Which fields would you like to contribute to?"}
-              <select
-                name="contributionFields"
-                multiple
-                value={formData.contributionFields}
-                onChange={(e) => {
-                  const options = e.target.options;
-                  const selectedValues = [];
-                  for (let i = 0; i < options.length; i++) {
-                    if (options[i].selected) {
-                      selectedValues.push(options[i].value);
-                    }
-                  }
-                  setFormData({
-                    ...formData,
-                    contributionFields: selectedValues,
-                  });
-                }}
-                required={formData.willingToContribute === "yes"}
-              >
-                <option value="urban">
-                  {isRTL
+            </label>
+            <div className="contribution-options">
+              {[
+                {
+                  value: "urban",
+                  label: isRTL
                     ? "التخطيط العمراني وإعادة الإعمار"
-                    : "Urban Planning and Reconstruction"}
-                </option>
-                <option value="education">
-                  {isRTL ? "التعليم والتدريب" : "Education and Training"}
-                </option>
-                <option value="health">
-                  {isRTL
+                    : "Urban Planning and Reconstruction",
+                },
+                {
+                  value: "education",
+                  label: isRTL ? "التعليم والتدريب" : "Education and Training",
+                },
+                {
+                  value: "health",
+                  label: isRTL
                     ? "الصحة والخدمات الطبية"
-                    : "Health and Medical Services"}
-                </option>
-                <option value="economy">
-                  {isRTL
+                    : "Health and Medical Services",
+                },
+                {
+                  value: "economy",
+                  label: isRTL
                     ? "الاقتصاد وريادة الأعمال"
-                    : "Economy and Entrepreneurship"}
-                </option>
-                <option value="technology">
-                  {isRTL
+                    : "Economy and Entrepreneurship",
+                },
+                {
+                  value: "technology",
+                  label: isRTL
                     ? "التكنولوجيا والتحول الرقمي"
-                    : "Technology and Digital Transformation"}
-                </option>
-                <option value="law">
-                  {isRTL ? "القانون والحوكمة" : "Law and Governance"}
-                </option>
-                <option value="media">
-                  {isRTL ? "الإعلام والتواصل" : "Media and Communication"}
-                </option>
-              </select>
-              <small>
-                {isRTL
-                  ? "(يمكنك اختيار أكثر من مجال باستخدام مفتاح Ctrl أو Command)"
-                  : "(You can select multiple fields using Ctrl or Command key)"}
-              </small>
-            </label>
-
-            <label>
+                    : "Technology and Digital Transformation",
+                },
+                {
+                  value: "law",
+                  label: isRTL ? "القانون والحوكمة" : "Law and Governance",
+                },
+                {
+                  value: "media",
+                  label: isRTL ? "الإعلام والتواصل" : "Media and Communication",
+                },
+              ].map((option) => (
+                <div key={option.value} className="contribution-option">
+                  <input
+                    type="checkbox"
+                    name="contributionFields"
+                    value={option.value}
+                    checked={formData.contributionFields.includes(option.value)}
+                    onChange={(e) => {
+                      const { value, checked } = e.target;
+                      setFormData((prevData) => ({
+                        ...prevData,
+                        contributionFields: checked
+                          ? [...prevData.contributionFields, value]
+                          : prevData.contributionFields.filter(
+                              (item) => item !== value
+                            ),
+                      }));
+                    }}
+                  />
+                  <label>{option.label}</label>
+                </div>
+              ))}
+            </div>
+            <small>
               {isRTL
-                ? "ما هي الطريقة التي تفضلها للمساهمة؟"
-                : "What is your preferred method of contribution?"}
-              <select
-                name="contributionMethod"
-                value={formData.contributionMethod}
-                onChange={handleChange}
-                required={formData.willingToContribute === "yes"}
-              >
-                <option value="">{isRTL ? "اختر" : "Select"}</option>
-                <option value="remote">
-                  {isRTL ? "تقديم استشارات عن بعد" : "Remote Consulting"}
-                </option>
-                <option value="onsite">
-                  {isRTL
-                    ? "السفر إلى سوريا والمساهمة ميدانيًا"
-                    : "Travel to Syria and Contribute On-site"}
-                </option>
-                <option value="financial">
-                  {isRTL
-                    ? "تقديم دعم مالي أو لوجستي"
-                    : "Provide Financial or Logistical Support"}
-                </option>
-                <option value="conferences">
-                  {isRTL
-                    ? "المشاركة في مؤتمرات وورش عمل"
-                    : "Participate in Conferences and Workshops"}
-                </option>
-              </select>
-            </label>
+                ? "(يمكنك اختيار أكثر من مجال)"
+                : "(You can select multiple fields)"}
+            </small>
           </>
         )}
-
         <h2>{isRTL ? "معلومات إضافية" : "Additional Information"}</h2>
-
         <label>
           {isRTL
             ? "هل لديك أي اقتراحات أو تعليقات تود مشاركتها؟"
@@ -1194,7 +1358,6 @@ const SurveyPage = () => {
             </option>
           </select>
         </label>
-
         {formData.hasComments === "yes" && (
           <label>
             {t("survey.moreDetails")}:
@@ -1206,7 +1369,6 @@ const SurveyPage = () => {
             />
           </label>
         )}
-
         <div className="form-footer">
           <p className="privacy-notice">
             {isRTL

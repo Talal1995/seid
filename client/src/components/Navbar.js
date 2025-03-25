@@ -102,7 +102,7 @@ const Navbar = () => {
             onMouseLeave={() => setShowDropdown(false)}
             onClick={() => window.innerWidth <= 768 && toggleDropdown()}
           >
-            <Link to="/who-we-are" className={isActive("/who-we-are")}>
+            <Link className={isActive("/who-we-are")}>
               {t("about.pageTitle")}
             </Link>
             <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
@@ -119,7 +119,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/survey" className={isActive("/survey")}>
-              {t("survey.pageTitle")}
+              {t("survey.linkTitle")}
             </Link>
           </li>
           <li>

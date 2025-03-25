@@ -76,6 +76,7 @@
   },
   "joinUsButton": "Join Us",
   "survey": {
+    "linkTitle": "Join Us",
     "pageTitle": "Survey",
     "surname": "Surname",
     "name": "Name",
