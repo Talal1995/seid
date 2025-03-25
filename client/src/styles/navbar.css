@@ -29,45 +29,33 @@
   padding: 0 2rem; /* Adjust padding as needed */
 }
 
-/* COMPLETELY REVISED LOGO STYLES */
+/* Logo Container Styles */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
   width: 150px; /* Fixed width for logo container */
-  background-color: transparent;
-  z-index: 1001; /* Ensure logo is above other elements */
+  background-color: transparent; /* Ensure background is transparent */
 }
 
 .logo-container a {
+  display: block;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
 }
 
-/* Direct styling for the image itself */
 .navbar-logo {
-  display: block;
-  height: 60px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  /* Apply multiple image enhancements */
-  filter: contrast(2) brightness(1.3) saturate(1.2);
-  /* Force visibility */
-  opacity: 1 !important;
-  visibility: visible !important;
-  /* Add a subtle background to make logo stand out */
-  background-color: rgba(255, 255, 255, 0.9);
-  /* Add a subtle shadow */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  /* Add padding */
-  padding: 2px;
-  /* Ensure smooth transitions */
-  transition: none;
+  height: 60px; /* Adjusted to match navbar height better */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 150px; /* Prevents excessive growth */
+  object-fit: contain; /* Ensures full visibility of the logo */
+  display: block; /* Ensure it's a block element */
+  filter: contrast(1.5) brightness(1.2); /* Enhanced contrast and brightness */
+  opacity: 1 !important; /* Force full opacity */
 }
 
 /* Navigation Content Container */
@@ -466,6 +454,10 @@
     width: auto;
     flex-grow: 1;
     justify-content: center;
+  }
+
+  .navbar-logo {
+    height: 60px; /* Slightly smaller on mobile */
   }
 
   /* Mobile ordering for both LTR and RTL */
