@@ -44,8 +44,6 @@ const Navbar = () => {
     if (!mobileNavOpen) setShowDropdown(false);
   };
 
-  const toggleDropdown = () => setShowDropdown(!showDropdown);
-
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   // Close dropdowns when clicking outside
