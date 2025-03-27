@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaGlobe, FaBars } from "react-icons/fa";
 import "../styles/navbar.css";
-import logo4 from "../assets/Logo4.jpeg";
+import OnlyLogoVertical from "../assets/OnlyLogoVertical.svg";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -71,7 +71,7 @@ const Navbar = () => {
       {/* Logo container - will be positioned differently based on language direction */}
       <div className="logo-container">
         <Link to="/">
-          <img src={logo4} alt="Logo" className="navbar-logo" />
+          <img src={OnlyLogoVertical} alt="Logo" className="navbar-logo" />
         </Link>
       </div>
 

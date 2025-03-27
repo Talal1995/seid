@@ -51,9 +51,6 @@ const Home = () => {
         style={{ backgroundImage: `url(${carouselImages[currentImageIndex]})` }}
       >
         <div className="hero-content">
-          <h1 className="hero-title">
-            {t("whoWeAre.visionAndMission.pageTitle")}
-          </h1>
           <h2>{t("whoWeAre.visionAndMission.visionTitle")}</h2>
           <p className="hero-text">{t("whoWeAre.visionAndMission.vision")}</p>
           <h2>{t("whoWeAre.visionAndMission.missionTitle")}</h2>
