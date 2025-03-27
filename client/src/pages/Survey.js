@@ -18,7 +18,7 @@ const SurveyPage = () => {
     province: "",
     email: "",
     phone: "",
-    countryCode: "", // New field for country code
+    countryCode: "",
     abroadDuration: "",
     educationLevel: "",
     specialization: "",

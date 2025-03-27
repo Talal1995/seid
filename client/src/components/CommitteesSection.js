@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "../styles/committees.css";
 
-// Import committee images - you'll need to add these to your assets folder
 import engineeringCommitteeImg from "../assets/engineering.jpeg";
 import educationCommitteeImg from "../assets/education.jpeg";
 import lawCommitteeImg from "../assets/law.jpeg";

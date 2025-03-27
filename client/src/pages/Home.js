@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import "../styles/committees.css"; // Import committees styles
+import "../styles/committees.css";
 import backgroundLogo2 from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
-import backgroundLogo1 from "../assets/vissionMission.jpeg"; // Import the Our Story image
-import CommitteesSection from "../components/CommitteesSection"; // Import the CommitteesSection component
+import backgroundLogo1 from "../assets/vissionMission.jpeg";
+import CommitteesSection from "../components/CommitteesSection";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -15,7 +15,7 @@ const Home = () => {
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const carouselImages = [backgroundLogo2, backgroundLogo1]; // Add your carousel images here
+  const carouselImages = [backgroundLogo2, backgroundLogo1];
 
   // Function to handle image navigation
   const navigateToImage = (index) => {
@@ -67,10 +67,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Main Content Section with Video and Hero Content Side by Side */}
       <section className="main-content">
         <div className="content-container video-hero-layout">
-          {/* Hero Content moved beside video */}
           <div className="video-section-text">
             <h1 className="section-title">{t("home.title")}</h1>
             <p className="section-description">{t("home.description")}</p>
@@ -123,10 +121,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Scientific Committees Section */}
       <CommitteesSection />
-
-      {/* Our Story Section (integrated from OurStory component) */}
     </div>
   );
 };

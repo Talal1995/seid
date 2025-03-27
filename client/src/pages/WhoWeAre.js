@@ -1,12 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/whatWeDo.css"; // Using the same CSS
-// Add any images if required, or just leave it as a text-based layout
-import aboutLogo from "../assets/Logo5.jpeg"; // Import the image
+import "../styles/whatWeDo.css";
+import aboutLogo from "../assets/Logo5.jpeg";
 
 const WhoWeAre = () => {
-  const { t, i18n } = useTranslation(); // Get i18n object to access current language
-
+  const { t, i18n } = useTranslation();
   // Determine the text direction based on language
   const isRTL = i18n.language === "ar"; // "ar" for Arabic
   const direction = isRTL ? "rtl" : "ltr";
