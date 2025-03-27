@@ -6,6 +6,7 @@ import "../styles/committees.css";
 import backgroundLogo2 from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
 import backgroundLogo1 from "../assets/aleppoCastle.jpeg";
+import togetherImage from "../assets/together.jpeg";
 import syianFlag from "../assets/syrianFlag.jpeg";
 import syrianFlag2 from "../assets/syrianFlag2.jpeg";
 import CommitteesSection from "../components/CommitteesSection";
@@ -102,7 +103,7 @@ const Home = () => {
           <div className="program-section">
             <div className="program-content">
               <div className="program-image">
-                <img src={backgroundLogo1} alt="Our Story" loading="lazy" />
+                <img src={togetherImage} alt="Our Story" loading="lazy" />
               </div>
               <div className="program-details">
                 <h2 className="program-title">
