@@ -95,30 +95,11 @@ const Navbar = () => {
               {t("whatWeDo.pageTitle")}
             </Link>
           </li>
-          {/* Who We Are dropdown */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setShowDropdown(true)}
-            onMouseLeave={() => setShowDropdown(false)}
-            onClick={() => window.innerWidth <= 768 && toggleDropdown()}
-          >
-            <Link className={isActive("/who-we-are")}>
-              {t("whoWeAre.pageTitle")}
+
+          <li>
+            <Link to="/our-team" className={isActive("/our-team")}>
+              {t("whoWeAre.ourTeam.pageTitle")}
             </Link>
-            <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
-              <Link
-                to="/vision-mission"
-                className={isActive("/vision-mission")}
-              >
-                {t("whoWeAre.pageTitle")}
-              </Link>
-              <Link to="/our-story" className={isActive("/our-story")}>
-                {t("whoWeAre.ourStory.pageTitle")}
-              </Link>
-              <Link to="/our-team" className={isActive("/our-team")}>
-                {t("whoWeAre.ourTeam.pageTitle")}
-              </Link>
-            </div>
           </li>
           <li>
             <Link to="/survey" className={isActive("/survey")}>
