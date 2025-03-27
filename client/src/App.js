@@ -11,8 +11,6 @@ import VisionMission from "./pages/VisionMission";
 import OurTeam from "./pages/OurTeam";
 import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
 
-import "./styles/responsive.css"; // Import the new responsive styles
-
 const App = () => {
   return (
     <div className="app-container">

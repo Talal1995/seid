@@ -199,7 +199,7 @@
 .globe-icon {
   background: none;
   border: none;
-  color: var(--text-dark);
+  color: var(--accent-dark); /* Updated color */
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.5s ease;
@@ -210,7 +210,7 @@
 }
 
 .globe-icon:hover {
-  color: var(--accent-dark);
+  color: var(--accent); /* Lighter accent on hover */
   transform: rotate(30deg);
 }
 
@@ -369,109 +369,197 @@
 @media (max-width: 768px) {
   .mobile-nav-toggle {
     display: block;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1100; /* Ensure it's above other elements */
+    position: relative;
+  }
+
+  .mobile-nav-toggle:hover {
+    transform: rotate(180deg);
+    color: var(--accent-dark);
   }
 
   .nav-content {
     display: none;
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg-mid), var(--bg-deep));
     flex-direction: column;
-    padding: 1rem 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    z-index: 1050;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   .nav-content.open {
     display: flex;
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-links {
-    flex-direction: column !important; /* Force column for both LTR and RTL */
+    flex-direction: column;
     width: 100%;
     text-align: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .nav-links li {
     width: 100%;
+    overflow: hidden;
   }
 
   .nav-links a {
     display: block;
-    padding: 0.75rem 0;
+    padding: 1rem 0;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 
-  /* Mobile dropdown handling */
-  .dropdown-menu {
-    position: static;
+  .nav-content.open .nav-links a {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: calc(0.1s * var(--i)); /* Staggered animation */
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+    transform: scale(1.05);
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
     width: 100%;
-    box-shadow: none;
-    padding: 0;
+    left: 0;
+  }
+
+  /* Dropdown styles for mobile */
+  .dropdown-menu {
+    background: transparent;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-    transform: none;
-    border-radius: 0;
-    margin-top: 0; /* Reset margin for mobile */
-  }
-
-  .dropdown::after {
-    display: none; /* Remove invisible bridge on mobile */
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    padding: 0;
+    box-shadow: none;
   }
 
   .dropdown-menu.show {
-    max-height: 200px;
-    padding: 0.5rem 0;
+    max-height: 300px;
+    opacity: 1;
+    padding: 1rem 0;
   }
 
+  .dropdown-menu a {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0;
+    border-radius: 8px;
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(125, 211, 252, 0.2);
+    color: var(--accent);
+  }
+
+  /* Language Dropdown */
   .language-dropdown {
-    margin: 1rem 0;
-  }
-
-  /* Mobile RTL adjustments */
-  .navbar.rtl .nav-content,
-  .navbar.ltr .nav-content {
-    left: 0;
-    right: 0;
-  }
-
-  .navbar.rtl .nav-links {
-    text-align: right;
-  }
-
-  .navbar.ltr .nav-links {
-    text-align: left;
-  }
-
-  /* Mobile logo positioning */
-  .logo-container {
-    width: auto;
-    flex-grow: 1;
-    justify-content: center;
-  }
-
-  .navbar-logo {
-    height: 60px; /* Slightly smaller on mobile */
-  }
-
-  /* Mobile ordering for both LTR and RTL */
-  .navbar.ltr .mobile-nav-toggle,
-  .navbar.rtl .mobile-nav-toggle {
-    order: 1;
-  }
-
-  .navbar.ltr .logo-container,
-  .navbar.rtl .logo-container {
-    order: 2;
+    margin: 1.5rem 0;
+    width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .language-menu {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .language-menu button {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .language-menu button:hover {
+    background: rgba(125, 211, 252, 0.2);
+    color: var(--accent);
+  }
+
+  /* Exit Icon Styling */
+  .mobile-nav-toggle::after {
+    content: "";
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: none;
+    z-index: 1100;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: transparent;
+    position: relative;
+  }
+
+  .mobile-nav-toggle::after::before,
+  .mobile-nav-toggle::after::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 4px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-toggle::after::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .mobile-nav-toggle::after::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .nav-content.open .mobile-nav-toggle::after {
+    display: block;
+  }
+
+  .mobile-nav-toggle::after:hover::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
+  .mobile-nav-toggle::after:hover::after {
+    transform: translate(-50%, -50%) rotate(-135deg);
   }
 }
