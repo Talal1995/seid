@@ -17,7 +17,7 @@ i18next
         translation: require("./locales/en/translation.json"),
       },
       ar: {
-        translation: require("./locales/fr/translation.json"),
+        translation: require("./locales/ar/translation.json"),
       },
     },
     supportedLngs: ["en", "ar"], // Supported languages
