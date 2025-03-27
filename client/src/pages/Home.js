@@ -77,7 +77,7 @@ const Home = () => {
                 {t("joinUsButton")}
               </Link>
               <Link to="/what-we-do" className="cta-button secondary-dark">
-                {t("learn More")}
+                {t("learnMoreButton")}
               </Link>
             </div>
           </div>
