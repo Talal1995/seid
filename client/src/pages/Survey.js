@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/survey.css";
 
 const SurveyPage = () => {
@@ -344,7 +346,6 @@ const SurveyPage = () => {
       label: isRTL ? "المملكة المتحدة (+44)" : "United Kingdom (+44)",
     },
     { value: "+971", label: isRTL ? "الإمارات (+971)" : "UAE (+971)" },
-    { value: "+91", label: isRTL ? "الهند (+91)" : "India (+91)" },
     { value: "+20", label: isRTL ? "مصر (+20)" : "Egypt (+20)" },
     { value: "+963", label: isRTL ? "سوريا (+963)" : "Syria (+963)" },
     { value: "+90", label: isRTL ? "تركيا (+90)" : "Turkey (+90)" },
@@ -562,21 +563,21 @@ const SurveyPage = () => {
   // Syrian provinces
   const syrianProvinces = [
     { value: "", label: isRTL ? "اختر" : "Select" },
-    { value: "damascus", label: isRTL ? "دمشق" : "Damascus" },
-    { value: "ruraldamascus", label: isRTL ? "ريف دمشق" : "Rural Damascus" },
     { value: "aleppo", label: isRTL ? "حلب" : "Aleppo" },
-    { value: "homs", label: isRTL ? "حمص" : "Homs" },
-    { value: "hama", label: isRTL ? "حماة" : "Hama" },
-    { value: "latakia", label: isRTL ? "اللاذقية" : "Latakia" },
-    { value: "tartus", label: isRTL ? "طرطوس" : "Tartus" },
-    { value: "idlib", label: isRTL ? "إدلب" : "Idlib" },
-    { value: "deirezzor", label: isRTL ? "ديرالزور" : "Deir ez-Zor" },
-    { value: "raqqa", label: isRTL ? "الرقة" : "Raqqa" },
-    { value: "qamishli", label: isRTL ? "القامشلي" : "Qamishli" },
     { value: "hasakah", label: isRTL ? "الحسكة" : "Al-Hasakah" },
     { value: "suwayda", label: isRTL ? "السويداء" : "As-Suwayda" },
+    { value: "damascus", label: isRTL ? "دمشق" : "Damascus" },
     { value: "daraa", label: isRTL ? "درعا" : "Daraa" },
+    { value: "deirezzor", label: isRTL ? "ديرالزور" : "Deir ez-Zor" },
+    { value: "hama", label: isRTL ? "حماة" : "Hama" },
+    { value: "homs", label: isRTL ? "حمص" : "Homs" },
+    { value: "idlib", label: isRTL ? "إدلب" : "Idlib" },
+    { value: "latakia", label: isRTL ? "اللاذقية" : "Latakia" },
+    { value: "qamishli", label: isRTL ? "القامشلي" : "Qamishli" },
     { value: "quneitra", label: isRTL ? "القنيطرة" : "Quneitra" },
+    { value: "ruraldamascus", label: isRTL ? "ريف دمشق" : "Rural Damascus" },
+    { value: "raqqa", label: isRTL ? "الرقة" : "Raqqa" },
+    { value: "tartus", label: isRTL ? "طرطوس" : "Tartus" },
   ];
 
   useEffect(() => {
@@ -633,7 +634,7 @@ const SurveyPage = () => {
     // Check if all required fields are filled
     for (const field of requiredFields) {
       if (!formData[field]) {
-        alert(
+        toast.warning(
           isRTL
             ? "يرجى ملء جميع الحقول المطلوبة."
             : "Please fill in all required fields."
@@ -654,8 +655,10 @@ const SurveyPage = () => {
 
       const result = await response.json();
       if (response.ok) {
-        alert(
-          isRTL ? "تم إرسال البيانات بنجاح!" : "Data submitted successfully!"
+        toast.success(
+          isRTL
+            ? `تم إرسال البيانات بنجاح! ${result.message || ""}`
+            : `Data submitted successfully! ${result.message || ""}`
         );
         setFormData({
           firstName: "",
@@ -691,13 +694,15 @@ const SurveyPage = () => {
           commentText: "",
         });
       } else {
-        alert(
-          isRTL ? "حدث خطأ أثناء إرسال البيانات." : "Error submitting data."
+        toast.error(
+          isRTL
+            ? `حدث خطأ أثناء إرسال البيانات: ${result.error || ""}`
+            : `Error submitting data: ${result.error || ""}`
         );
       }
     } catch (error) {
       console.error("Error submitting survey:", error);
-      alert(
+      toast.error(
         isRTL
           ? "فشل إرسال البيانات، الرجاء المحاولة لاحقًا."
           : "Failed to submit data, please try again later."
@@ -705,7 +710,7 @@ const SurveyPage = () => {
     }
 
     if (!validateEmail(formData.email)) {
-      alert(
+      toast.warning(
         isRTL
           ? "يرجى إدخال بريد إلكتروني صالح."
           : "Please enter a valid email address."
@@ -922,6 +927,7 @@ const SurveyPage = () => {
 
   return (
     <div className="survey-container" dir={direction}>
+      <ToastContainer />
       <h1 className="survey-title">
         {isRTL
           ? "استبيان جمع بيانات الخبرات السورية في المهجر"
@@ -942,6 +948,7 @@ const SurveyPage = () => {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
+            placeholder={isRTL ? "يرجى كتابة الاسم" : "Please write your name"}
             required
           />
           <small>
@@ -957,6 +964,9 @@ const SurveyPage = () => {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
+            placeholder={
+              isRTL ? "يرجى كتابة الكنية" : "Please write your surname"
+            }
             required
           />
           <small>
@@ -1044,6 +1054,9 @@ const SurveyPage = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder={
+              isRTL ? "يرجى كتابة البريد الإلكتروني" : "Please write your email"
+            }
             required
           />
           <small>
@@ -1060,7 +1073,6 @@ const SurveyPage = () => {
               value={formData.countryCode}
               onChange={handleChange}
               style={{ width: "30%" }}
-              required
             >
               {countryCodes.map((option) => (
                 <option key={option.value} value={option.value}>
