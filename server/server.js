@@ -13,25 +13,25 @@ const PORT = process.env.PORT || 5001;
 const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://seid-uk15.onrender.com",
-      "http://localhost:3000",
+      "https://seid-uk15.onrender.com", // Deployed frontend
+      "http://localhost:3000", // Local frontend
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      console.error(`Blocked CORS request from: ${origin}`); // Debugging
+      console.error(`❌ Blocked CORS request from: ${origin}`);
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true, // Allow cookies and credentials
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
   allowedHeaders: [
     "Origin",
     "X-Requested-With",
     "Content-Type",
     "Accept",
     "Authorization",
-  ],
+  ], // Allowed headers
 };
 
 // Middleware

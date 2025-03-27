@@ -645,14 +645,16 @@ const SurveyPage = () => {
 
     // Proceed with form submission
     try {
-      const response = await fetch("http://localhost:5001/api/survey", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
+      const response = await fetch(
+        "https://seid-uk15.onrender.com/api/survey",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         toast.success(
