@@ -308,7 +308,7 @@
 
 .involvement-steps li {
   position: relative;
-  padding: var(--space-sm) 0 var(--space-sm) 35px;
+  padding-left: 35px; /* Adjust padding for the blue dot */
   margin-bottom: var(--space-xs);
   color: var(--text-medium);
   font-size: 1.05rem;
@@ -316,21 +316,15 @@
 }
 
 .involvement-steps li::before {
-  content: "→";
+  content: ""; /* Keep the blue dot */
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-color: var(--primary-light);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  transition: var(--transition-normal);
+  top: 50%; /* Center the dot vertically */
+  left: 0; /* Position it to the left */
+  width: 10px; /* Size of the blue dot */
+  height: 10px; /* Size of the blue dot */
+  background-color: var(--primary); /* Blue color for the dot */
+  border-radius: 50%; /* Make it circular */
+  transform: translateY(-50%); /* Center the dot perfectly */
 }
 
 .involvement-steps li:hover {
@@ -339,8 +333,7 @@
 }
 
 .involvement-steps li:hover::before {
-  background-color: var(--primary);
-  transform: translateY(-50%) rotate(360deg);
+  background-color: var(--primary-dark); /* Darker blue on hover */
 }
 
 /* Responsive Design Enhancements */

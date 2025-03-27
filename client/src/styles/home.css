@@ -99,9 +99,10 @@ body {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 5%;
+  justify-content: flex-start; /* Align content to the left */
+  padding: 0 5%; /* Add padding for spacing */
   overflow: hidden;
+  text-align: left; /* Align text to the left */
 }
 
 .hero-section::before {
@@ -111,26 +112,32 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8)
+  ); /* Darker overlay for better text contrast */
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  max-width: 600px; /* Limit the width of the content */
   color: var(--primary-white);
+  text-align: left; /* Align text to the left */
 }
 
 .hero-title {
   font-family: var(--font-primary);
-  font-size: 3.5rem;
+  font-size: 3.5rem; /* Adjust the font size */
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInDown 0.8s ease-out forwards;
-  color: white; /* Change this to your desired color */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle shadow for better readability */
+  color: var(--primary-white);
+  word-wrap: break-word; /* Ensure long words break properly */
+  text-align: left; /* Align text to the left */
+  max-width: 100%; /* Ensure it doesn't overflow */
 }
 
 .hero-subtitle {
@@ -148,12 +155,81 @@ body {
 .hero-text {
   font-family: var(--font-secondary);
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 90%;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--primary-white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Add subtle shadow for better readability */
+}
+
+.hero-content h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-cyan); /* Add a cyan color for section titles */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  animation: fadeInDown 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
+}
+
+.hero-content p {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--primary-white);
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 60vh;
+    padding: 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
 }
 
 /* Image Carousel Navigation Pills */
@@ -241,20 +317,6 @@ body {
   transform: translateY(-3px);
 }
 
-.logo-container {
-  width: 120px;
-  height: 120px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  opacity: 0.3; /* Adjust the opacity to make it less visible */
-  transition: var(--transition-normal); /* Optional: Add a smooth transition */
-}
-
 .logo-container:hover {
   opacity: 0.5; /* Optional: Slightly increase visibility on hover */
 }
@@ -305,7 +367,6 @@ body {
   border-radius: 2px;
   margin: var(--space-sm) 0 0;
   opacity: 0;
-  animation: scaleIn 1s ease-out 0.3s forwards;
 }
 
 .section-description {

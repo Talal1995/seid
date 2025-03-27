@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 import "../styles/committees.css"; // Import committees styles
-import backgroundLogo from "../assets/Logo7.jpeg";
+import backgroundLogo2 from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
-import aboutLogo from "../assets/Logo5.jpeg"; // Import the Our Story image
+import backgroundLogo1 from "../assets/vissionMission.jpeg"; // Import the Our Story image
 import CommitteesSection from "../components/CommitteesSection"; // Import the CommitteesSection component
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const carouselImages = [backgroundLogo, aboutLogo]; // Add your carousel images here
+  const carouselImages = [backgroundLogo2, backgroundLogo1]; // Add your carousel images here
 
   // Function to handle image navigation
   const navigateToImage = (index) => {
@@ -97,7 +97,7 @@ const Home = () => {
           <div className="program-section">
             <div className="program-content">
               <div className="program-image">
-                <img src={aboutLogo} alt="Our Story" loading="lazy" />
+                <img src={backgroundLogo1} alt="Our Story" loading="lazy" />
               </div>
               <div className="program-details">
                 <h2 className="program-title">
