@@ -5,7 +5,9 @@ import "../styles/home.css";
 import "../styles/committees.css";
 import backgroundLogo2 from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
-import backgroundLogo1 from "../assets/vissionMission.jpeg";
+import backgroundLogo1 from "../assets/aleppoCastle.jpeg";
+import syianFlag from "../assets/syrianFlag.jpeg";
+import syrianFlag2 from "../assets/syrianFlag2.jpeg";
 import CommitteesSection from "../components/CommitteesSection";
 
 const Home = () => {
@@ -15,7 +17,12 @@ const Home = () => {
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const carouselImages = [backgroundLogo2, backgroundLogo1];
+  const carouselImages = [
+    backgroundLogo2,
+    backgroundLogo1,
+    syrianFlag2,
+    syianFlag,
+  ];
 
   // Function to handle image navigation
   const navigateToImage = (index) => {
