@@ -6,14 +6,14 @@
     "callToAction": "كن جزءً من هذه المسيرة. معًا، نحوّل الخبرة إلى بناء، والمعرفة إلى فعل، لنرسم ملامح سوريا الجديدة."
   },
   "scientificCommittees": {
-    "pageTitle": "اللجان العلمية",
+    "pageTitle": " اللجان العلمية",
     "engineeringTitle": "الهندسة",
-    "educationTitle": "التعليم",
+    "educationTitle": "التعليم والتدريب",
     "healthTitle": "الصحة",
     "agricultureTitle": "الزراعة",
-    "economyTitle": "الاقتصاد",
-    "lawTitle": "القانون",
-    "technologyTitle": "  التكنولوجيا",
+    "economyTitle": "الاقتصاد والاستثمار",
+    "lawTitle": "الشؤون القانونية",
+    "technologyTitle": "التكنولوجيا وأنظمة المعلومات",
     "committeesMemberOf": "أعضاء اللجان في"
   },
   "whoWeAre": {

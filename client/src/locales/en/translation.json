@@ -1,19 +1,19 @@
 {
   "home": {
     "pageTitle": "Home",
-    "title": "Syrian expertise is a key driver for Syria’s future.",
-    "description": "Syrian expertise is a key driver for Syria’s future. Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
+    "title": "Syrian Expertise is a key driver for Syria’s future",
+    "description": "Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
     "callToAction": "Join us in shaping Syria’s future, where knowledge leads to action."
   },
   "scientificCommittees": {
-    "pageTitle": "Scientific Committees",
+    "pageTitle": "Expert Committees",
     "engineeringTitle": "Engineering",
-    "educationTitle": "Education",
-    "healthTitle": "Health",
+    "educationTitle": "Education & Training",
+    "healthTitle": "Healthcare",
     "agricultureTitle": "Agriculture",
-    "economyTitle": "Economy",
-    "lawTitle": "Law",
-    "technologyTitle": "Technology",
+    "economyTitle": "Economic Development & Investment",
+    "lawTitle": "Legal Affairs",
+    "technologyTitle": "Technology & Information Systems",
     "committeesMemberOf": "Committee members Of"
   },
   "whoWeAre": {
