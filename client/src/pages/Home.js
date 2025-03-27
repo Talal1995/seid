@@ -1,14 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
+import "../styles/committees.css"; // Import committees styles
 import backgroundLogo from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
-import { Link } from "react-router-dom";
+import aboutLogo from "../assets/Logo5.jpeg"; // Import the Our Story image
+import CommitteesSection from "../components/CommitteesSection"; // Import the CommitteesSection component
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
   const direction = isRTL ? "rtl" : "ltr";
+
+  // State for image carousel
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const carouselImages = [backgroundLogo, aboutLogo]; // Add your carousel images here
+
+  // Function to handle image navigation
+  const navigateToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
 
   // Add animation effect similar to what-we-do page
   useEffect(() => {
@@ -25,32 +37,54 @@ const Home = () => {
 
   return (
     <div className="home-page" dir={direction}>
-      {/* Hero Section */}
+      {/* Hero Section with Image Carousel */}
       <section
         className="hero-section"
-        style={{ backgroundImage: `url(${backgroundLogo})` }}
+        style={{ backgroundImage: `url(${carouselImages[currentImageIndex]})` }}
       >
         <div className="hero-content">
-          <h1 className="hero-title">{t("home.title")}</h1>
-          <p className="hero-text">{t("home.description")}</p>
-          <div className="buttons-container">
-            <Link to="/survey" className="cta-button">
-              {t("joinUsButton")}
-            </Link>
-            <Link to="/what-we-do" className="cta-button secondary">
-              {t("learn More")}
-            </Link>
-          </div>
+          <h1 className="hero-title">
+            {t("whoWeAre.visionAndMission.pageTitle")}
+          </h1>
+          <h2>{t("whoWeAre.visionAndMission.visionTitle")}</h2>
+          <p className="hero-text">{t("whoWeAre.visionAndMission.vision")}</p>
+          <h2>{t("whoWeAre.visionAndMission.missionTitle")}</h2>
+          <p className="hero-text">{t("whoWeAre.visionAndMission.mission")}</p>
+        </div>
+
+        {/* Image Carousel Navigation Pills */}
+        <div className="carousel-navigation">
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              className={`carousel-pill ${
+                index === currentImageIndex ? "active" : ""
+              }`}
+              onClick={() => navigateToImage(index)}
+              aria-label={`View image ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 
-      {/* Main Content Section */}
+      {/* Main Content Section with Video and Hero Content Side by Side */}
       <section className="main-content">
-        <div className="content-container">
-          {/* <h2 className="section-title">{t("home.videoTitle")}</h2>
-          <p className="section-subtitle">{t("home.videoDescription")}</p> */}
+        <div className="content-container video-hero-layout">
+          {/* Hero Content moved beside video */}
+          <div className="video-section-text">
+            <h1 className="section-title">{t("home.title")}</h1>
+            <p className="section-description">{t("home.description")}</p>
+            <div className="buttons-container">
+              <Link to="/survey" className="cta-button">
+                {t("joinUsButton")}
+              </Link>
+              <Link to="/what-we-do" className="cta-button secondary-dark">
+                {t("learn More")}
+              </Link>
+            </div>
+          </div>
 
-          {/* Video Section with improved styling */}
+          {/* Video Section */}
           <div className="video-container">
             <video controls>
               <source src={seidVideo} type="video/mp4" />
@@ -58,6 +92,41 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="our-story-section">
+        <div className="content-container">
+          <div className="program-section">
+            <div className="program-content">
+              <div className="program-image">
+                <img src={aboutLogo} alt="Our Story" loading="lazy" />
+              </div>
+              <div className="program-details">
+                <h2 className="program-title">
+                  {t("whoWeAre.ourStory.pageTitle")}
+                </h2>
+                <p className="program-description">
+                  {t("whoWeAre.ourStory.part1")}
+                </p>
+                <p className="program-description">
+                  {t("whoWeAre.ourStory.part2")}
+                </p>
+                <h3 className="program-title">
+                  {t("whoWeAre.ourStory.unifyingQuestion")}
+                </h3>
+                <p className="program-description">
+                  {t("whoWeAre.ourStory.part3")}
+                </p>
+                <p className="program-description">
+                  {t("whoWeAre.ourStory.howWeStarted")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Scientific Committees Section */}
+      <CommitteesSection />
+
+      {/* Our Story Section (integrated from OurStory component) */}
     </div>
   );
 };

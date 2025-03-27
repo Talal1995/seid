@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaYoutube,
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhone,
@@ -12,6 +13,8 @@ import {
 import "../styles/footer.css";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -31,9 +34,6 @@ const Footer = () => {
             <a href="#" className="social-icon">
               <FaInstagram />
             </a>
-            <a href="#" className="social-icon">
-              <FaYoutube />
-            </a>
           </div>
         </div>
 
@@ -41,19 +41,16 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"> {t("home.pageTitle")}</Link>
             </li>
             <li>
-              <Link to="/vision-mission"> Vision and Mission</Link>
+              <Link to="/our-team"> {t("whoWeAre.ourTeam.pageTitle")}</Link>
             </li>
             <li>
-              <Link to="/our-story"> Our Story</Link>
+              <Link to="/what-we-do">{t("whatWeDo.pageTitle")}</Link>
             </li>
             <li>
-              <Link to="/what-we-do">What We Do</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">{t("contact.pageTitle")}</Link>
             </li>
           </ul>
         </div>
