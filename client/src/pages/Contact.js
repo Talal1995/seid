@@ -1,10 +1,10 @@
 // Contact.js
 import React from "react";
-import { useTranslation } from "react-i18next"; // Import the translation hook
-import "../styles/whatWeDo.css"; // Import the styles
-import contactUs from "../assets/contact-us.jpeg"; // Import the image
+import { useTranslation } from "react-i18next";
+import "../styles/whatWeDo.css";
+import contactUs from "../assets/contact-us.jpeg";
 const Contact = () => {
-  const { t } = useTranslation(); // Use the translation hook to get translated content
+  const { t } = useTranslation();
 
   return (
     <div className="what-we-do-page">

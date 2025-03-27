@@ -1,8 +1,8 @@
 // index.js
 
 import React from "react";
-import ReactDOM from "react-dom/client"; // import from react-dom/client
-import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { I18nextProvider } from "react-i18next";
@@ -33,20 +33,20 @@ i18next
         "path",
         "subdomain",
       ],
-      lookupQuerystring: "lng", // Query parameter (e.g., ?lng=fr)
-      lookupCookie: "i18next", // Cookie name for storing language
-      lookupLocalStorage: "i18nextLng", // LocalStorage key for storing language
-      lookupSessionStorage: "i18nextLng", // SessionStorage key for storing language
-      caches: ["localStorage", "cookie"], // Where to store detected language
-      cookieMinutes: 10, // Expiry time for cookies in minutes
-      cookieDomain: "myDomain", // Optional cookie domain
-      htmlTag: document.documentElement, // Set HTML lang attribute
+      lookupQuerystring: "lng",
+      lookupCookie: "i18next",
+      lookupLocalStorage: "i18nextLng",
+      lookupSessionStorage: "i18nextLng",
+      caches: ["localStorage", "cookie"],
+      cookieMinutes: 10,
+      cookieDomain: "myDomain",
+      htmlTag: document.documentElement,
       cookieOptions: { path: "/", sameSite: "strict" },
-      convertDetectedLanguage: (lng) => lng.replace("-", "_"), // Optional language conversion
+      convertDetectedLanguage: (lng) => lng.replace("-", "_"),
     },
   })
   .then(() => {
-    // Render your app with BrowserRouter wrapping the app component
+    // Render the app with BrowserRouter wrapping the app component
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(
       <I18nextProvider i18n={i18next}>

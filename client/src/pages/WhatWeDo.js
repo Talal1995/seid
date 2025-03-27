@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/whatWeDo.css"; // Using our premium CSS
+import "../styles/whatWeDo.css";
 import InnovationAndInitiativesLogo from "../assets/whatWeDoPart1.jpeg";
 import syrianHub from "../assets/Logo5.jpeg";
 import expertInsights from "../assets/expertInsight.jpeg";

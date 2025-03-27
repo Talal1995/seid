@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import styles from "../styles/CommitteesPage.module.css";
-
-// Import committee member images - you'll need to add these to your assets folder
 import engineeringAdminMostafa from "../assets/mostafaIsa.jpeg";
 import technologyAdminTalal from "../assets/talalAttar.jpeg";
 import economyAdminMohammad from "../assets/mohammadBarhamji.jpeg";
