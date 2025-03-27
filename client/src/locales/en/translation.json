@@ -5,6 +5,17 @@
     "description": "Syrian expertise is a key driver for Syria’s future. Across the world, skilled professionals and thought leaders stand ready to contribute. Our mission is to connect, empower, and activate this collective knowledge to rebuild, innovate, and advance Syria’s development.",
     "callToAction": "Join us in shaping Syria’s future, where knowledge leads to action."
   },
+  "scientificCommittees": {
+    "pageTitle": "Scientific Committees",
+    "engineeringTitle": "Engineering",
+    "educationTitle": "Education",
+    "healthTitle": "Health",
+    "agricultureTitle": "Agriculture",
+    "economyTitle": "Economy",
+    "lawTitle": "Law",
+    "technologyTitle": "Technology",
+    "committeesMemberOf": "Committee members Of"
+  },
   "whoWeAre": {
     "pageTitle": "Who We Are",
     "visionAndMission": {

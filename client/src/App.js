@@ -9,6 +9,8 @@ import Footer from "./pages/Footer";
 import OurStory from "./pages/OurStory";
 import VisionMission from "./pages/VisionMission";
 import OurTeam from "./pages/OurTeam";
+import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
+
 import "./styles/responsive.css"; // Import the new responsive styles
 
 const App = () => {
@@ -20,6 +22,12 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/vision-mission" element={<VisionMission />} />{" "}
+        {/* Corrected */}
+        <Route
+          path="/scientific-committees"
+          element={<ScientificCommitteesPage />}
+        />{" "}
+        {/* Corrected */}
         <Route path="/survey" element={<SurveyPage />} /> {/* Corrected */}
         <Route path="/our-story" element={<OurStory />} /> {/* Corrected */}
         <Route path="/what-we-do" element={<WhatWeDo />} />
