@@ -1114,8 +1114,11 @@ const SurveyPage = () => {
             <option value="10-15">
               {isRTL ? "10 - 15 سنة" : "10 - 15 years"}
             </option>
-            <option value="more-15">
-              {isRTL ? "أكثر من 15 سنة" : "More than 15 years"}
+            <option value="16-26">
+              {isRTL ? "16 - 26 سنة" : "16 - 25 years"}
+            </option>
+            <option value="more-25">
+              {isRTL ? "أكثر من 25 سنة" : "More than 25 years"}
             </option>
           </select>
         </label>
