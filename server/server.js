@@ -15,6 +15,7 @@ const corsOptions = {
     const allowedOrigins = [
       "https://seid-uk15.onrender.com", // Deployed frontend
       "http://localhost:3000", // Local frontend
+      "https://www.syrianexpertise.org", // Custom domain
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
