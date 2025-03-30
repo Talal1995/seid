@@ -3,16 +3,22 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 import "../styles/committees.css";
-import backgroundLogo2 from "../assets/Logo7.jpeg";
+import backgroundLogo2 from "../assets/HomeImage0.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
 import togetherImage from "../assets/together.jpeg";
-import syrianFlag from "../assets/syrianFlag2.jpeg";
+import syrianFlag from "../assets/HomeImage1.jpeg";
 import CommitteesSection from "../components/CommitteesSection";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
   const direction = isRTL ? "rtl" : "ltr";
+  useEffect(() => {
+    document.documentElement.setAttribute("dir", direction);
+    document.body.style.fontFamily = isRTL
+      ? "Markazi Text, serif"
+      : "Open Sans, sans-serif";
+  }, [direction, isRTL]);
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

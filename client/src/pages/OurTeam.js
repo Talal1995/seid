@@ -15,8 +15,14 @@ const OurTeam = () => {
         {boardMembers.map((member) => (
           <div key={member.id} className="team-member">
             <img src={member.image} alt={member.name} className="team-image" />
-            <h3 className="team-name">{member.name}</h3>
-            {/* Dynamically fetch the position from the translation file */}
+            {/* Dynamically fetch the name and position from the translation file */}
+            <h3 className="team-name">
+              {t(
+                `scientificCommittees.members.${member.name
+                  .replace(/\s+/g, "")
+                  .toLowerCase()}.name`
+              )}
+            </h3>
             <p className="team-profession">
               {t(
                 `scientificCommittees.members.${member.name

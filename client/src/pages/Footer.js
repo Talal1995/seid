@@ -73,6 +73,17 @@ const Footer = () => {
           © 2025 SEID - Syrian Initiative for Expertise and Development. All
           Rights Reserved.
         </p>
+        <p>
+          Developed by
+          <a
+            href="https://www.linkedin.com/in/talal-attar-3b7229182/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <strong> Talal Attar</strong>
+          </a>
+        </p>
       </div>
     </footer>
   );
