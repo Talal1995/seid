@@ -285,6 +285,11 @@ const CSSModuleCommitteesPage = () => {
     setAnimateDetails(true);
   }, []);
 
+  useEffect(() => {
+    // Scroll to the top of the page when the component is loaded or the selected committee changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [selectedCommittee]);
+
   // Update selected committee when URL parameter changes
   useEffect(() => {
     if (
