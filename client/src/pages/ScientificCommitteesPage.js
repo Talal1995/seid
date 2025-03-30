@@ -32,20 +32,15 @@ const CSSModuleCommitteesPage = () => {
   const committeeParam = queryParams.get("committee");
 
   // State to track which committee is selected (default to engineering or URL parameter)
-  const validCommittees = [
-    "engineering",
-    "education",
-    "economy",
-    "healthCare",
-    "law",
-    "technology",
-  ];
-  const defaultCommittee = "engineering";
-
   const [selectedCommittee, setSelectedCommittee] = useState(
-    validCommittees.includes(committeeParam) ? committeeParam : defaultCommittee
+    committeeParam ||
+      "engineering" ||
+      "education" ||
+      "economy" ||
+      "healthCare" ||
+      "law" ||
+      "technology"
   );
-
   const [animateDetails, setAnimateDetails] = useState(false);
 
   // Committee data with members
