@@ -1,6 +1,7 @@
-/* Updated home.css - Merged styles from both files for consistency */
+/* Updated home.css - Fixed Markazi font implementation for Arabic */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
+
 /* Color Variables - Merged from both files */
 :root {
   /* Primary Colors */
@@ -47,25 +48,7 @@
   /* Fonts */
   --font-primary: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-secondary: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-arabic: "Markazi Text", serif; /* Add this for Arabic */
-
-  /* Spacing (from what-we-do) */
-  --space-xxs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1.25rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-xxl: 5rem;
-
-  /* Border radius */
-  --border-radius-sm: 8px;
-  --border-radius-md: 12px;
-  --border-radius-lg: 16px;
-  --border-radius-xl: 24px;
-
-  /* Transitions */
-  --transition-normal: all 0.3s ease;
+  --font-arabic: "Markazi Text", serif; /* Arabic font */
 }
 
 /* General Reset and Base Styles */
@@ -82,9 +65,25 @@ body {
   line-height: 1.6;
 }
 
-body[dir="rtl"] {
-  font-family: var(--font-arabic);
+/* FIX: More specific selectors for Arabic font */
+html[dir="rtl"] body,
+html[dir="rtl"] .home-page,
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .section-description,
+html[dir="rtl"] .program-title,
+html[dir="rtl"] .program-description,
+html[dir="rtl"] .cta-button,
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  font-family: var(--font-arabic) !important;
 }
+
 /* Home Page Container */
 .home-page {
   display: flex;
@@ -141,6 +140,11 @@ body[dir="rtl"] {
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow for better readability */
   color: var(--primary-cyan); /* Cyan color for the title */
   letter-spacing: 0.05em; /* Slight spacing for elegance */
+}
+
+/* FIX: Override letter-spacing for Arabic */
+html[dir="rtl"] .hero-content h2 {
+  letter-spacing: normal;
 }
 
 .hero-content p {
