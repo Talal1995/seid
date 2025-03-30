@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section about-section">
-          <h3>Syrian Experts</h3>
+          <h3>Syrian Expertise</h3>
           <p>
             The Syrian Initiative for Expertise and Development connects Syrian
             professionals worldwide to contribute to Syria's future.
@@ -59,13 +59,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <address>
             <p>
-              <FaMapMarkerAlt /> 123 Main Street, City, Country
-            </p>
-            <p>
-              <FaEnvelope /> info@seid.org
-            </p>
-            <p>
-              <FaPhone /> +1 (234) 567-8900
+              <FaEnvelope /> info@syrianexpertise.org
             </p>
           </address>
         </div>

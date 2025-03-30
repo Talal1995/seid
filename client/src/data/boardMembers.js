@@ -1,4 +1,3 @@
-import talalAttar from "../assets/talalAttar.jpeg"; // Import the image
 import mostafaIsa from "../assets/mostafaIsa.jpeg"; // Import the image
 import mohammadBarhamji from "../assets/mohammadBarhamji.jpeg"; // Import the image
 import saleemAlaya from "../assets/saleemAlaya.jpeg"; // Import the image
@@ -6,13 +5,6 @@ import anasAlshugri from "../assets/anasAlshugri.jpeg"; // Import the image
 import alaaShubat from "../assets/alaaShubat.jpeg"; // Import the image
 
 const boardMembers = [
-  {
-    id: 1,
-    name: "Talal Attar",
-    profession: "Software Engineer",
-    location: "Helsingborg, Sweden",
-    image: talalAttar,
-  },
   {
     id: 2,
     name: "Mostafa Isa",

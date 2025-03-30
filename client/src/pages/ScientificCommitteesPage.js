@@ -30,6 +30,70 @@ const CSSModuleCommitteesPage = () => {
   // Committee data with members
   const committees = [
     {
+      id: "education",
+      title: t("scientificCommittees.educationTitle"),
+      icon: "🎓",
+      members: [
+        {
+          id: 1,
+          name: "Azhar Alimadi",
+          title: " Teacher ",
+          position: "Committee Coordinator",
+          image: womanIcon,
+          linkedin: "https://linkedin.com/in/member3",
+        },
+        {
+          id: 2,
+          name: "Jihad Rahmoon",
+          title: " Teacher ",
+          position: "Committee Coordinator",
+          image: manIcon,
+          linkedin: "https://linkedin.com/in/member3",
+        },
+        {
+          id: 3,
+          name: "Nour Abdalsalam",
+          title: " Teacher ",
+          position: "Committee Coordinator",
+          image: womanIcon,
+          linkedin: "https://linkedin.com/in/member3",
+        },
+        {
+          id: 4,
+          name: "Alaa Shubat",
+          title: " Teacher ",
+          position: "Committee Coordinator",
+          image: manIcon,
+          linkedin: "https://linkedin.com/in/member3",
+        },
+        // Add more education committee members
+      ],
+    },
+    {
+      id: "economy",
+      title: t("scientificCommittees.economyTitle"),
+      icon: "📊",
+      members: [
+        {
+          id: 1,
+          name: "Mohammad Barhamji",
+          title: " Master in Economics",
+          position: " Committee Coordinator",
+          image: economyAdminMohammad,
+          linkedin: "https://linkedin.com/in/member6",
+        },
+        {
+          id: 2,
+          name: "Anas Alsheghri",
+          title: " Master in Economics",
+          position: " Committee Coordinator",
+          image: economyAdminAnas,
+          linkedin: "https://linkedin.com/in/member6",
+        },
+        // Add more economy committee members
+      ],
+    },
+    {
       id: "engineering",
       title: t("scientificCommittees.engineeringTitle"),
       icon: "🔧",
@@ -79,70 +143,6 @@ const CSSModuleCommitteesPage = () => {
       ],
     },
     {
-      id: "education",
-      title: t("scientificCommittees.educationTitle"),
-      icon: "🎓",
-      members: [
-        {
-          id: 1,
-          name: "Azhar Alimadi",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: womanIcon,
-          linkedin: "https://linkedin.com/in/member3",
-        },
-        {
-          id: 2,
-          name: "Jihad Rahmoon",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member3",
-        },
-        {
-          id: 3,
-          name: "Nour Abdalsalam",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: womanIcon,
-          linkedin: "https://linkedin.com/in/member3",
-        },
-        {
-          id: 4,
-          name: "Alaa Shubat",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member3",
-        },
-        // Add more education committee members
-      ],
-    },
-    {
-      id: "law",
-      title: t("scientificCommittees.lawTitle"),
-      icon: "⚖️",
-      members: [
-        {
-          id: 1,
-          name: "Waleed Haji",
-          title: " Bachelor in Law",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member4",
-        },
-        {
-          id: 2,
-          name: "Basheer Alme ",
-          title: " Bachelor in Law",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member4",
-        },
-        // Add more law committee members
-      ],
-    },
-    {
       id: "healthCare",
       title: t("scientificCommittees.healthTitle"),
       icon: "🏥",
@@ -167,27 +167,27 @@ const CSSModuleCommitteesPage = () => {
       ],
     },
     {
-      id: "economy",
-      title: t("scientificCommittees.economyTitle"),
-      icon: "📊",
+      id: "law",
+      title: t("scientificCommittees.lawTitle"),
+      icon: "⚖️",
       members: [
         {
           id: 1,
-          name: "Mohammad Barhamji",
-          title: " Master in Economics",
-          position: " Committee Coordinator",
-          image: economyAdminMohammad,
-          linkedin: "https://linkedin.com/in/member6",
+          name: "Waleed Haji",
+          title: " Bachelor in Law",
+          position: "Committee Coordinator",
+          image: manIcon,
+          linkedin: "https://linkedin.com/in/member4",
         },
         {
           id: 2,
-          name: "Anas Alsheghri",
-          title: " Master in Economics",
-          position: " Committee Coordinator",
-          image: economyAdminAnas,
-          linkedin: "https://linkedin.com/in/member6",
+          name: "Basheer Alme ",
+          title: " Bachelor in Law",
+          position: "Committee Coordinator",
+          image: manIcon,
+          linkedin: "https://linkedin.com/in/member4",
         },
-        // Add more economy committee members
+        // Add more law committee members
       ],
     },
     {
