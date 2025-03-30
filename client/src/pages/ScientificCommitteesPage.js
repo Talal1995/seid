@@ -32,9 +32,20 @@ const CSSModuleCommitteesPage = () => {
   const committeeParam = queryParams.get("committee");
 
   // State to track which committee is selected (default to engineering or URL parameter)
+  const validCommittees = [
+    "engineering",
+    "education",
+    "economy",
+    "healthCare",
+    "law",
+    "technology",
+  ];
+  const defaultCommittee = "engineering";
+
   const [selectedCommittee, setSelectedCommittee] = useState(
-    committeeParam || "engineering"
+    validCommittees.includes(committeeParam) ? committeeParam : defaultCommittee
   );
+
   const [animateDetails, setAnimateDetails] = useState(false);
 
   // Committee data with members
@@ -288,7 +299,7 @@ const CSSModuleCommitteesPage = () => {
   useEffect(() => {
     // Scroll to the top of the page when the component is loaded or the selected committee changes
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [selectedCommittee, committees]);
+  }, [selectedCommittee]);
 
   // Update selected committee when URL parameter changes
   useEffect(() => {
