@@ -20,6 +20,9 @@ const Contact = () => {
 
             <div className="program-details">
               <div className="how-to-get-involved">
+                <p className="program-description">
+                  {t("contact.description")}
+                </p>
                 <ul className="involvement-steps">
                   <li>
                     {t("contact.email")}:{" "}

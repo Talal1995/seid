@@ -105,6 +105,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/get-involved" className={isActive("/get-involved")}>
+              {t("whatWeDo.getInvolved.title")}
+            </Link>
+          </li>
+          <li>
             <Link to="/contact" className={isActive("/contact")}>
               {t("contact.pageTitle")}
             </Link>

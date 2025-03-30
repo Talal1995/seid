@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import "../styles/whatWeDo.css";
 import InnovationAndInitiativesLogo from "../assets/InnovationInitiative.jpeg";
 import syrianHub from "../assets/ExpertInsight.png";
 import expertInsights from "../assets/ExpertHub.jpeg";
+import getInvolvedImage from "../assets/ExpertHub.jpeg"; // Add this import for the Get Involved image
 
 const WhatWeDo = () => {
   const { t, i18n } = useTranslation();

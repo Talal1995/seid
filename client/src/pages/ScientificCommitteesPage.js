@@ -84,7 +84,7 @@ const CSSModuleCommitteesPage = () => {
     {
       id: "economy",
       title: t("scientificCommittees.economyTitle"),
-      icon: "📊",
+      icon: "📈",
       members: [
         {
           id: 1,
@@ -108,7 +108,7 @@ const CSSModuleCommitteesPage = () => {
     {
       id: "engineering",
       title: t("scientificCommittees.engineeringTitle"),
-      icon: "🔧",
+      icon: "⚙️",
       members: [
         {
           id: 1,
@@ -177,7 +177,7 @@ const CSSModuleCommitteesPage = () => {
     {
       id: "healthCare",
       title: t("scientificCommittees.healthTitle"),
-      icon: "🏥",
+      icon: "🩺",
       members: [
         {
           id: 1,

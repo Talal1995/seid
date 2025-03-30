@@ -134,49 +134,6 @@
       }
     },
 
-    "whatWeDo": {
-      "pageTitle": "What We Do",
-      "innovationAndInitiatives": {
-        "title": "Innovation & Initiatives",
-        "description": "No idea succeeds in isolation. Many of us have concepts that could contribute to rebuilding Syria, but are they realistic? Have they been tested, refined, and shaped by those with the expertise to take them further? Every strong idea needs a foundation, a reality check, and the right people to help it grow.",
-        "role": "This is where we come in. We provide a space for professionals to connect, challenge, and develop ideas together. This is not a passive platform where ideas wait for approval. It is an active community where your ability to engage, collaborate, and build relationships determines how far your idea can go.",
-        "howToGetInvolved": {
-          "title": "How to Get Involved?",
-          "step1": "Join discussions and present your idea to others in the network.",
-          "step2": "Connect with experts who can help evaluate and refine your concept.",
-          "step3": "Work on a structured proposal with feedback from professionals.",
-          "step4": "Build a small team and prepare your idea for the next stage."
-        },
-        "engagementMessage": "Our role is to facilitate connections and provide access to expertise, but the progress of your idea depends on your engagement. If you are ready to take the next step, start here."
-      },
-      "syrianExpertiseHub": {
-        "title": "Syrian Expertise Hub",
-        "description": "Over 4,000 professionals have joined our network, and hundreds have already shared details about their expertise. This allows us to map skills, connect people efficiently, and ensure that expertise is accessible where it is needed most.",
-        "platformGoal": "We are building the largest Syrian expertise platform, powered by smart technology and AI-driven matching. The goal is simple: to ensure that knowledge does not remain scattered but is connected, structured, and ready to contribute to Syria’s reconstruction.",
-        "howToGetInvolved": {
-          "title": "How to Get Involved?",
-          "step1": "Join us by filling the survey and sharing details about your expertise.",
-          "step2": "Specify your field, experience, and how you want to contribute.",
-          "step3": "Get matched with individuals and projects that need your expertise.",
-          "step4": "Leverage the platform to build connections, share expertise, and collaborate effectively."
-        },
-        "expertiseMessage": "If you are looking for expertise, you can easily find and connect with the right people. If you have expertise, this is where you make it visible and accessible."
-      },
-      "expertInsights": {
-        "title": "Expert Insights",
-        "description": "Knowledge is only powerful when it is shared. If you have insights, experiences, or ideas that others should hear, this is the place to share them.",
-        "callToAction": "Perhaps you have a concept but need to articulate it clearly before taking it further. Maybe you want to share an article, a video, or an analysis that contributes to the wider conversation. By publishing your insights, you make your expertise visible, connect with those who share your vision, and open the door to new opportunities.",
-        "howToGetInvolved": {
-          "title": "How to Get Involved?",
-          "step1": "Write an article, record a video, or prepare a visual presentation.",
-          "step2": "Submit your content to our team for review.",
-          "step3": "Once approved, your insights will be published and shared with the network.",
-          "step4": "Engage with others who respond to your ideas and expand your reach."
-        },
-        "impactMessage": "Your expertise has the power to inspire change. Share your insights and make an impact."
-      }
-    },
-
     "donate": {
       "pageTitle": "Donate"
     },
@@ -267,10 +224,35 @@
         "step4": "Engage with others who respond to your ideas and expand your reach."
       },
       "impactMessage": "Your expertise has the power to inspire change. Share your insights and make an impact."
+    },
+    "getInvolved": {
+      "title": "Get Involved ",
+      "subTitle": "Join Our Network",
+      "description": "Change starts with people. By joining our network, you become part of a global initiative where Syrian expertise is connected, activated, and applied to rebuild Syria. Whether you want to contribute your knowledge, collaborate on projects, or stay engaged in shaping the future, this is where it begins.",
+      "howToGetInvolved": {
+        "title": "How to Join?",
+        "step1": "Becoming a member is simple. Fill out the application and become part of the network today",
+        "step2": "→ [Join Us] (Button linking to the application form)",
+        "whatHappensNext": "What Happens After You Join?",
+        "nextStepDescription": "Once you are part of the network, you will:",
+        "step3": "Connect with experts, discussions, and collaboration opportunities.",
+        "step4": "Find projects and initiatives that match your skills and interests.",
+        "step5": "Receive updates on projects, events, and opportunities to engage.",
+        "exploreMore": "Explore More Ways to Contribute",
+        "exploreMoreDescription": "Want to learn more before joining? Explore how you can get involved:",
+        "innovationAndInitiativesTitle": "Innovation & Initiatives",
+        "syrianExpertiseHubTitle": "Syrian Expertise Hub",
+        "expertInsightsTitle": "Expert Insights",
+        "innovationAndInitiativesDescription": "Have an idea? Develop it with expert support.",
+        "syrianExpertiseHubDescription": "Connect with professionals across all fields.",
+        "expertInsightsDescription": "Share your knowledge and contribute to meaningful discussions.",
+        "opportunities": "This is your opportunity to be part of something bigger. Join today and help shape Syria’s future."
+      }
     }
   },
   "contact": {
     "pageTitle": "Contact Us",
+    "description": "We value engagement and collaboration. Whether you want to reach out directly, stay updated on our latest activities, or request media materials, this is where you find the right way to connect.",
     "email": "Email"
   },
   "donate": {

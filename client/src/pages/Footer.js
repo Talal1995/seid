@@ -48,12 +48,15 @@ const Footer = () => {
               <Link to="/what-we-do">{t("whatWeDo.pageTitle")}</Link>
             </li>
             <li>
-              <Link to="/contact">{t("contact.pageTitle")}</Link>
-            </li>
-            <li>
               <Link to="/scientific-committees">
                 {t("scientificCommittees.pageTitle")}
               </Link>
+            </li>
+            <li>
+              <Link to="/get-involved">{t("whatWeDo.getInvolved.title")}</Link>
+            </li>
+            <li>
+              <Link to="/contact">{t("contact.pageTitle")}</Link>
             </li>
           </ul>
         </div>

@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer";
 import OurStory from "./pages/OurStory";
 import OurTeam from "./pages/OurTeam";
+import GetInvolved from "./pages/GetInvolve";
 import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         />{" "}
         <Route path="/survey" element={<SurveyPage />} />
         <Route path="/our-story" element={<OurStory />} />
+        <Route path="/get-involved" element={<GetInvolved />} />
         <Route path="/what-we-do" element={<WhatWeDo />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
