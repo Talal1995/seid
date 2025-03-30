@@ -16,7 +16,14 @@ const OurTeam = () => {
           <div key={member.id} className="team-member">
             <img src={member.image} alt={member.name} className="team-image" />
             <h3 className="team-name">{member.name}</h3>
-            <p className="team-profession">{member.profession}</p>
+            {/* Dynamically fetch the position from the translation file */}
+            <p className="team-profession">
+              {t(
+                `scientificCommittees.members.${member.name
+                  .replace(/\s+/g, "")
+                  .toLowerCase()}.position`
+              )}
+            </p>
           </div>
         ))}
       </div>

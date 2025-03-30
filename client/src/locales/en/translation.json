@@ -31,25 +31,25 @@
         "title": "Teacher, Project Manager, and Civil Society Activist",
         "position": "Committee Coordinator"
       },
-      "alaaShubat": {
+      "alaashubat": {
         "name": "Alaa Shubat",
         "title": "English Teacher with a master's degree in Sustainable Institutions Leadership",
-        "position": "Committee Coordinator"
+        "position": "Board Member"
       },
-      "mohammadBarhamji": {
+      "mohammadbarhamji": {
         "name": "Mohammad Barhamji",
         "title": "Bachelor in Economics and Business Administration",
-        "position": "Committee Coordinator"
+        "position": "Treasurer"
       },
-      "anasAlshugri": {
+      "anasalshugri": {
         "name": "Anas Alshugri",
         "title": "Bachelor in Economics and Business Administration, specialized in auditing and financial statement analysis",
-        "position": "Committee Coordinator"
+        "position": "Board Member"
       },
-      "mostafaIsa": {
+      "mostafaisa": {
         "name": "Eng. Mostafa Said Isa",
         "title": "Expert in Infrastructure Project Management and Urban Planning",
-        "position": "Co-founder"
+        "position": "Chairman of the Board"
       },
       "talalAttar": {
         "name": "Eng. Talal Attar",
@@ -105,6 +105,9 @@
         "name": "Eng. Alaa Alboush",
         "title": "Software Engineer specialized in Software Development",
         "position": "Committee Coordinator"
+      },
+      "saleemalaya": {
+        "position": "Secretary"
       }
     },
     "whoWeAre": {
