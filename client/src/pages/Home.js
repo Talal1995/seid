@@ -45,7 +45,7 @@ const Home = () => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % carouselImages.length
       );
-    }, 5000); // Change image every 5 seconds
+    }, 10000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [carouselImages.length]);
