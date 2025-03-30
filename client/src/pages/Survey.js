@@ -380,7 +380,7 @@ const SurveyPage = () => {
     { value: "+98", label: isRTL ? "إيران (+98)" : "Iran (+98)" },
     { value: "+92", label: isRTL ? "باكستان (+92)" : "Pakistan (+92)" },
     { value: "+380", label: isRTL ? "أوكرانيا (+380)" : "Ukraine (+380)" },
-    { value: "+972", label: isRTL ? "إسرائيل (+972)" : "Israel (+972)" },
+    { value: "+972", label: isRTL ? "فلسطين (+972)" : "Palestine (+972)" },
     { value: "+351", label: isRTL ? "البرتغال (+351)" : "Portugal (+351)" },
     { value: "+30", label: isRTL ? "اليونان (+30)" : "Greece (+30)" },
     { value: "+36", label: isRTL ? "المجر (+36)" : "Hungary (+36)" },
