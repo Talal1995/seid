@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer";
 import OurStory from "./pages/OurStory";
 import OurTeam from "./pages/OurTeam";
-import GetInvolved from "./pages/GetInvolve";
+import GetInvolved from "./pages/GetInvolved";
 import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
 
 const App = () => {

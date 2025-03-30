@@ -1,6 +1,6 @@
-/* ====================================
-   PREMIUM WHAT WE DO - MODERN PROFESSIONAL DESIGN
-   ==================================== */
+/* Updated whatWeDo.css - Fixed Markazi font implementation for Arabic */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
 
 /* Base Variables */
 :root {
@@ -35,6 +35,7 @@
     Roboto, sans-serif;
   --font-secondary: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
+  --font-arabic: "Markazi Text", serif; /* Add Arabic font variable */
   --line-height: 1.7;
 
   /* Effects */
@@ -48,6 +49,36 @@
   --transition-fast: all 0.2s ease;
   --transition-normal: all 0.3s ease;
   --transition-slow: all 0.5s ease;
+}
+
+/* FIX: More specific selectors for Arabic font */
+html[dir="rtl"] body,
+html[dir="rtl"] .what-we-do-page,
+html[dir="rtl"] .program-section,
+html[dir="rtl"] .program-title,
+html[dir="rtl"] .program-description,
+html[dir="rtl"] .main-title,
+html[dir="rtl"] .how-to-get-involved h3,
+html[dir="rtl"] .involvement-steps li,
+html[dir="rtl"] .explore-option h4,
+html[dir="rtl"] .explore-option p,
+html[dir="rtl"] .opportunities-message,
+html[dir="rtl"] .get-involved-subtitle,
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] li {
+  font-family: var(--font-arabic) !important;
+}
+
+/* FIX: Override letter-spacing for Arabic */
+html[dir="rtl"] .main-title,
+html[dir="rtl"] .program-title {
+  letter-spacing: normal !important;
 }
 
 /* Core Page Styles */
@@ -85,6 +116,11 @@
   border-radius: 2px;
   margin: var(--space-sm) auto 0;
   opacity: 0;
+}
+
+/* RTL Support for main title */
+html[dir="rtl"] .main-title::after {
+  margin: var(--space-sm) auto 0;
 }
 
 /* Program Section Enhancements */
@@ -127,6 +163,12 @@
   z-index: 1;
 }
 
+/* RTL Support for program section */
+html[dir="rtl"] .program-section::before {
+  left: auto;
+  right: 0;
+}
+
 .program-section:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-lg);
@@ -138,6 +180,11 @@
   padding: var(--space-lg);
   align-items: center;
   position: relative;
+}
+
+/* RTL Support for program content */
+html[dir="rtl"] .program-content {
+  flex-direction: row-reverse;
 }
 
 /* Premium Image Styling */
@@ -240,6 +287,13 @@
   transition: var(--transition-normal);
 }
 
+/* RTL Support for program title */
+html[dir="rtl"] .program-title::before,
+html[dir="rtl"] .program-title::after {
+  margin-right: 0;
+  margin-left: auto;
+}
+
 .program-section:hover .program-title::after,
 .program-section:hover .program-title::before {
   background: #00bcd4 !important; /* Force cyan on hover with !important */
@@ -279,6 +333,14 @@
   z-index: 1;
 }
 
+/* RTL Support for how-to-get-involved */
+html[dir="rtl"] .how-to-get-involved::before {
+  right: auto;
+  left: 0;
+  border-width: 0 0 40px 40px;
+  border-color: transparent transparent transparent var(--primary-light);
+}
+
 .program-section:hover .how-to-get-involved {
   box-shadow: var(--shadow-sm);
   transform: translateY(-5px);
@@ -305,6 +367,12 @@
   border-radius: 50%;
 }
 
+/* RTL Support for h3 before */
+html[dir="rtl"] .how-to-get-involved h3::before {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
 /* Steps Enhancement */
 .involvement-steps {
   list-style-type: none;
@@ -321,6 +389,12 @@
   transition: var(--transition-normal);
 }
 
+/* RTL Support for involvement steps */
+html[dir="rtl"] .involvement-steps li {
+  padding-left: 0;
+  padding-right: 35px;
+}
+
 .involvement-steps li::before {
   content: ""; /* Keep the blue dot */
   position: absolute;
@@ -330,118 +404,65 @@
   height: 10px; /* Size of the blue dot */
   background-color: var(--primary); /* Blue color for the dot */
   border-radius: 50%; /* Make it circular */
-  transform: translateY(-50%); /* Center the dot perfectly */
+  transform: translateY(-50%); /* Center it vertically */
 }
 
-.involvement-steps li:hover {
-  color: var(--primary-dark);
-  transform: translateX(5px);
+/* RTL Support for involvement steps before */
+html[dir="rtl"] .involvement-steps li::before {
+  left: auto;
+  right: 0;
 }
 
-.involvement-steps li:hover::before {
-  background-color: var(--primary-dark); /* Darker blue on hover */
-}
-
-/* Get Involved Section Specific Styles */
-.get-involved-section {
-  background-color: var(--surface-light);
-  border: 1px solid var(--border-light);
-}
-
+/* Additional styles for GetInvolved component */
 .get-involved-subtitle {
   font-family: var(--font-primary);
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--primary-light);
+  color: var(--accent);
   margin-bottom: var(--space-md);
-  letter-spacing: -0.01em;
 }
 
 .join-button-container {
-  margin: var(--space-md) 0;
-  text-align: center;
+  margin-top: var(--space-md);
 }
 
 .join-now-button {
   display: inline-block;
-  background: var(--primary-gradient);
+  background-color: var(--accent);
   color: white;
-  padding: 0.75rem 2.5rem;
-  border-radius: 30px;
+  font-family: var(--font-primary);
   font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-sm);
   text-decoration: none;
-  transition: var(--transition-normal);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.join-now-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--primary-dark) 0%,
-    var(--primary) 100%
-  );
-  opacity: 0;
-  z-index: -1;
   transition: var(--transition-normal);
 }
 
 .join-now-button:hover {
+  background-color: var(--accent-light);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-.join-now-button:hover::before {
-  opacity: 1;
-}
-
-.explore-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
-}
-
-.explore-option {
-  flex: 1;
-  min-width: 250px;
-  background-color: var(--surface-white);
-  padding: var(--space-lg);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--border-light);
-}
-
-.explore-option::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--primary-gradient);
-  opacity: 0.7;
-  transition: var(--transition-normal);
-}
-
-.explore-option:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-md);
 }
 
-.explore-option:hover::before {
-  opacity: 1;
+.explore-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.explore-option {
+  background-color: var(--surface-white);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  border: 1px solid var(--border-light);
+}
+
+.explore-option:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .explore-option h4 {
@@ -449,93 +470,29 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .explore-option p {
-  color: var(--text-medium);
   font-size: 1rem;
-  line-height: 1.6;
+  color: var(--text-medium);
 }
 
 .opportunities-message {
-  margin-top: var(--space-xl);
-  font-weight: 500;
-  font-size: 1.1rem;
+  margin-top: var(--space-lg);
+  font-style: italic;
+  color: var(--text-light);
   text-align: center;
-  color: var(--primary-dark);
-  padding: var(--space-lg);
-  background-color: var(--surface-blue);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--border-light);
-  position: relative;
-  overflow: hidden;
 }
 
-.opportunities-message::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-gradient);
-  opacity: 0.05;
-  z-index: -1;
+/* Animation Classes */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Connect With Us Section Specific Styles */
-.social-media-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin-top: var(--space-md);
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--surface-white);
-  border-radius: 30px;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition-normal);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.social-link i {
-  margin-right: 8px;
-  font-size: 1.2rem;
-}
-
-.social-link:hover {
-  background-color: var(--primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.press-contact {
-  margin-top: var(--space-md);
-  padding: var(--space-md);
-  background-color: var(--surface-white);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--border-light);
-}
-
-.press-contact p {
-  margin-bottom: var(--space-md);
-}
-
-/* Responsive Design Enhancements */
+/* Responsive Design */
 @media (max-width: 992px) {
-  .program-section {
-    margin-bottom: var(--space-lg);
-  }
-
   .program-content {
     gap: var(--space-lg);
     padding: var(--space-md);
@@ -544,19 +501,6 @@
   .program-image {
     width: 200px;
     height: 200px;
-  }
-
-  .explore-options {
-    gap: var(--space-md);
-  }
-
-  .social-media-links {
-    gap: var(--space-sm);
-  }
-
-  .social-link {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
   }
 }
 
@@ -567,222 +511,71 @@
     padding: var(--space-lg) var(--space-md);
   }
 
-  .program-image {
-    margin-bottom: var(--space-md);
-  }
-
-  .program-title::after,
-  .program-title::before {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .program-section::before {
-    width: 100%;
-    height: 6px;
-    top: 0;
-    left: 0;
-  }
-
-  .how-to-get-involved {
-    text-align: left;
-    padding: var(--space-md);
-  }
-
-  .how-to-get-involved h3 {
-    justify-content: flex-start;
-  }
-
-  .explore-options {
+  /* RTL Support for program content in mobile */
+  html[dir="rtl"] .program-content {
     flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .explore-option {
-    min-width: 100%;
-  }
-
-  .social-media-links {
-    justify-content: center;
-    gap: var(--space-xs);
-  }
-
-  .social-link {
-    flex: 1 0 calc(50% - var(--space-xs));
-    justify-content: center;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .program-section {
-    border-radius: var(--border-radius-md);
   }
 
   .program-image {
     width: 180px;
     height: 180px;
+    margin-bottom: var(--space-md);
+  }
+
+  .program-title::before,
+  .program-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .how-to-get-involved {
+    padding: var(--space-md);
+  }
+
+  .how-to-get-involved h3 {
+    justify-content: center;
+  }
+
+  .involvement-steps li {
+    padding-left: 0;
+    padding-top: 25px;
+  }
+
+  .involvement-steps li::before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  /* RTL Support for mobile */
+  html[dir="rtl"] .involvement-steps li {
+    padding-right: 0;
+    padding-top: 25px;
+  }
+
+  html[dir="rtl"] .involvement-steps li::before {
+    right: 50%;
+    left: auto;
+    top: 0;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 576px) {
+  .program-image {
+    width: 150px;
+    height: 150px;
   }
 
   .program-title {
     font-size: 1.4rem;
   }
 
-  .program-description {
-    font-size: 1rem;
-  }
-
-  .involvement-steps li {
-    font-size: 0.95rem;
-  }
-
-  .get-involved-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .how-to-get-involved h3 {
-    font-size: 1.2rem;
-  }
-
-  .explore-option {
-    padding: var(--space-md);
-  }
-
-  .explore-option h4 {
-    font-size: 1.1rem;
-  }
-
-  .opportunities-message {
-    font-size: 1rem;
-    padding: var(--space-md);
-  }
-
-  .social-media-links {
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .social-link {
-    width: 100%;
-  }
-}
-
-/* RTL Support Refinement */
-[dir="rtl"] .program-section::before {
-  left: auto;
-  right: 0;
-}
-
-[dir="rtl"] .program-title::after,
-[dir="rtl"] .program-title::before {
-  margin-right: 0;
-  margin-left: auto;
-}
-
-[dir="rtl"] .involvement-steps li {
-  padding-left: 0;
-  padding-right: 35px;
-}
-
-[dir="rtl"] .involvement-steps li::before {
-  left: auto;
-  right: 0;
-}
-
-[dir="rtl"] .involvement-steps li:hover {
-  transform: translateX(-5px);
-}
-
-[dir="rtl"] .how-to-get-involved h3::before {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-[dir="rtl"] .how-to-get-involved::before {
-  right: auto;
-  left: 0;
-  border-width: 40px 0 0 40px;
-  border-color: transparent transparent transparent var(--primary-light);
-}
-
-[dir="rtl"] .social-link i {
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-/* Print Media Optimizations */
-@media print {
-  .program-section {
-    break-inside: avoid;
-    box-shadow: none;
-    margin-bottom: 1cm;
-    border: 1px solid #ccc;
-  }
-
-  .program-image {
-    border: 4px solid #eee;
-    box-shadow: none;
-  }
-
   .how-to-get-involved {
-    background-color: #f5f5f5;
-    box-shadow: none;
+    padding: var(--space-sm);
   }
 
-  .join-now-button {
-    border: 1px solid #333;
-    background: none !important;
-    color: #333;
-  }
-
-  .explore-option {
-    border: 1px solid #ccc;
-    box-shadow: none;
-  }
-
-  .opportunities-message {
-    border: 1px solid #ccc;
-    background: none;
-  }
-
-  .social-link {
-    border: 1px solid #ccc;
-    background: none !important;
-    color: #333 !important;
-  }
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  to {
-    opacity: 1;
-    transform: scaleX(1);
+  .explore-options {
+    grid-template-columns: 1fr;
   }
 }
