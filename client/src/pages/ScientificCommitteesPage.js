@@ -7,7 +7,17 @@ import technologyAdminTalal from "../assets/talalAttar.jpeg";
 import economyAdminMohammad from "../assets/mohammadBarhamji.jpeg";
 import economyAdminAnas from "../assets/anasAlshugri.jpeg";
 import engineeringAdminAlkudaymi from "../assets/mohammadAlkudaymi.jpeg";
-import womanIcon from "../assets/womanIcon.jpeg";
+import osamaAlDakkak from "../assets/OsamaAldakkak.jpeg";
+import ghiathMohammad from "../assets/GhiathMohammad.jpeg";
+import joudTulimat from "../assets/JoudTulimat.jpeg";
+import azharAlimadi from "../assets/AzharAlimadi.jpeg";
+import maherAlfarra from "../assets/MaherAlfarra.jpeg";
+import nourAbdalsalam from "../assets/NourAbdelsalam.jpeg";
+import basheerAlmuhaimid from "../assets/BasherAlmehemed.jpeg";
+import jihadRahmoon from "../assets/JihadRahmoon.jpeg";
+import alaaShubat from "../assets/alaaShubat.jpeg";
+import AhmadShubat from "../assets/AhmadShubat.jpeg";
+
 import manIcon from "../assets/manIcon.jpeg";
 
 // Add more member imports as needed
@@ -36,35 +46,37 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Azhar Alimadi",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: womanIcon,
-          linkedin: "https://linkedin.com/in/member3",
+          name: t(`scientificCommittees.members.azharAlimadi.name`),
+          title: t(`scientificCommittees.members.azharAlimadi.title`),
+          position: t(`scientificCommittees.members.azharAlimadi.position`),
+          image: azharAlimadi,
+          linkedin:
+            "https://www.linkedin.com/in/azhar-alimadi-a3528695?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
         {
           id: 2,
-          name: "Jihad Rahmoon",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member3",
+          name: t(`scientificCommittees.members.jihadRahmoon.name`),
+          title: t(`scientificCommittees.members.jihadRahmoon.title`),
+          position: t(`scientificCommittees.members.jihadRahmoon.position`),
+          image: jihadRahmoon,
+          linkedin:
+            "https://www.linkedin.com/in/jihad-rahmoon-61428a71?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
         {
           id: 3,
-          name: "Nour Abdalsalam",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: womanIcon,
-          linkedin: "https://linkedin.com/in/member3",
+          name: t(`scientificCommittees.members.nourAbdalsalam.name`),
+          title: t(`scientificCommittees.members.nourAbdalsalam.title`),
+          position: t(`scientificCommittees.members.nourAbdalsalam.position`),
+          image: nourAbdalsalam,
+          linkedin: "",
         },
         {
           id: 4,
-          name: "Alaa Shubat",
-          title: " Teacher ",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member3",
+          name: t(`scientificCommittees.members.alaaShubat.name`),
+          title: t(`scientificCommittees.members.alaaShubat.title`),
+          position: t(`scientificCommittees.members.alaaShubat.position`),
+          image: alaaShubat,
+          linkedin: "",
         },
         // Add more education committee members
       ],
@@ -76,19 +88,19 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Mohammad Barhamji",
-          title: " Master in Economics",
-          position: " Committee Coordinator",
+          name: t(`scientificCommittees.members.mohammadBarhamji.name`),
+          title: t(`scientificCommittees.members.mohammadBarhamji.title`),
+          position: t(`scientificCommittees.members.mohammadBarhamji.position`),
           image: economyAdminMohammad,
-          linkedin: "https://linkedin.com/in/member6",
+          linkedin: "https://www.linkedin.com/in/mohamad-barhamji/",
         },
         {
           id: 2,
-          name: "Anas Alsheghri",
-          title: " Master in Economics",
-          position: " Committee Coordinator",
+          name: t(`scientificCommittees.members.anasAlshugri.name`),
+          title: t(`scientificCommittees.members.anasAlshugri.title`),
+          position: t(`scientificCommittees.members.anasAlshugri.position`),
           image: economyAdminAnas,
-          linkedin: "https://linkedin.com/in/member6",
+          linkedin: "",
         },
         // Add more economy committee members
       ],
@@ -100,41 +112,61 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Eng. Mostafa Isa",
-          title: "Project Manager",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.mostafaIsa.name`),
+          title: t(`scientificCommittees.members.mostafaIsa.title`),
+          position: t(`scientificCommittees.members.mostafaIsa.position`),
           image: engineeringAdminMostafa,
-          linkedin: "https://linkedin.com/in/member1",
+          linkedin: "https://linkedin.com/in/mostafaisa",
         },
         {
           id: 2,
-          name: "Joud tulimat",
-          title: "Civil Engineer",
-          position: "Committee Coordinator",
-          image: womanIcon,
-          linkedin: "https://linkedin.com/in/member1",
+          name: t(`scientificCommittees.members.talalAttar.name`),
+          title: t(`scientificCommittees.members.talalAttar.title`),
+          position: t(`scientificCommittees.members.talalAttar.position`),
+          image: technologyAdminTalal,
+          linkedin: "https://www.linkedin.com/in/talal-attar-3b7229182/",
         },
         {
           id: 3,
-          name: "Eng. Osama Al Dakkkak",
-          title: "Civil Engineer ",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member1",
+          name: t(`scientificCommittees.members.joudTulimat.name`),
+          title: t(`scientificCommittees.members.joudTulimat.title`),
+          position: t(`scientificCommittees.members.joudTulimat.position`),
+          image: joudTulimat,
+          linkedin:
+            "https://www.linkedin.com/in/joud-tulimat-a33352225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
         {
           id: 4,
-          name: "Eng. Ahmad Shubat ",
-          title: "Civil Engineer",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.alaaAlboush.name`),
+          title: t(`scientificCommittees.members.alaaAlboush.title`),
+          position: t(`scientificCommittees.members.alaaAlboush.position`),
           image: manIcon,
-          linkedin: "https://linkedin.com/in/member1",
+          linkedin: "",
         },
         {
           id: 5,
-          name: "Eng. Mohamad Alkudaymi ",
-          title: "Architect Engineer",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.osamaAlDakkak.name`),
+          title: t(`scientificCommittees.members.osamaAlDakkak.title`),
+          position: t(`scientificCommittees.members.osamaAlDakkak.position`),
+          image: osamaAlDakkak,
+          linkedin:
+            "https://www.linkedin.com/in/osama-aldakkak-a6165838?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        },
+        {
+          id: 6,
+          name: t(`scientificCommittees.members.ahmadShubat.name`),
+          title: t(`scientificCommittees.members.ahmadShubat.title`),
+          position: t(`scientificCommittees.members.ahmadShubat.position`),
+          image: AhmadShubat,
+          linkedin: "",
+        },
+        {
+          id: 7,
+          name: t(`scientificCommittees.members.mohammadAlkudaymi.name`),
+          title: t(`scientificCommittees.members.mohammadAlkudaymi.title`),
+          position: t(
+            `scientificCommittees.members.mohammadAlkudaymi.position`
+          ),
           image: engineeringAdminAlkudaymi,
           linkedin:
             "https://www.linkedin.com/in/mohamad-alkudaymi-5b57b36a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -149,19 +181,19 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Dr. Maher Alfarra",
-          title: "Doctor",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member5",
+          name: t(`scientificCommittees.members.maherAlfarra.name`),
+          title: t(`scientificCommittees.members.maherAlfarra.title`),
+          position: t(`scientificCommittees.members.maherAlfarra.position`),
+          image: maherAlfarra,
+          linkedin: "",
         },
         {
           id: 2,
-          name: "Ghiath Mohammad",
-          title: "Master in Medicine",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member5",
+          name: t(`scientificCommittees.members.ghiathMohammad.name`),
+          title: t(`scientificCommittees.members.ghiathMohammad.title`),
+          position: t(`scientificCommittees.members.ghiathMohammad.position`),
+          image: ghiathMohammad,
+          linkedin: "https://www.linkedin.com/in/ghiath-mohammad",
         },
         // Add more healthcare committee members
       ],
@@ -173,19 +205,21 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Waleed Haji",
-          title: " Bachelor in Law",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.waleedHaji.name`),
+          title: t(`scientificCommittees.members.waleedHaji.title`),
+          position: t(`scientificCommittees.members.waleedHaji.position`),
           image: manIcon,
-          linkedin: "https://linkedin.com/in/member4",
+          linkedin: "",
         },
         {
           id: 2,
-          name: "Basheer Alme ",
-          title: " Bachelor in Law",
-          position: "Committee Coordinator",
-          image: manIcon,
-          linkedin: "https://linkedin.com/in/member4",
+          name: t(`scientificCommittees.members.basheerAlmuhaimid.name`),
+          title: t(`scientificCommittees.members.basheerAlmuhaimid.title`),
+          position: t(
+            `scientificCommittees.members.basheerAlmuhaimid.position`
+          ),
+          image: basheerAlmuhaimid,
+          linkedin: "",
         },
         // Add more law committee members
       ],
@@ -197,27 +231,29 @@ const CSSModuleCommitteesPage = () => {
       members: [
         {
           id: 1,
-          name: "Eng. Talal Attar",
-          title: "Bachelor in Computer Science",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.talalAttar.name`),
+          title: t(`scientificCommittees.members.talalAttar.title`),
+          position: t(`scientificCommittees.members.talalAttar.position`),
           image: technologyAdminTalal,
-          linkedin: "https://linkedin.com/in/member7",
+          linkedin: "https://www.linkedin.com/in/talal-attar-3b7229182/",
         },
         {
           id: 2,
-          name: "Mohamed Ali Maghreby",
-          title: "Bachelor in cyber security",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.mohamedAliMaghreby.name`),
+          title: t(`scientificCommittees.members.mohamedAliMaghreby.title`),
+          position: t(
+            `scientificCommittees.members.mohamedAliMaghreby.position`
+          ),
           image: manIcon,
-          linkedin: "https://linkedin.com/in/member7",
+          linkedin: "",
         },
         {
           id: 3,
-          name: "Alaa Alboush",
-          title: "Bachelor in Computer Science",
-          position: "Committee Coordinator",
+          name: t(`scientificCommittees.members.alaaAlboush.name`),
+          title: t(`scientificCommittees.members.alaaAlboush.title`),
+          position: t(`scientificCommittees.members.alaaAlboush.position`),
           image: manIcon,
-          linkedin: "https://linkedin.com/in/member7",
+          linkedin: "",
         },
         // Add more technology committee members
       ],

@@ -6,9 +6,7 @@ import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaMapMarkerAlt,
   FaEnvelope,
-  FaPhone,
 } from "react-icons/fa";
 import "../styles/footer.css";
 
@@ -51,6 +49,11 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/contact">{t("contact.pageTitle")}</Link>
+            </li>
+            <li>
+              <Link to="/scientific-committees">
+                {t("scientificCommittees.pageTitle")}
+              </Link>
             </li>
           </ul>
         </div>

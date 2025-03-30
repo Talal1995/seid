@@ -18,9 +18,9 @@ const CommitteesSection = () => {
   // Committee data
   const committees = [
     {
-      id: "engineering",
-      image: engineeringCommitteeImg,
-      title: t("scientificCommittees.engineeringTitle"),
+      id: "economy",
+      image: economyCommitteeImg,
+      title: t("scientificCommittees.economyTitle"),
     },
     {
       id: "education",
@@ -28,9 +28,9 @@ const CommitteesSection = () => {
       title: t("scientificCommittees.educationTitle"),
     },
     {
-      id: "law",
-      image: lawCommitteeImg,
-      title: t("scientificCommittees.lawTitle"),
+      id: "engineering",
+      image: engineeringCommitteeImg,
+      title: t("scientificCommittees.engineeringTitle"),
     },
     {
       id: "healthCare",
@@ -38,9 +38,9 @@ const CommitteesSection = () => {
       title: t("scientificCommittees.healthTitle"),
     },
     {
-      id: "economy",
-      image: economyCommitteeImg,
-      title: t("scientificCommittees.economyTitle"),
+      id: "law",
+      image: lawCommitteeImg,
+      title: t("scientificCommittees.lawTitle"),
     },
     {
       id: "technology",

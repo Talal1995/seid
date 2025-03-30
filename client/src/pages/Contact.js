@@ -19,22 +19,11 @@ const Contact = () => {
             </div>
 
             <div className="program-details">
-              <h2 className="program-title">{t("contact.sectionTitle")}</h2>
-              <p className="program-description">{t("contact.message")}</p>
-
               <div className="how-to-get-involved">
-                <h3>{t("contact.getInTouchTitle")}</h3>
                 <ul className="involvement-steps">
                   <li>
                     {t("contact.email")}:{" "}
-                    <strong>contact@ourwebsite.com</strong>
-                  </li>
-                  <li>
-                    {t("contact.phone")}: <strong>+1 (555) 123-4567</strong>
-                  </li>
-                  <li>
-                    {t("contact.address")}:{" "}
-                    <strong>{t("contact.addressDetails")}</strong>
+                    <strong>info@syrianexpertise.org</strong>
                   </li>
                 </ul>
               </div>

@@ -99,10 +99,10 @@ body {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
-  padding: 0 5%; /* Add padding for spacing */
+  justify-content: flex-start;
+  padding: 0 5%;
   overflow: hidden;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
 .hero-section::before {
@@ -122,75 +122,63 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px; /* Limit the width of the content */
+  max-width: 600px;
   color: var(--primary-white);
-  text-align: left; /* Align text to the left */
-}
-
-.hero-title {
-  font-family: var(--font-primary);
-  font-size: 3.5rem; /* Adjust the font size */
-  font-weight: 800;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle shadow for better readability */
-  color: var(--primary-white);
-  word-wrap: break-word; /* Ensure long words break properly */
-  text-align: left; /* Align text to the left */
-  max-width: 100%; /* Ensure it doesn't overflow */
-}
-
-.hero-subtitle {
-  font-family: var(--font-primary);
-  font-size: 2rem;
-  font-weight: 400;
-  font-style: italic;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInDown 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero-text {
-  font-family: var(--font-secondary);
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  color: var(--primary-white);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Add subtle shadow for better readability */
+  text-align: left;
+  animation: fadeInUp 1s ease-out; /* Add fade-in animation */
 }
 
 .hero-content h2 {
   font-family: var(--font-primary);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary-cyan); /* Add a cyan color for section titles */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 3rem; /* Larger font size for the title */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow for better readability */
+  color: var(--primary-cyan); /* Cyan color for the title */
+  letter-spacing: 0.05em; /* Slight spacing for elegance */
 }
 
 .hero-content p {
   font-family: var(--font-secondary);
-  font-size: 1.1rem;
+  font-size: 1.3rem; /* Slightly larger font size for the text */
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--primary-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+  animation: fadeInUp 1.2s ease-out; /* Add fade-in animation with delay */
+}
+
+.hero-content .cta-button {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background-color: var(--accent); /* Accent color for the button */
+  color: var(--primary-white);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+.hero-content .cta-button:hover {
+  background-color: var(--accent-light); /* Lighter accent color on hover */
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Responsive Design for Hero Section */
 @media (max-width: 992px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-
   .hero-content h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
 
-  .hero-text {
-    font-size: 1rem;
+  .hero-content p {
+    font-size: 1.1rem;
   }
 }
 
@@ -200,16 +188,12 @@ body {
     padding: 0 2rem;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .hero-content h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
-  .hero-text {
-    font-size: 0.95rem;
+  .hero-content p {
+    font-size: 1rem;
   }
 }
 
@@ -219,15 +203,11 @@ body {
     padding: 0 1.5rem;
   }
 
-  .hero-title {
-    font-size: 2rem;
-  }
-
   .hero-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
-  .hero-text {
+  .hero-content p {
     font-size: 0.9rem;
   }
 }

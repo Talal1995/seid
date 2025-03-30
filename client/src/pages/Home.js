@@ -5,10 +5,8 @@ import "../styles/home.css";
 import "../styles/committees.css";
 import backgroundLogo2 from "../assets/Logo7.jpeg";
 import seidVideo from "../assets/seidVideo.mp4";
-import backgroundLogo1 from "../assets/aleppoCastle.jpeg";
 import togetherImage from "../assets/together.jpeg";
-import syianFlag from "../assets/syrianFlag.jpeg";
-import syrianFlag2 from "../assets/syrianFlag2.jpeg";
+import syrianFlag from "../assets/syrianFlag2.jpeg";
 import CommitteesSection from "../components/CommitteesSection";
 
 const Home = () => {
@@ -18,11 +16,16 @@ const Home = () => {
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const carouselImages = [
-    backgroundLogo2,
-    backgroundLogo1,
-    syrianFlag2,
-    syianFlag,
+  const carouselImages = [backgroundLogo2, syrianFlag];
+  const carouselTexts = [
+    {
+      title: t("whoWeAre.visionAndMission.visionTitle"),
+      text: t("whoWeAre.visionAndMission.vision"),
+    },
+    {
+      title: t("whoWeAre.visionAndMission.missionTitle"),
+      text: t("whoWeAre.visionAndMission.mission"),
+    },
   ];
 
   // Function to handle image navigation
@@ -30,9 +33,19 @@ const Home = () => {
     setCurrentImageIndex(index);
   };
 
+  // Automatic carousel effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % carouselImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [carouselImages.length]);
+
   // Add animation effect similar to what-we-do page
   useEffect(() => {
-    // This mimics the animation behavior in your what-we-do CSS
     const mainTitle = document.querySelector(".section-title");
     if (mainTitle) {
       mainTitle.style.opacity = "0";
@@ -51,10 +64,8 @@ const Home = () => {
         style={{ backgroundImage: `url(${carouselImages[currentImageIndex]})` }}
       >
         <div className="hero-content">
-          <h2>{t("whoWeAre.visionAndMission.visionTitle")}</h2>
-          <p className="hero-text">{t("whoWeAre.visionAndMission.vision")}</p>
-          <h2>{t("whoWeAre.visionAndMission.missionTitle")}</h2>
-          <p className="hero-text">{t("whoWeAre.visionAndMission.mission")}</p>
+          <h2>{carouselTexts[currentImageIndex].title}</h2>
+          <p className="hero-text">{carouselTexts[currentImageIndex].text}</p>
         </div>
 
         {/* Image Carousel Navigation Pills */}

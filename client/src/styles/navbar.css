@@ -36,7 +36,7 @@
   justify-content: center;
   height: 100%;
   position: relative;
-  width: 150px; /* Fixed width for logo container */
+  width: 190px; /* Fixed width for logo container */
   background-color: transparent; /* Ensure background is transparent */
 }
 
@@ -49,9 +49,9 @@
 }
 
 .navbar-logo {
-  height: 60px; /* Adjusted to match navbar height better */
+  height: 90px; /* Adjusted to match navbar height better */
   width: auto; /* Maintain aspect ratio */
-  max-width: 138px; /* Prevents excessive growth */
+  max-width: 190px; /* Prevents excessive growth */
   object-fit: contain; /* Ensures full visibility of the logo */
   display: block; /* Ensure it's a block element */
   filter: none; /* Remove any filters affecting the colors */
