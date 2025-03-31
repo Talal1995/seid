@@ -143,14 +143,6 @@ const CSSModuleCommitteesPage = () => {
         },
         {
           id: 4,
-          name: t(`scientificCommittees.members.alaaAlboush.name`),
-          title: t(`scientificCommittees.members.alaaAlboush.title`),
-          position: t(`scientificCommittees.members.alaaAlboush.position`),
-          image: manIcon,
-          linkedin: "",
-        },
-        {
-          id: 5,
           name: t(`scientificCommittees.members.osamaAlDakkak.name`),
           title: t(`scientificCommittees.members.osamaAlDakkak.title`),
           position: t(`scientificCommittees.members.osamaAlDakkak.position`),
@@ -159,7 +151,7 @@ const CSSModuleCommitteesPage = () => {
             "https://www.linkedin.com/in/osama-aldakkak-a6165838?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
         {
-          id: 6,
+          id: 5,
           name: t(`scientificCommittees.members.ahmadShubat.name`),
           title: t(`scientificCommittees.members.ahmadShubat.title`),
           position: t(`scientificCommittees.members.ahmadShubat.position`),
@@ -167,7 +159,7 @@ const CSSModuleCommitteesPage = () => {
           linkedin: "",
         },
         {
-          id: 7,
+          id: 6,
           name: t(`scientificCommittees.members.mohammadAlkudaymi.name`),
           title: t(`scientificCommittees.members.mohammadAlkudaymi.title`),
           position: t(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaGlobe, FaBars } from "react-icons/fa";
@@ -12,6 +12,8 @@ const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navContentRef = useRef(null);
+  const mobileToggleRef = useRef(null);
 
   // Determine the direction based on language
   const isRTL = i18n.language === "ar";
@@ -37,14 +39,30 @@ const Navbar = () => {
     // Set the document direction based on language
     document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
     setShowLanguages(false);
+    // Close mobile menu when changing language
+    if (window.innerWidth <= 768) {
+      setMobileNavOpen(false);
+    }
   };
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen);
     if (!mobileNavOpen) setShowDropdown(false);
   };
-  const toggleDropdown = () => setShowDropdown(!showDropdown);
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setShowDropdown(!showDropdown);
+  };
+
   const isActive = (path) => (location.pathname === path ? "active" : "");
+
+  // Close mobile menu when clicking on a navigation link
+  const handleNavLinkClick = () => {
+    if (window.innerWidth <= 768) {
+      setMobileNavOpen(false);
+    }
+  };
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -76,48 +94,86 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu toggle button */}
-      <button className="mobile-nav-toggle" onClick={toggleMobileNav}>
+      <button
+        className="mobile-nav-toggle"
+        onClick={toggleMobileNav}
+        ref={mobileToggleRef}
+      >
         <FaBars />
       </button>
 
       {/* Navigation links and language selector */}
-      <div className={`nav-content ${mobileNavOpen ? "open" : ""}`}>
+      <div
+        className={`nav-content ${mobileNavOpen ? "open" : ""}`}
+        ref={navContentRef}
+      >
         <ul className="nav-links">
           <li>
-            <Link to="/" className={isActive("/")}>
+            <Link to="/" className={isActive("/")} onClick={handleNavLinkClick}>
               {t("home.pageTitle")}
             </Link>
           </li>
           <li>
-            <Link to="/what-we-do" className={isActive("/what-we-do")}>
+            <Link
+              to="/what-we-do"
+              className={isActive("/what-we-do")}
+              onClick={handleNavLinkClick}
+            >
               {t("whatWeDo.pageTitle")}
             </Link>
           </li>
           <li>
-            <Link to="/our-team" className={isActive("/our-team")}>
+            <Link
+              to="/our-team"
+              className={isActive("/our-team")}
+              onClick={handleNavLinkClick}
+            >
               {t("whoWeAre.ourTeam.pageTitle")}
             </Link>
           </li>
           <li
             className="dropdown"
-            onMouseEnter={() => setShowDropdown(true)}
-            onMouseLeave={() => setShowDropdown(false)}
-            onClick={() => window.innerWidth <= 768 && toggleDropdown()}
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setShowDropdown(true)
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setShowDropdown(false)
+            }
           >
-            <Link className={isActive("/who-we-are")}>
+            <Link
+              className={isActive("/who-we-are")}
+              onClick={(e) => {
+                e.preventDefault(); // Prevent navigation for dropdown toggle
+                if (window.innerWidth <= 768) {
+                  toggleDropdown(e);
+                }
+              }}
+            >
               {t("survey.linkTitle")}
             </Link>
             <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
-              <Link to="/get-involved" className={isActive("/get-involved")}>
+              <Link
+                to="/get-involved"
+                className={isActive("/get-involved")}
+                onClick={handleNavLinkClick}
+              >
                 {t("whatWeDo.getInvolved.title")}
               </Link>
-              <Link to="/survey" className={isActive("/survey")}>
+              <Link
+                to="/survey"
+                className={isActive("/survey")}
+                onClick={handleNavLinkClick}
+              >
                 {t("survey.pageTitle")}
               </Link>
             </div>
           </li>
           <li>
-            <Link to="/contact" className={isActive("/contact")}>
+            <Link
+              to="/contact"
+              className={isActive("/contact")}
+              onClick={handleNavLinkClick}
+            >
               {t("contact.pageTitle")}
             </Link>
           </li>
