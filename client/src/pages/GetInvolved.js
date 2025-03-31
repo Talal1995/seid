@@ -136,7 +136,7 @@ const GetInvolved = () => {
                 </p>
               </div>
               <div className="join-button-container">
-                <Link to="/survey" className="join-now-button">
+                <Link to="/what-we-do" className="join-now-button">
                   {t("learnMoreButton")}
                 </Link>
               </div>
