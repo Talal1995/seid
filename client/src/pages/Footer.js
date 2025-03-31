@@ -21,16 +21,16 @@ const Footer = () => {
           <h3>Syrian Expertise</h3>
           <p>{t("home.description")}</p>
           <div className="social-icons">
-            <a href="#" className="social-icon">
+            <a
+              href="https://www.facebook.com/groups/9607764639252406"
+              className="social-icon"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="social-icon">
-              <FaTwitter />
-            </a>
-            <a href="#" className="social-icon">
-              <FaInstagram />
-            </a>
-            <a href="#" className="social-icon">
+            <a
+              href="https://www.linkedin.com/company/the-syrian-initiative-for-expertise-and-development/about/?viewAsMember=true"
+              className="social-icon"
+            >
               <FaLinkedin />
             </a>
           </div>
