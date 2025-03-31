@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import "../styles/whatWeDo.css";
 import InnovationAndInitiativesLogo from "../assets/InnovationInitiative.jpeg";
 import syrianHub from "../assets/ExpertInsight.png";
 import expertInsights from "../assets/ExpertHub.jpeg";
-import getInvolvedImage from "../assets/ExpertHub.jpeg"; // Add this import for the Get Involved image
 
 const WhatWeDo = () => {
   const { t, i18n } = useTranslation();
@@ -76,6 +74,9 @@ const WhatWeDo = () => {
                 {t("whatWeDo.innovationAndInitiatives.description")}
               </p>
 
+              <p className="program-description">
+                {t("whatWeDo.innovationAndInitiatives.role")}
+              </p>
               <div className="how-to-get-involved">
                 <h3>
                   {t(
@@ -105,6 +106,18 @@ const WhatWeDo = () => {
                   </li>
                 </ul>
               </div>
+              <p className="program-description">
+                {t("whatWeDo.innovationAndInitiatives.engagementMessage")}{" "}
+                <a
+                  href="https://syrianexpertise.org/survey"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "underline", color: "blue" }}
+                >
+                  {t("whatWeDo.innovationAndInitiatives.startHere")}
+                </a>
+                .
+              </p>
             </div>
           </div>
         </div>
@@ -128,6 +141,9 @@ const WhatWeDo = () => {
               <p className="program-description">
                 {t("whatWeDo.syrianExpertiseHub.description")}
               </p>
+              <p className="program-description">
+                {t("whatWeDo.syrianExpertiseHub.platformGoal")}
+              </p>
 
               <div className="how-to-get-involved">
                 <h3>
@@ -148,6 +164,9 @@ const WhatWeDo = () => {
                   </li>
                 </ul>
               </div>
+              <p className="program-description">
+                {t("whatWeDo.syrianExpertiseHub.expertiseMessage")}
+              </p>
             </div>
           </div>
         </div>
@@ -168,6 +187,9 @@ const WhatWeDo = () => {
               <p className="program-description">
                 {t("whatWeDo.expertInsights.description")}
               </p>
+              <p className="program-description">
+                {t("whatWeDo.expertInsights.callToAction")}
+              </p>
 
               <div className="how-to-get-involved">
                 <h3>{t("whatWeDo.expertInsights.howToGetInvolved.title")}</h3>
@@ -178,6 +200,9 @@ const WhatWeDo = () => {
                   <li>{t("whatWeDo.expertInsights.howToGetInvolved.step4")}</li>
                 </ul>
               </div>
+              <p className="program-description">
+                {t("whatWeDo.expertInsights.impactMessage")}
+              </p>
             </div>
           </div>
         </div>

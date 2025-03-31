@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "../styles/whatWeDo.css";
-import getInvolvedImage from "../assets/ExpertHub.jpeg"; // Import for the Get Involved image
+import getInvolvedImage from "../assets/getInvolved.png"; // Import for the Get Involved image
 
 const GetInvolved = () => {
   const { t, i18n } = useTranslation();
@@ -57,7 +57,6 @@ const GetInvolved = () => {
         </div>
 
         <div className="program-details">
-          <h2 className="program-title">{t("whatWeDo.getInvolved.title")}</h2>
           <h3 className="get-involved-subtitle">
             {t("whatWeDo.getInvolved.subTitle")}
           </h3>
@@ -135,6 +134,11 @@ const GetInvolved = () => {
                     "whatWeDo.getInvolved.howToGetInvolved.expertInsightsDescription"
                   )}
                 </p>
+              </div>
+              <div className="join-button-container">
+                <Link to="/survey" className="join-now-button">
+                  {t("learnMoreButton")}
+                </Link>
               </div>
             </div>
           </div>

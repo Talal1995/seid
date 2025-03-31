@@ -94,6 +94,7 @@ const Home = () => {
           <div className="video-section-text">
             <h1 className="section-title">{t("home.title")}</h1>
             <p className="section-description">{t("home.description")}</p>
+            <p className="section-description">{t("home.callToAction")}</p>
             <div className="buttons-container">
               <Link to="/survey" className="cta-button">
                 {t("joinUsButton")}

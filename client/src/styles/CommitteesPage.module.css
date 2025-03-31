@@ -106,14 +106,14 @@
 }
 
 .tabItem:hover {
-  transform: translateY(-15px) rotateX(10deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Optional: Keep or remove */
 }
 
 .tabItem.active {
   background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
   border: 2px solid #4175c7;
-  transform: translateY(-15px);
+  transform: none;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 

@@ -112,7 +112,7 @@
       }
     },
     "whoWeAre": {
-      "pageTitle": "Who Wse Are seid",
+      "pageTitle": "Who We Are",
       "visionAndMission": {
         "pageTitle": "Vision and Mission ",
         "visionTitle": "Vision ",
@@ -163,7 +163,7 @@
     "learnMoreButton": "Learn More"
   },
   "whoWeAre": {
-    "pageTitle": "Who Wse Are seid",
+    "pageTitle": "Who We Are",
     "visionAndMission": {
       "pageTitle": "Vision and Mission ",
       "visionTitle": "Vision ",
@@ -197,7 +197,8 @@
         "step3": "Work on a structured proposal with feedback from professionals.",
         "step4": "Build a small team and prepare your idea for the next stage."
       },
-      "engagementMessage": "Our role is to facilitate connections and provide access to expertise, but the progress of your idea depends on your engagement. If you are ready to take the next step, start here."
+      "engagementMessage": "Our role is to facilitate connections and provide access to expertise, but the progress of your idea depends on your engagement. If you are ready to take the next step, ",
+      "startHere": "start here."
     },
     "syrianExpertiseHub": {
       "title": "Syrian Expertise Hub",
@@ -231,7 +232,7 @@
       "description": "Change starts with people. By joining our network, you become part of a global initiative where Syrian expertise is connected, activated, and applied to rebuild Syria. Whether you want to contribute your knowledge, collaborate on projects, or stay engaged in shaping the future, this is where it begins.",
       "howToGetInvolved": {
         "title": "How to Join?",
-        "step1": "Becoming a member is simple. Fill out the application and become part of the network today",
+        "step1": "Becoming a member is simple. Fill out the survey and become part of the network today",
         "step2": "→ [Join Us] (Button linking to the application form)",
         "whatHappensNext": "What Happens After You Join?",
         "nextStepDescription": "Once you are part of the network, you will:",

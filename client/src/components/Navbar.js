@@ -43,7 +43,7 @@ const Navbar = () => {
     setMobileNavOpen(!mobileNavOpen);
     if (!mobileNavOpen) setShowDropdown(false);
   };
-
+  const toggleDropdown = () => setShowDropdown(!showDropdown);
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   // Close dropdowns when clicking outside
@@ -98,10 +98,23 @@ const Navbar = () => {
               {t("whoWeAre.ourTeam.pageTitle")}
             </Link>
           </li>
-          <li>
-            <Link to="/get-involved" className={isActive("/get-involved")}>
-              {t("whatWeDo.getInvolved.title")}
+          <li
+            className="dropdown"
+            onMouseEnter={() => setShowDropdown(true)}
+            onMouseLeave={() => setShowDropdown(false)}
+            onClick={() => window.innerWidth <= 768 && toggleDropdown()}
+          >
+            <Link className={isActive("/who-we-are")}>
+              {t("survey.linkTitle")}
             </Link>
+            <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
+              <Link to="/get-involved" className={isActive("/get-involved")}>
+                {t("whatWeDo.getInvolved.title")}
+              </Link>
+              <Link to="/survey" className={isActive("/survey")}>
+                {t("survey.pageTitle")}
+              </Link>
+            </div>
           </li>
           <li>
             <Link to="/contact" className={isActive("/contact")}>
