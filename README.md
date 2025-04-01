@@ -17,8 +17,13 @@ This will start both the server and the client in development mode.
 # Project Structure
 
 `assets`: Contains all images and videos, including member photos, logos, and background images.
+
 `pages`: Includes all sub-pages of the website.
+
 `styles`: Contains CSS styles for all components and pages.
+
 `locales`: Stores translations for the website in English and Arabic.
+
 `data`: Contains data for board members.
+
 `components`: Includes reusable components used across various pages, such as the home page.
