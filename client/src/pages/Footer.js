@@ -24,12 +24,16 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/groups/9607764639252406"
               className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaFacebookF />
             </a>
             <a
               href="https://www.linkedin.com/company/the-syrian-initiative-for-expertise-and-development/about/?viewAsMember=true"
               className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedin />
             </a>
@@ -40,24 +44,60 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <Link to="/"> {t("home.pageTitle")}</Link>
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("home.pageTitle")}
+              </Link>
             </li>
             <li>
-              <Link to="/our-team"> {t("whoWeAre.ourTeam.pageTitle")}</Link>
+              <Link
+                to="/our-team"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("whoWeAre.ourTeam.pageTitle")}
+              </Link>
             </li>
             <li>
-              <Link to="/what-we-do">{t("whatWeDo.pageTitle")}</Link>
+              <Link
+                to="/what-we-do"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("whatWeDo.pageTitle")}
+              </Link>
             </li>
             <li>
-              <Link to="/scientific-committees">
+              <Link
+                to="/scientific-committees"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 {t("scientificCommittees.pageTitle")}
               </Link>
             </li>
             <li>
-              <Link to="/get-involved">{t("whatWeDo.getInvolved.title")}</Link>
+              <Link
+                to="/get-involved"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("whatWeDo.getInvolved.title")}
+              </Link>
             </li>
             <li>
-              <Link to="/contact">{t("contact.pageTitle")}</Link>
+              <Link
+                to="/survey"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("survey.pageTitle")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("contact.pageTitle")}
+              </Link>
             </li>
           </ul>
         </div>

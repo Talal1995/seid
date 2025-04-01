@@ -30,9 +30,10 @@ const Navbar = () => {
 
   // Set document direction based on language
   useEffect(() => {
-    document.documentElement.dir = isRTL ? "rtl" : "ltr";
+    document.documentElement.lang = i18n.language; // Set the lang attribute dynamically
+    document.documentElement.dir = isRTL ? "rtl" : "ltr"; // Set the direction
     document.body.classList.toggle("rtl", isRTL);
-  }, [isRTL]);
+  }, [i18n.language, isRTL]);
 
   const handleLanguageChange = (lng) => {
     i18n.changeLanguage(lng);

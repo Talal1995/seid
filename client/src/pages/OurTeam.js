@@ -27,6 +27,13 @@ const OurTeam = () => {
               {t(
                 `scientificCommittees.members.${member.name
                   .replace(/\s+/g, "")
+                  .toLowerCase()}.title`
+              )}
+            </p>
+            <p className="subtitle">
+              {t(
+                `scientificCommittees.members.${member.name
+                  .replace(/\s+/g, "")
                   .toLowerCase()}.position`
               )}
             </p>

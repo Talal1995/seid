@@ -12,6 +12,14 @@
   --shadow: rgba(0, 0, 0, 0.45);
 }
 
+/* Load Markazi Text Font */
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap");
+
+/* Apply Markazi Text for Arabic Content */
+:lang(ar) {
+  font-family: "Markazi Text", serif;
+}
+
 /* General Navbar Styles */
 .navbar {
   display: flex;
@@ -19,14 +27,19 @@
   align-items: center;
   background-color: #fff;
   box-shadow: 0 0.5rem 1.5rem var(--shadow);
-  font-family: "Markazi Text", serif;
+  font-family: "Open Sans", sans-serif;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: background 0.3s ease;
   overflow: visible;
-  height: 80px; /* Keep the navbar height fixed */
-  padding: 0 2rem; /* Adjust padding as needed */
+  height: 80px;
+  padding: 0 2rem;
+}
+
+/* Apply Markazi Text specifically for Arabic in Navbar */
+.navbar:lang(ar) {
+  font-family: "Markazi Text", serif;
 }
 
 /* Logo Container Styles */
@@ -36,27 +49,23 @@
   justify-content: center;
   height: 100%;
   position: relative;
-  width: 190px; /* Fixed width for logo container */
-  background-color: transparent; /* Ensure background is transparent */
+  width: 190px;
+  background-color: transparent;
 }
 
 .logo-container a {
-  display: block;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .navbar-logo {
-  height: 90px; /* Adjusted to match navbar height better */
-  width: auto; /* Maintain aspect ratio */
-  max-width: 190px; /* Prevents excessive growth */
-  object-fit: contain; /* Ensures full visibility of the logo */
-  display: block; /* Ensure it's a block element */
-  filter: none; /* Remove any filters affecting the colors */
-  opacity: 1 !important; /* Force full opacity */
-  background-color: transparent; /* Ensure no background color interferes */
+  height: 90px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Navigation Content Container */
@@ -91,7 +100,16 @@
   transition: color 0.3s ease;
 }
 
-/* Enhanced Hover Effect for Nav Links */
+/* Apply Markazi Text for Arabic Links */
+.nav-links a:lang(ar) {
+  font-family: "Markazi Text", serif;
+}
+
+/* Specifically for navigation links */
+.nav-links a:lang(ar) {
+  font-size: 1.2rem; /* Adjust this value as needed */
+}
+/* Hover Effect for Nav Links */
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--accent-dark);

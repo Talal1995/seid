@@ -17,6 +17,7 @@ import basheerAlmuhaimid from "../assets/BasherAlmehemed.jpeg";
 import jihadRahmoon from "../assets/JihadRahmoon.jpeg";
 import alaaShubat from "../assets/alaaShubat.jpeg";
 import AhmadShubat from "../assets/AhmadShubat.jpeg";
+import waleedHaji from "../assets/waleedHaji.jpeg";
 
 import manIcon from "../assets/manIcon.jpeg";
 
@@ -206,7 +207,7 @@ const CSSModuleCommitteesPage = () => {
           name: t(`scientificCommittees.members.waleedHaji.name`),
           title: t(`scientificCommittees.members.waleedHaji.title`),
           position: t(`scientificCommittees.members.waleedHaji.position`),
-          image: manIcon,
+          image: waleedHaji,
           linkedin: "",
         },
         {
