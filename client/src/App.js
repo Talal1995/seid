@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import WhatWeDo from "./pages/WhatWeDo";
 import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer";
-import OurStory from "./pages/OurStory";
+import OurStory from "./components/OurStory";
 import OurTeam from "./pages/OurTeam";
 import GetInvolved from "./pages/GetInvolved";
 import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
