@@ -61,6 +61,7 @@ const CommitteesSection = () => {
               key={committee.id}
               to={`/scientific-committees?committee=${committee.id}`}
               className="committee-card-link"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <div className="committee-card">
                 <div className="committee-image">
