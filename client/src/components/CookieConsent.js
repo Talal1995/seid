@@ -17,20 +17,30 @@ const CookieConsent = () => {
   }, []);
 
   const sendConsentToBackend = (consent) => {
-    // Fallback URL based on the domain where the app is running
+    // Use the correct API URL based on environment
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "https://api.syrianexpertise.org"
+        ? "https://seid-uk15.onrender.com" // Use your render.com backend URL
         : "http://localhost:5001";
 
     fetch(`${apiUrl}/api/cookie-consent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: "include", // Important for cookies/sessions
       body: JSON.stringify({ consent }),
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data.message))
-      .catch((err) => console.error("Error:", err));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Server responded with status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => console.log("Consent saved:", data.message))
+      .catch((err) => {
+        console.error("Error saving consent:", err);
+        // Save consent locally even if server request fails
+        localStorage.setItem("cookie_consent", consent);
+      });
   };
 
   const acceptAllCookies = () => {

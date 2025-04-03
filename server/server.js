@@ -17,9 +17,10 @@ const PORT = process.env.PORT || 5001;
 const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://seid-uk15.onrender.com", // Deployed frontend
-      "http://localhost:3000", // Local frontend
-      "https://www.syrianexpertise.org", // Custom domain
+      "https://seid-uk15.onrender.com",
+      "http://localhost:3000",
+      "https://www.syrianexpertise.org",
+      "https://api.syrianexpertise.org", // Add this
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
