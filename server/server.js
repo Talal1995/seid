@@ -87,15 +87,27 @@ app.use("/api/survey", require("./routes/survey"));
 
 // Handle the consent data from the frontend
 app.post("/api/cookie-consent", async (req, res) => {
-  const { consent } = req.body;
+  const { consent, timestamp, language, userAgent, consentTypes } = req.body;
 
+  // Validate the required fields
   if (!consent || !["all", "essential"].includes(consent)) {
     return res.status(400).json({ message: "Invalid consent type" });
   }
 
+  if (!timestamp) {
+    return res.status(400).json({ message: "Timestamp is required" });
+  }
+
   try {
     // Create a new consent record in the database
-    const newConsent = new Consent({ consent });
+    const newConsent = new Consent({
+      consent,
+      timestamp,
+      language, // Optional field
+      userAgent, // Optional field
+      consentTypes, // Optional field
+    });
+
     await newConsent.save();
     res.status(200).json({ message: "Consent saved successfully" });
   } catch (err) {
