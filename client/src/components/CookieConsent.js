@@ -16,18 +16,17 @@ const CookieConsent = () => {
     }
   }, []);
 
-  const sendConsentToBackend = (consent) => {
-    // Use the correct API URL based on environment
+  const sendConsentToBackend = (consentData) => {
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "https://seid-uk15.onrender.com" // Use your render.com backend URL
+        ? "https://seid-uk15.onrender.com"
         : "http://localhost:5001";
 
     fetch(`${apiUrl}/api/cookie-consent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include", // Important for cookies/sessions
-      body: JSON.stringify({ consent }),
+      body: JSON.stringify(consentData), // Send the full consentData object
     })
       .then((response) => {
         if (!response.ok) {
@@ -39,7 +38,7 @@ const CookieConsent = () => {
       .catch((err) => {
         console.error("Error saving consent:", err);
         // Save consent locally even if server request fails
-        localStorage.setItem("cookie_consent", consent);
+        localStorage.setItem("cookie_consent", JSON.stringify(consentData));
       });
   };
 
