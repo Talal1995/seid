@@ -262,6 +262,10 @@
   },
   "joinUsButton": "Join Us",
   "survey": {
+    "consent": {
+      "label": "I confirm that I have read and agree to the processing of my personal data as described in the Privacy Policy",
+      "required": "You must agree to the Privacy Policy to submit the form"
+    },
     "linkTitle": "Join Us",
     "pageTitle": "Survey",
     "surname": "Surname",
@@ -283,5 +287,139 @@
     "moreDetails": "More Details",
     "submit": "Submit"
   },
-  "learnMoreButton": "Learn More"
+  "learnMoreButton": "Learn More",
+  "cookieConsent": {
+    "title": "This website uses cookies",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies.",
+    "acceptAll": "Accept All",
+    "settings": "This website use Cookie",
+    "cookieSetting": {
+      "title": "Cookie Settings",
+      "description": "You can manage your cookie preferences by clicking 'Settings'. You can choose to accept all cookies, reject non-essential cookies, or customize your preferences."
+    }
+  },
+  "gdpr": {
+    "title": "GDPR Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "introduction": {
+      "title": "Introduction",
+      "content1": "This Privacy Policy explains how we collect, use, and protect your personal data in accordance with the General Data Protection Regulation (GDPR).",
+      "content2": "We respect your privacy and are committed to protecting your personal data. This Privacy Policy will inform you about how we look after your personal data and tell you about your privacy rights and how the law protects you."
+    },
+    "dataController": {
+      "title": "Data Controller",
+      "content": "We are the data controller responsible for your personal data. If you have any questions about this Privacy Policy, including any requests to exercise your legal rights, please contact us using the details provided at the end of this policy."
+    },
+    "dataCollected": {
+      "title": "Data We Collect",
+      "intro": "We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:",
+      "personalData": {
+        "title": "Personal Identification Data",
+        "content": "This includes your name, email address, phone number, gender, age group, and location information."
+      },
+      "surveyData": {
+        "title": "Survey and Contribution Data",
+        "content": "This includes information you provide in surveys, forms, and other contributions including your education, professional experience, and areas of expertise."
+      },
+      "technicalData": {
+        "title": "Technical Data",
+        "content": "This includes information about how you use our website, such as your IP address, browser type and version, time zone setting, browser plug-in types, operating system, and platform."
+      }
+    },
+    "legalBasis": {
+      "title": "Legal Basis for Processing",
+      "content1": "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data where we need to perform a contract we are about to enter into or have entered into with you, where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests, or where we need to comply with a legal obligation.",
+      "content2": "Generally, we do not rely on consent as a legal basis for processing your personal data other than in relation to sending marketing communications to you. You have the right to withdraw consent to marketing at any time by contacting us."
+    },
+    "dataPurpose": {
+      "title": "How We Use Your Data",
+      "content": "We use your personal data for the following purposes:",
+      "purpose1": "To register you as a new member or participant",
+      "purpose2": "To manage our relationship with you",
+      "purpose3": "To enable you to participate in surveys, forums, or other collaborative activities",
+      "purpose4": "To connect you with relevant opportunities based on your expertise",
+      "purpose5": "To improve our website, products/services, and user experience"
+    },
+    "dataRetention": {
+      "title": "Data Retention",
+      "content": "We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements. To determine the appropriate retention period for personal data, we consider the amount, nature, and sensitivity of the personal data, the potential risk of harm from unauthorized use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal requirements."
+    },
+    "dataSharing": {
+      "title": "Data Sharing",
+      "content1": "We may share your personal data with other organizations and individuals who are involved in the delivery of our services to you. This includes our staff, volunteers, partners, and service providers.",
+      "content2": "We require all third parties to respect the security of your personal data and to treat it in accordance with the law. We do not allow our third-party service providers to use your personal data for their own purposes and only permit them to process your personal data for specified purposes and in accordance with our instructions."
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "content": "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality."
+    },
+    "userRights": {
+      "title": "Your Legal Rights",
+      "intro": "Under the GDPR, you have the following rights in relation to your personal data:",
+      "right1": "The right to access your personal data",
+      "right2": "The right to request correction of your personal data",
+      "right3": "The right to request erasure of your personal data",
+      "right4": "The right to object to processing of your personal data",
+      "right5": "The right to request restriction of processing your personal data",
+      "right6": "The right to request transfer of your personal data",
+      "right7": "The right to withdraw consent",
+      "exerciseRights": "You can exercise any of these rights by contacting us using the details provided at the end of this policy."
+    },
+    "internationalTransfers": {
+      "title": "International Transfers",
+      "content": "We may transfer your personal data to countries outside the European Economic Area (EEA). Whenever we transfer your personal data out of the EEA, we ensure a similar degree of protection is afforded to it by ensuring appropriate safeguards are implemented."
+    },
+    "changes": {
+      "title": "Changes to This Privacy Policy",
+      "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date at the top of this policy."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this Privacy Policy or our privacy practices, please contact us."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last Updated",
+    "introduction": {
+      "title": "Introduction",
+      "content": "This Cookie Policy explains how we use cookies and similar technologies on our website. This policy is designed to help you understand what cookies are, how we use them, and the choices you have regarding their use."
+    },
+    "whatAreCookies": {
+      "title": "What are Cookies",
+      "content": "Cookies are small text files that are placed on your device when you visit our website. They help us analyze how users interact with our site, personalize content, and improve user experience. Cookies may be 'persistent' cookies or 'session' cookies. Persistent cookies remain on your device after you close your browser, while session cookies are deleted when you close your browser."
+    },
+    "cookiesWeUse": {
+      "title": "Types of Cookies We Use",
+      "intro": "We use the following types of cookies on our website:",
+      "essential": {
+        "title": "Essential Cookies",
+        "content": "These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and account access. You cannot opt out of these cookies."
+      },
+      "preference": {
+        "title": "Preference Cookies",
+        "content": "These cookies allow us to remember choices you make and provide enhanced, personalized features. They may be set by us or by third-party providers whose services we have added to our pages."
+      },
+      "statistics": {
+        "title": "Statistics Cookies",
+        "content": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. They allow us to count visits and traffic sources so we can measure and improve the performance of our site."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "content": "These cookies are used to track visitors across websites. They are set to display targeted advertisements based on your interests and online behavior."
+      }
+    },
+    "managingCookies": {
+      "title": "Managing Cookies",
+      "content": "You can control and manage cookies in various ways. You can modify your browser settings to decline cookies or to alert you when cookies are being sent. Please note that if you disable cookies, some features of our website may not function properly."
+    },
+    "changes": {
+      "title": "Changes to This Cookie Policy",
+      "content": "We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the 'Last Updated' date."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about our Cookie Policy, please contact us."
+    }
+  }
 }

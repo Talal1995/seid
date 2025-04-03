@@ -2,11 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
 require("dotenv").config();
 
+// Import the Consent model
+const Consent = require("./models/Consent");
+
 const app = express();
+app.use(bodyParser.json()); // Ensures req.body is parsed correctly
+app.use(cors());
 const PORT = process.env.PORT || 5001;
 
 // Comprehensive CORS Configuration
@@ -79,6 +85,25 @@ mongoose
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api", require("./routes/api"));
 app.use("/api/survey", require("./routes/survey"));
+
+// Handle the consent data from the frontend
+app.post("/api/cookie-consent", async (req, res) => {
+  const { consent } = req.body;
+
+  if (!consent || !["all", "essential"].includes(consent)) {
+    return res.status(400).json({ message: "Invalid consent type" });
+  }
+
+  try {
+    // Create a new consent record in the database
+    const newConsent = new Consent({ consent });
+    await newConsent.save();
+    res.status(200).json({ message: "Consent saved successfully" });
+  } catch (err) {
+    console.error("❌ Error saving consent:", err);
+    res.status(500).json({ message: "Error saving consent data" });
+  }
+});
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

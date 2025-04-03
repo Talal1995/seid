@@ -2,13 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaEnvelope,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaFacebookF, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import "../styles/footer.css";
 
 const Footer = () => {
@@ -97,6 +91,14 @@ const Footer = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 {t("contact.pageTitle")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/gdpr-policy"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                {t("gdpr.title")}
               </Link>
             </li>
           </ul>

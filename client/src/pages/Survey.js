@@ -41,7 +41,10 @@ const SurveyPage = () => {
     naturalScienceSpecialty: "",
     hasComments: "no",
     commentText: "",
+    gdprConsent: false,
   });
+
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   // Engineering specialties
   const engineeringSpecialties = [
@@ -602,7 +605,10 @@ const SurveyPage = () => {
           : prevData.contributionFields.filter((item) => item !== value),
       }));
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData({
+        ...formData,
+        [name]: type === "checkbox" ? checked : value,
+      });
     }
   };
 
@@ -613,7 +619,11 @@ const SurveyPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Submitting Data:", formData); // Debugging: Check formData before sending
+    if (!formData.gdprConsent) {
+      toast.error("You must accept the GDPR consent to submit.");
+      return;
+    }
     // Validation logic
     const requiredFields = [
       "firstName",
@@ -629,6 +639,7 @@ const SurveyPage = () => {
       "currentJob",
       "workExperience",
       "willingToContribute",
+      "gdprConsent",
     ];
 
     // Check if all required fields are filled
@@ -694,6 +705,7 @@ const SurveyPage = () => {
           naturalScienceSpecialty: "",
           hasComments: "no",
           commentText: "",
+          gdprConsent: false,
         });
       } else {
         toast.error(
@@ -718,6 +730,24 @@ const SurveyPage = () => {
           : "Please enter a valid email address."
       );
       return;
+    }
+    if (!formData.gdprConsent) {
+      toast.warning(
+        isRTL
+          ? "يرجى تأكيد موافقتك على استخدام بياناتك."
+          : "Please confirm your consent to use your data."
+      );
+      return;
+    }
+    for (const field of requiredFields) {
+      if (!formData[field]) {
+        toast.warning(
+          isRTL
+            ? "يرجى ملء جميع الحقول المطلوبة."
+            : "Please fill in all required fields."
+        );
+        return;
+      }
     }
   };
 
@@ -1406,7 +1436,24 @@ const SurveyPage = () => {
               ? "شكرًا لمشاركتك! سيتم استخدام هذه البيانات بسرية تامة لدعم جهود التنمية وإعادة الإعمار."
               : "Thank you for your participation! This data will be used confidentially to support development and reconstruction efforts."}
           </p>
-          <button type="submit">{t("survey.submit")}</button>
+          <label>
+            <input
+              type="checkbox"
+              name="gdprConsent"
+              checked={formData.gdprConsent}
+              onChange={(e) => {
+                const isChecked = e.target.checked;
+                setFormData({ ...formData, gdprConsent: isChecked });
+                setIsConfirmed(isChecked); // Update isConfirmed state
+              }}
+            />
+            {isRTL
+              ? "أؤكد موافقتي على استخدام بياناتي."
+              : "I confirm my consent to use my data."}
+          </label>
+          <button type="submit" disabled={!isConfirmed}>
+            {t("survey.submit")}
+          </button>
         </div>
       </form>
     </div>

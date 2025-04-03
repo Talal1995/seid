@@ -1,0 +1,71 @@
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import "../styles/policy.css";
+
+const CookiePolicy = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+  const direction = isRTL ? "rtl" : "ltr";
+
+  useEffect(() => {
+    document.documentElement.setAttribute("dir", direction);
+    document.body.style.fontFamily = isRTL
+      ? "Markazi Text, serif"
+      : "Open Sans, sans-serif";
+  }, [direction, isRTL]);
+
+  return (
+    <div className="policy-container" dir={direction}>
+      <div className="policy-content">
+        <h1 className="policy-title">{t("cookiePolicy.title")}</h1>
+        <p className="policy-date">
+          {t("cookiePolicy.lastUpdated")}: April 3, 2025
+        </p>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.introduction.title")}</h2>
+          <p>{t("cookiePolicy.introduction.content")}</p>
+        </section>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.whatAreCookies.title")}</h2>
+          <p>{t("cookiePolicy.whatAreCookies.content")}</p>
+        </section>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.cookiesWeUse.title")}</h2>
+          <p>{t("cookiePolicy.cookiesWeUse.intro")}</p>
+
+          <h3>{t("cookiePolicy.cookiesWeUse.essential.title")}</h3>
+          <p>{t("cookiePolicy.cookiesWeUse.essential.content")}</p>
+
+          <h3>{t("cookiePolicy.cookiesWeUse.preference.title")}</h3>
+          <p>{t("cookiePolicy.cookiesWeUse.preference.content")}</p>
+
+          <h3>{t("cookiePolicy.cookiesWeUse.statistics.title")}</h3>
+          <p>{t("cookiePolicy.cookiesWeUse.statistics.content")}</p>
+
+          <h3>{t("cookiePolicy.cookiesWeUse.marketing.title")}</h3>
+          <p>{t("cookiePolicy.cookiesWeUse.marketing.content")}</p>
+        </section>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.managingCookies.title")}</h2>
+          <p>{t("cookiePolicy.managingCookies.content")}</p>
+        </section>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.changes.title")}</h2>
+          <p>{t("cookiePolicy.changes.content")}</p>
+        </section>
+
+        <section className="policy-section">
+          <h2>{t("cookiePolicy.contact.title")}</h2>
+          <p>{t("cookiePolicy.contact.content")}</p>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default CookiePolicy;
