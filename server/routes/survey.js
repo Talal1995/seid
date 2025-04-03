@@ -6,8 +6,6 @@ const router = express.Router();
 // POST route to save survey data
 router.post("/", async (req, res) => {
   try {
-    console.log("Received Data:", req.body); // Debugging: Log entire request body
-
     if (!req.body.gdprConsent) {
       return res
         .status(400)

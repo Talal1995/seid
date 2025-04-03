@@ -44,8 +44,14 @@ const CookieConsent = () => {
   };
 
   const acceptAllCookies = () => {
-    localStorage.setItem("cookie_consent", "all");
-    sendConsentToBackend("all");
+    const consentData = {
+      consent: "all",
+      timestamp: new Date().toISOString(),
+      language: i18n.language,
+      userAgent: navigator.userAgent,
+    };
+    localStorage.setItem("cookie_consent", JSON.stringify(consentData));
+    sendConsentToBackend(consentData);
     setShowConsent(false);
   };
 
