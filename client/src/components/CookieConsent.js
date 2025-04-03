@@ -19,9 +19,9 @@ const CookieConsent = () => {
   const sendConsentToBackend = (consent) => {
     // Fallback URL based on the domain where the app is running
     const apiUrl =
-      window.location.hostname === "www.syrianexpertise.org"
+      process.env.NODE_ENV === "production"
         ? "https://api.syrianexpertise.org"
-        : "https://api.seid-uk15.onrender.com"; // Use the appropriate API URL
+        : "http://localhost:5001";
 
     fetch(`${apiUrl}/api/cookie-consent`, {
       method: "POST",
