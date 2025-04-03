@@ -17,10 +17,12 @@ const CookieConsent = () => {
   }, []);
 
   const sendConsentToBackend = (consent) => {
+    // Fallback URL based on the domain where the app is running
     const apiUrl =
-      "https://api.seid-uk15.onrender.com" ||
-      "https://api.syrianexpertise.org" ||
-      "http://localhost:5001"; // Fallback to local if not defined
+      window.location.hostname === "www.syrianexpertise.org"
+        ? "https://api.syrianexpertise.org"
+        : "https://api.seid-uk15.onrender.com"; // Use the appropriate API URL
+
     fetch(`${apiUrl}/api/cookie-consent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
