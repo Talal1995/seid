@@ -17,7 +17,10 @@ const CookieConsent = () => {
   }, []);
 
   const sendConsentToBackend = (consent) => {
-    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5001"; // Fallback to local if not defined
+    const apiUrl =
+      "https://api.seid-uk15.onrender.com" ||
+      "https://api.syrianexpertise.org" ||
+      "http://localhost:5001"; // Fallback to local if not defined
     fetch(`${apiUrl}/api/cookie-consent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

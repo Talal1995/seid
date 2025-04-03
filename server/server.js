@@ -11,11 +11,9 @@ require("dotenv").config();
 const Consent = require("./models/Consent");
 
 const app = express();
-app.use(bodyParser.json()); // Ensures req.body is parsed correctly
-app.use(cors());
 const PORT = process.env.PORT || 5001;
 
-// Comprehensive CORS Configuration
+// CORS Configuration
 const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = [
@@ -41,13 +39,13 @@ const corsOptions = {
   ], // Allowed headers
 };
 
-// Middleware
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); // CORS Middleware
 app.options("*", cors(corsOptions)); // Handle preflight requests
+app.use(bodyParser.json()); // Ensures req.body is parsed correctly
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Session Configuration
+// Session Configuration (Keep only this one)
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -57,7 +55,7 @@ app.use(
       secure: process.env.NODE_ENV === "production", // Secure cookies in production
       httpOnly: true, // Prevent client-side JS from accessing the cookie
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Cross-origin fix
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Cross-origin fix for production
     },
   })
 );
@@ -67,7 +65,7 @@ require("./config/passport")(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Connect to MongoDB
+// MongoDB Connection
 console.log(
   "Connecting to MongoDB with URI:",
   process.env.MONGO_URI ? "Loaded" : "Not found"
