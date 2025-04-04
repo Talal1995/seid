@@ -18,6 +18,8 @@ import jihadRahmoon from "../assets/JihadRahmoon.jpeg";
 import alaaShubat from "../assets/alaaShubat.jpeg";
 import AhmadShubat from "../assets/AhmadShubat.jpeg";
 import waleedHaji from "../assets/waleedHaji.jpeg";
+import mohamedAliMaghreby from "../assets/mohamedAliMaghreby.jpeg";
+import omarBarhamji from "../assets/omarBarhamji.jpeg";
 
 import manIcon from "../assets/manIcon.jpeg";
 
@@ -107,6 +109,14 @@ const CSSModuleCommitteesPage = () => {
           title: t(`scientificCommittees.members.anasalshugri.title`),
           position: t(`scientificCommittees.members.anasalshugri.position`),
           image: economyAdminAnas,
+          linkedin: "",
+        },
+        {
+          id: 3,
+          name: t(`scientificCommittees.members.omarBarhamji.name`),
+          title: t(`scientificCommittees.members.omarBarhamji.title`),
+          position: t(`scientificCommittees.members.omarBarhamji.position`),
+          image: omarBarhamji,
           linkedin: "",
         },
         // Add more economy committee members
@@ -243,7 +253,7 @@ const CSSModuleCommitteesPage = () => {
           position: t(
             `scientificCommittees.members.mohamedAliMaghreby.position`
           ),
-          image: manIcon,
+          image: mohamedAliMaghreby,
           linkedin: "",
         },
         {

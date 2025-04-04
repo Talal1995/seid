@@ -42,7 +42,7 @@
         "position": "Treasurer"
       },
       "anasalshugri": {
-        "name": "Anas Alshugri",
+        "name": "Anas Alshegri",
         "title": "Bachelor in Economics and Business Administration, specialized in auditing and financial statement analysis",
         "position": "Board Member"
       },
@@ -97,8 +97,8 @@
         "position": "Committee Coordinator"
       },
       "mohamedAliMaghreby": {
-        "name": "Mohamed Ali Maghreby",
-        "title": "Cybersecurity Specialist",
+        "name": "Mohamed Maghriby",
+        "titleAr": "Computer Engineer, Information Security Expert and Auditor",
         "position": "Committee Coordinator"
       },
       "alaaAlboush": {
@@ -110,6 +110,11 @@
         "name": "Saleem Alaya",
         "title": "Bachelor in Business Administration",
         "position": "Secretary"
+      },
+      "omarBarhamji": {
+        "name": "Omar Barhamji",
+        "title": "Master’s degree in Financial Management, specialized in the establishment, development, and management of conventional and Islamic banks.",
+        "position": "Committee Coordinator"
       }
     },
     "whoWeAre": {
