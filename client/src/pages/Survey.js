@@ -1423,8 +1423,8 @@ const SurveyPage = () => {
           <label>
             {t("survey.moreDetails")}:
             <textarea
-              name="commentText"
-              value={formData.commentText}
+              name="additionalComments"
+              value={formData.additionalComments}
               onChange={handleChange}
               rows="4"
             />
