@@ -20,8 +20,7 @@ import AhmadShubat from "../assets/AhmadShubat.jpeg";
 import waleedHaji from "../assets/waleedHaji.jpeg";
 import mohamedAliMaghreby from "../assets/mohamedAliMaghreby.jpeg";
 import omarBarhamji from "../assets/omarBarhamji.jpeg";
-
-import manIcon from "../assets/manIcon.jpeg";
+import alaaAlboush from "../assets/alaaAlboush.jpeg";
 
 // Add more member imports as needed
 const CSSModuleCommitteesPage = () => {
@@ -180,6 +179,16 @@ const CSSModuleCommitteesPage = () => {
           linkedin:
             "https://www.linkedin.com/in/mohamad-alkudaymi-5b57b36a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
+        {
+          id: 7,
+          name: t(`scientificCommittees.members.mohamedAliMaghreby.name`),
+          title: t(`scientificCommittees.members.mohamedAliMaghreby.title`),
+          position: t(
+            `scientificCommittees.members.mohamedAliMaghreby.position`
+          ),
+          image: mohamedAliMaghreby,
+          linkedin: "",
+        },
         // Add more members as needed
       ],
     },
@@ -261,7 +270,7 @@ const CSSModuleCommitteesPage = () => {
           name: t(`scientificCommittees.members.alaaAlboush.name`),
           title: t(`scientificCommittees.members.alaaAlboush.title`),
           position: t(`scientificCommittees.members.alaaAlboush.position`),
-          image: manIcon,
+          image: alaaAlboush,
           linkedin: "",
         },
         // Add more technology committee members
