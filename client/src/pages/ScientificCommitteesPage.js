@@ -20,7 +20,6 @@ import AhmadShubat from "../assets/AhmadShubat.jpeg";
 import waleedHaji from "../assets/waleedHaji.jpeg";
 import mohamedAliMaghreby from "../assets/mohamedAliMaghreby.jpeg";
 import omarBarhamji from "../assets/omarBarhamji.jpeg";
-import alaaAlboush from "../assets/alaaAlboush.jpeg";
 import bilalAttar from "../assets/bilalAttar.jpeg";
 
 // Add more member imports as needed
@@ -280,14 +279,6 @@ const CSSModuleCommitteesPage = () => {
             `scientificCommittees.members.mohamedAliMaghreby.position`
           ),
           image: mohamedAliMaghreby,
-          linkedin: "",
-        },
-        {
-          id: 3,
-          name: t(`scientificCommittees.members.alaaAlboush.name`),
-          title: t(`scientificCommittees.members.alaaAlboush.title`),
-          position: t(`scientificCommittees.members.alaaAlboush.position`),
-          image: alaaAlboush,
           linkedin: "",
         },
         // Add more technology committee members
