@@ -21,6 +21,7 @@ import waleedHaji from "../assets/waleedHaji.jpeg";
 import mohamedAliMaghreby from "../assets/mohamedAliMaghreby.jpeg";
 import omarBarhamji from "../assets/omarBarhamji.jpeg";
 import alaaAlboush from "../assets/alaaAlboush.jpeg";
+import bilalAttar from "../assets/bilalAttar.jpeg";
 
 // Add more member imports as needed
 const CSSModuleCommitteesPage = () => {
@@ -118,6 +119,14 @@ const CSSModuleCommitteesPage = () => {
           image: omarBarhamji,
           linkedin: "",
         },
+        {
+          id: 4,
+          name: t(`scientificCommittees.members.bilalAttar.name`),
+          title: t(`scientificCommittees.members.bilalAttar.title`),
+          position: t(`scientificCommittees.members.bilalAttar.position`),
+          image: bilalAttar,
+          linkedin: "",
+        },
         // Add more economy committee members
       ],
     },
@@ -187,6 +196,14 @@ const CSSModuleCommitteesPage = () => {
             `scientificCommittees.members.mohamedAliMaghreby.position`
           ),
           image: mohamedAliMaghreby,
+          linkedin: "",
+        },
+        {
+          id: 8,
+          name: t(`scientificCommittees.members.bilalAttar.name`),
+          title: t(`scientificCommittees.members.bilalAttar.title`),
+          position: t(`scientificCommittees.members.bilalAttar.position`),
+          image: bilalAttar,
           linkedin: "",
         },
         // Add more members as needed
