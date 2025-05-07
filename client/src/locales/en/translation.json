@@ -431,5 +431,64 @@
       "title": "Contact Us",
       "content": "If you have any questions about our Cookie Policy, please contact us."
     }
-  }
+  },
+  "faqsPageTitle": "Frequently Asked Questions",
+  "faqs": [
+    {
+      "question": "What is the Syrian Initiative for Expertise and Development?",
+      "answer": "The Syrian Initiative for Expertise and Development is a non-profit organization that aims to mobilize the expertise of Syrians abroad to support Syria’s reconstruction and development. It connects professionals, facilitates knowledge-sharing, and promotes collaboration to drive impactful initiatives."
+    },
+    {
+      "question": "What is the goal of the initiative?",
+      "answer": "The initiative seeks to mobilize the expertise and talents of Syrians abroad to support Syria’s reconstruction and transformation. It focuses on developing ideas, building the largest Syrian expertise database, and organizing volunteer missions to offer consultancy, training, and technical support. Follow our page for more details: www.syrianexpertise.org"
+    },
+    {
+      "question": "How is the initiative funded?",
+      "answer": "The initiative is currently based entirely on voluntary efforts. We are working to build strategic partnerships with funding institutions to cover operational costs and support missions and projects."
+    },
+    {
+      "question": "How can I become part of the initiative?",
+      "answer": "The initiative is an open platform for anyone who wishes to contribute to rebuilding Syria. You can fill out the form to join the largest database of Syrian expertise abroad."
+    },
+    {
+      "question": "I have an idea I’d like to discuss. How can I reach out?",
+      "answer": "We welcome ideas from all fields. We have Facebook groups organized by area of expertise, each led by a specialist moderator. We recommend joining the main group first, then the specialized group that matches your interests. You can reach out to the moderators or the administration to share your idea."
+    },
+    {
+      "question": "Facebook group links:",
+      "answer": "Main group, Health, Engineering, Education and Training, Economy and Investment, Law, Technology and IT"
+    },
+    {
+      "question": "How can I contact the Board directly?",
+      "answer": "You can email us at: info@syrianexpertise.org"
+    },
+    {
+      "question": "Does the initiative only focus on projects inside Syria?",
+      "answer": "Yes, the initiative is dedicated to supporting a renewed Syria by leveraging the expertise of Syrians abroad and bridging the knowledge gap in various sectors within the country."
+    },
+    {
+      "question": "What was the purpose of your recent visit to Syria?",
+      "answer": "The aim was to introduce the initiative to governmental bodies, private sector organizations, and civil society, and to establish strategic partnerships that facilitate the implementation of future projects and initiatives."
+    },
+    {
+      "question": "What happens after I complete the form?",
+      "answer": "If you have an idea or project you’d like to develop, we recommend joining one of our specialized groups. There, you’ll meet professionals in your field, allowing you to discuss your idea, exchange perspectives, and benefit from collective experience to assess and refine it. From our side as the Board, we may contact you for two main reasons: 1. If a government or civil entity in Syria expresses interest in your expertise, we will work to connect you directly with them. 2. If there’s a project within the initiative that aligns with your field and experience, we may reach out to explore the possibility of your involvement, either as a consultant or as an active team member."
+    },
+    {
+      "question": "Is the initiative a for-profit organization?",
+      "answer": "No. The initiative is a non-profit organization registered in Sweden and operates under Swedish association laws. Its management is led by the founding team, and an expansion of the leadership structure will be announced soon."
+    },
+    {
+      "question": "How can I stay updated on the initiative’s activities?",
+      "answer": "Our main Facebook group is the primary platform for engagement. You can also follow our updates on: Facebook, Instagram, LinkedIn"
+    },
+    {
+      "question": "How were the specialized group moderators selected?",
+      "answer": "Initially, they were selected from qualified individuals within the founding team’s network. We are currently clarifying the responsibilities and structure of these committees, and we will soon open nominations for those interested in moderating and actively contributing."
+    },
+    {
+      "question": "When will we see projects implemented on the ground?",
+      "answer": "We follow an “inverted pyramid” model. Projects don’t come from the top, but from the idea-holders themselves. Our role is to pave the way and support implementation. Several projects are currently under review, including some proposed during our recent visit to Syria. Announcements will be made at the appropriate time."
+    }
+  ]
 }

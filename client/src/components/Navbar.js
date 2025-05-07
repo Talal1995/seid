@@ -10,15 +10,14 @@ const Navbar = () => {
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown2, setShowDropdown2] = useState(false); // Added for the second dropdown
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navContentRef = useRef(null);
   const mobileToggleRef = useRef(null);
 
-  // Determine the direction based on language
   const isRTL = i18n.language === "ar";
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -28,19 +27,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Set document direction based on language
   useEffect(() => {
-    document.documentElement.lang = i18n.language; // Set the lang attribute dynamically
-    document.documentElement.dir = isRTL ? "rtl" : "ltr"; // Set the direction
+    document.documentElement.lang = i18n.language;
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
     document.body.classList.toggle("rtl", isRTL);
   }, [i18n.language, isRTL]);
 
   const handleLanguageChange = (lng) => {
     i18n.changeLanguage(lng);
-    // Set the document direction based on language
     document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
     setShowLanguages(false);
-    // Close mobile menu when changing language
     if (window.innerWidth <= 768) {
       setMobileNavOpen(false);
     }
@@ -48,24 +44,32 @@ const Navbar = () => {
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen);
-    if (!mobileNavOpen) setShowDropdown(false);
+    if (!mobileNavOpen) {
+      setShowDropdown(false);
+      setShowDropdown2(false); // Close the second dropdown when toggling mobile nav
+    }
   };
 
   const toggleDropdown = (e) => {
     e.stopPropagation();
     setShowDropdown(!showDropdown);
+    setShowDropdown2(false); // Close the second dropdown when the first is toggled
+  };
+
+  const toggleDropdown2 = (e) => {
+    e.stopPropagation();
+    setShowDropdown2(!showDropdown2);
+    setShowDropdown(false); // Close the first dropdown when the second is toggled
   };
 
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
-  // Close mobile menu when clicking on a navigation link
   const handleNavLinkClick = () => {
     if (window.innerWidth <= 768) {
       setMobileNavOpen(false);
     }
   };
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -73,6 +77,7 @@ const Navbar = () => {
         !event.target.closest(".language-dropdown")
       ) {
         setShowDropdown(false);
+        setShowDropdown2(false); // Close the second dropdown when clicking outside
         setShowLanguages(false);
       }
     };
@@ -87,14 +92,12 @@ const Navbar = () => {
         isRTL ? "rtl" : "ltr"
       }`}
     >
-      {/* Logo container - will be positioned differently based on language direction */}
       <div className="logo-container">
         <Link to="/">
           <img src={OnlyLogoVertical} alt="Logo" className="navbar-logo" />
         </Link>
       </div>
 
-      {/* Mobile menu toggle button */}
       <button
         className="mobile-nav-toggle"
         onClick={toggleMobileNav}
@@ -103,7 +106,6 @@ const Navbar = () => {
         <FaBars />
       </button>
 
-      {/* Navigation links and language selector */}
       <div
         className={`nav-content ${mobileNavOpen ? "open" : ""}`}
         ref={navContentRef}
@@ -132,6 +134,7 @@ const Navbar = () => {
               {t("whoWeAre.ourTeam.pageTitle")}
             </Link>
           </li>
+          {/* First Dropdown */}
           <li
             className="dropdown"
             onMouseEnter={() =>
@@ -144,7 +147,7 @@ const Navbar = () => {
             <Link
               className={isActive("/who-we-are")}
               onClick={(e) => {
-                e.preventDefault(); // Prevent navigation for dropdown toggle
+                e.preventDefault();
                 if (window.innerWidth <= 768) {
                   toggleDropdown(e);
                 }
@@ -169,14 +172,43 @@ const Navbar = () => {
               </Link>
             </div>
           </li>
-          <li>
+          {/* Second Dropdown */}
+          <li
+            className="dropdown"
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setShowDropdown2(true)
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setShowDropdown2(false)
+            }
+          >
             <Link
-              to="/contact"
               className={isActive("/contact")}
-              onClick={handleNavLinkClick}
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.innerWidth <= 768) {
+                  toggleDropdown2(e);
+                }
+              }}
             >
               {t("contact.pageTitle")}
             </Link>
+            <div className={`dropdown-menu ${showDropdown2 ? "show" : ""}`}>
+              <Link
+                to="/contact"
+                className={isActive("/contact")}
+                onClick={handleNavLinkClick}
+              >
+                {t("contact.pageTitle")}
+              </Link>
+              <Link
+                to="/qanda"
+                className={isActive("/qanda")}
+                onClick={handleNavLinkClick}
+              >
+                {t("faqsPageTitle")}
+              </Link>
+            </div>
           </li>
         </ul>
 

@@ -13,6 +13,7 @@ import ScientificCommitteesPage from "./pages/ScientificCommitteesPage";
 import GDPRPolicy from "./pages/GDPRPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
 import CookieConsent from "./components/CookieConsent";
+import QAndA from "./pages/Q&a";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/gdpr-policy" element={<GDPRPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/qanda" element={<QAndA />} /> {/* Add this new route */}
       </Routes>
       <Footer />
       <CookieConsent />
