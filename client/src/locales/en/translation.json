@@ -432,7 +432,7 @@
       "content": "If you have any questions about our Cookie Policy, please contact us."
     }
   },
-  "faqsPageTitle": "Frequently Asked Questions",
+  "faqsPageTitle": "FAQ",
   "faqs": [
     {
       "question": "What is the Syrian Initiative for Expertise and Development?",
@@ -448,15 +448,13 @@
     },
     {
       "question": "How can I become part of the initiative?",
-      "answer": "The initiative is an open platform for anyone who wishes to contribute to rebuilding Syria. You can fill out the form to join the largest database of Syrian expertise abroad."
+      "answer": "The initiative is an open platform for anyone who wishes to contribute to rebuilding Syria. You can fill out the survey to join the largest database of Syrian expertise abroad."
     },
     {
       "question": "I have an idea I’d like to discuss. How can I reach out?",
-      "answer": "We welcome ideas from all fields. We have Facebook groups organized by area of expertise, each led by a specialist moderator. We recommend joining the main group first, then the specialized group that matches your interests. You can reach out to the moderators or the administration to share your idea."
-    },
-    {
-      "question": "Facebook group links:",
-      "answer": "Main group, Health, Engineering, Education and Training, Economy and Investment, Law, Technology and IT"
+      "answer": "We welcome ideas from all fields. We have Facebook groups organized by area of expertise, each led by a specialist moderator. We recommend joining the main group first, then the specialized group that matches your interests. You can reach out to the moderators or the administration to share your idea.",
+      "question2": "Facebook group links:",
+      "answer2": "Main group, Health, Engineering, Education and Training, Economy and Investment, Law, Technology and IT"
     },
     {
       "question": "How can I contact the Board directly?",
